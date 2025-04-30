@@ -61,45 +61,46 @@ header.header-container {
   color: rgb(31, 5, 227);
   padding: 1rem;
   display: flex;
-  justify-content: space-between; 
-  align-items: center; 
-  height: auto; 
+  justify-content: space-between; /* Distribute space evenly */
+  align-items: center; /* Vertically align the sections */
+  height: auto; /* Ensure header adjusts to its content */
   margin-bottom: 0;
 }
 
 .header-left {
   display: flex;
-  flex-direction: column;
-  align-items: center; 
-  justify-content: center;
+  flex-direction: column; /* Stack icon and text vertically */
+  align-items: center; /* Center icon and text horizontally */
+  justify-content: center; /* Center content vertically within the container */
 }
 
 .header-left img.header-icon {
-  width: 80px; 
-  height: 80px; 
-  margin-bottom: 5px; 
+  width: 80px; /* Same size as profile picture */
+  height: 80px; /* Same size as profile picture */
+  margin-bottom: 5px; /* Add some space between icon and text */
+}
 
 .header-left p.icon-label {
-  margin-top: 0; 
-  margin-bottom: 0; 
-  font-size: 0.9em;
-  color: gold; 
+  margin-top: 0; /* Remove default top margin */
+  margin-bottom: 0; /* Remove default bottom margin */
+  font-size: 0.9em; /* Adjust size as needed */
+  color: gold; /* Set the color to gold */
 }
 
 .header-middle {
-  text-align: center; 
+  text-align: center; /* Center the text within the middle section */
 }
 
 .header-middle h1 {
   margin-top: 0;
   margin-bottom: 5px;
-  font-size: 1.8em; 
+  font-size: 1.8em; /* Slightly reduced font size */
 }
 
 .header-middle h2 {
   margin-top: 0;
   margin-bottom: 0;
-  font-size: 1.3em;
+  font-size: 1.3em; /* Slightly reduced font size */
 }
 
 .header-right {
@@ -109,8 +110,8 @@ header.header-container {
 }
 
 .header-right img.profile-pic {
-  width: 80px; 
-  height: 80px; 
+  width: 80px; /* Consistent size */
+  height: 80px; /* Consistent size */
   border-radius: 50%;
   margin-left: 0;
   margin-bottom: 5px;
@@ -119,7 +120,7 @@ header.header-container {
 .header-right a.linkedin-link {
   display: block;
   margin-top: 0;
-  font-size: 14px; 
+  font-size: 14px; /* Slightly reduced font size */
   color: #e70cdc;
   text-decoration: none;
 }
@@ -171,7 +172,7 @@ footer {
 
 #home {
   background-color: transparent;
-  background-image: url('home.png');
+  background-image: url('images/home.png');
   background-size: cover;
   color: #03d7f7;
   padding: 20px;
@@ -192,7 +193,7 @@ footer {
 
 #projects {
   background-color: transparent;
-  background-image: url('github.png');
+  background-image: url('images/github.png');
   background-size: cover;
   color: #08cef6;
   padding: 20px;
@@ -213,7 +214,7 @@ footer {
 
 #about {
   background-color: transparent;
-  background-image: url('about.jpg');
+  background-image: url('images/about.jpg');
   background-size: cover;
   color: #24a4ee;
   padding: 20px;
@@ -234,7 +235,7 @@ footer {
 
 #contact {
   background-color: transparent;
-  background-image: url(contact.jpg');
+  background-image: url('images/contact.jpg');
   background-size: cover;
   color: #3e89f1;
   padding: 20px;
