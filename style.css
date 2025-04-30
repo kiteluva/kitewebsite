@@ -66,23 +66,6 @@ footer {
   height: auto;
   bottom: 0;
 }
-
-.header-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px;
-}
-
-.header-left {
-  flex: 1;
-}
-
-.header-right {
-  flex: 1;
-  text-align: center; 
-}
-
 .profile-pic {
   width: 100px; 
   height: 100px;
