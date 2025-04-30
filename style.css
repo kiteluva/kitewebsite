@@ -43,17 +43,35 @@ html, body {
 .dark-band {
   display: none; 
 }
-header {
-  background-color: #01131e;
-  color: rgb(31, 5, 227);
-  padding: 1rem;
-  text-align: center;
-}
 .header-container {
-  background-image: url("icon.png");
-  background-size: contain; /* Adjust how the image fits */
-  background-repeat: no-repeat; /* Avoid repetition of the image */
-  background-position: center; /* Position it centrally in the header */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-image: url('icon.png'); 
+  background-repeat: no-repeat; 
+  background-size: cover; 
+  filter: blur(4px); 
+  position: relative; 
+  z-index: 1; 
+}
+
+.text-content,
+.header-right {
+  position: relative; 
+  z-index: 2; 
+}
+
+.header-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.5); 
+  z-index: 1; 
+  backdrop-filter: blur(4px); 
 }
 footer {
   background: #01131e;
