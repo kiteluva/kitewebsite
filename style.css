@@ -1,38 +1,43 @@
-
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  }
+}
+
 nav.navbar {
   background-color: #011f20;
   color: rgb(224, 198, 6);
   padding: 10px;
-  }
+}
+
 nav ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
   display: flex;
-  }
+}
+
 nav ul li {
   position: relative;
-  }
+}
+
 nav ul li a {
-  text-decoration: bold;
+  font-weight: bold;
   color: rgb(247, 4, 4);
   padding: 10px 15px;
   display: block;
-  }
-  nav ul li:hover a {
+  text-decoration: none;
+}
+
+nav ul li:hover a {
   background-color: #917c06;
-  }
-   
+}
+
 body {
   font-family: Arial, sans-serif;
   background-position: center;
   background-repeat: no-repeat;
-  background-size: cover; 
-  height: 100vh;
+  background-size: cover;
+  min-height: 100vh;
   margin: 0;
   padding: 0;
   background-color: transparent;
@@ -40,19 +45,51 @@ body {
 }
 
 html, body {
-  height: 100%; 
-  overflow: hidden; 
+  height: 100%;
+  overflow: auto;
 }
 
 .dark-band {
-  display: none; 
+  display: none;
 }
 
-header {
+header.header-container {
   background-color: #01131e;
   color: rgb(31, 5, 227);
   padding: 1rem;
-  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-container .text-content {
+  text-align: center; /* Center the text horizontally within this container */
+}
+
+.header-container .header-right {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.header-container .header-right img.profile-pic {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-left: 0;
+  margin-bottom: 10px;
+}
+
+.header-container .header-right a.linkedin-link {
+  display: block;
+  margin-top: 0;
+  font-size: 16px;
+  color: #e70cdc;
+  text-decoration: none;
+}
+
+.header-container .header-right a.linkedin-link:hover {
+  text-decoration: underline;
 }
 
 footer {
@@ -66,25 +103,7 @@ footer {
   height: auto;
   bottom: 0;
 }
-.profile-pic {
-  width: 100px; 
-  height: 100px;
-  border-radius: 50%; 
-  display: block;
-  margin: 0 auto; 
-}
 
-.linkedin-link {
-  display: block; 
-  margin-top: 10px; 
-  font-size: 16px;
-  color: #e70cdc; 
-  text-decoration: none;
-}
-
-.linkedin-link:hover {
-  text-decoration: underline;
-}
 #contacts {
   padding: 20px;
   background-color: #292b2d;
@@ -110,18 +129,20 @@ footer {
 }
 
 #home {
-  background-color: transparent;  
-  background-image: url('images/home.png'); 
+  background-color: transparent;
+  background-image: url('images/home.png');
   background-size: cover;
   color: #03d7f7;
-  padding: 20px; 
-  height: 100vh;
+  padding: 20px;
+  min-height: 100vh;
 }
+
 #home h3 {
   font-family: 'Arial', sans-serif;
   font-size: 24px;
   text-align: center;
 }
+
 #home p {
   font-size: 16px;
   line-height: 1.5;
@@ -129,18 +150,20 @@ footer {
 }
 
 #projects {
-  background-color: transparent;  
-  background-image: url('images/github.png'); 
+  background-color: transparent;
+  background-image: url('images/github.png');
   background-size: cover;
-  color: #08cef6; 
-  padding: 20px; 
-  height: 100vh;
+  color: #08cef6;
+  padding: 20px;
+  min-height: 100vh;
 }
+
 #projects h3 {
   font-family: 'Arial', sans-serif;
   font-size: 24px;
   text-align: center;
 }
+
 #projects p {
   font-size: 16px;
   line-height: 1.5;
@@ -148,18 +171,20 @@ footer {
 }
 
 #about {
-  background-color: transparent;  
-  background-image: url('images/about.jpg'); 
+  background-color: transparent;
+  background-image: url('images/about.jpg');
   background-size: cover;
-  color: #24a4ee; 
-  padding: 20px; 
-  height: 100vh;
+  color: #24a4ee;
+  padding: 20px;
+  min-height: 100vh;
 }
+
 #about h3 {
   font-family: 'Arial', sans-serif;
   font-size: 24px;
   text-align: center;
 }
+
 #about p {
   font-size: 16px;
   line-height: 1.5;
@@ -167,18 +192,20 @@ footer {
 }
 
 #contact {
-  background-color: transparent;  
-  background-image: url('images/contact.jpg'); 
+  background-color: transparent;
+  background-image: url('images/contact.jpg');
   background-size: cover;
-  color: #3e89f1; 
-  padding: 20px; 
-  height: 100vh;
+  color: #3e89f1;
+  padding: 20px;
+  min-height: 100vh;
 }
+
 #contact h3 {
   font-family: 'Arial', sans-serif;
   font-size: 24px;
   text-align: center;
 }
+
 #contact p {
   font-size: 16px;
   line-height: 1.5;
@@ -186,5 +213,5 @@ footer {
 }
 
 body {
-  min-height: 100vh; /* Ensures the body height covers the viewport but expands with content */
+  min-height: 100vh;
 }
