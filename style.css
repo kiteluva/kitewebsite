@@ -49,6 +49,12 @@ header {
   padding: 1rem;
   text-align: center;
 }
+.header-container {
+  background-image: url("icon.png");
+  background-size: contain; /* Adjust how the image fits */
+  background-repeat: no-repeat; /* Avoid repetition of the image */
+  background-position: center; /* Position it centrally in the header */
+}
 footer {
   background: #01131e;
   color: rgb(244, 245, 251);
