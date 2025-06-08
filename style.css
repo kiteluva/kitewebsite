@@ -1,259 +1,379 @@
+/* style.css */
+
+/* Universal Box Sizing - Essential for consistent layout calculations */
+* {
+    box-sizing: border-box;
+}
+
+/* Consolidated Body Styles - Handles the universal fixed background and sticky footer */
 body {
-  margin: 0;
-  font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 1cm; /* Uniform 1cm padding around the entire page, showing hback.png */
+    font-family: Arial, sans-serif;
+    color: #FFF; /* Default text color for the page */
+    min-height: 100vh; /* Ensures body takes at least full viewport height */
+    overflow-x: hidden; /* Prevents horizontal scrollbar */
+
+    /* Universal fixed background for the entire page (will show in the 1cm margins) */
+    background-image: url('images/hback.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed; /* Makes the universal background fixed */
+    background-color: transparent; /* No solid background color on body itself */
+
+    /* Re-added flexbox properties for sticky footer */
+    display: flex;
+    flex-direction: column; /* Stacks children vertically */
 }
 
-nav.navbar {
-  background-color: #011f20;
-  color: rgb(224, 198, 6);
-  padding: 10px;
-  margin-top: 0;
-  margin-bottom: 0;
-}
-
-nav ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-}
-
-nav ul li {
-  position: relative;
-}
-
-nav ul li a {
-  font-weight: bold;
-  color: rgb(247, 4, 4);
-  padding: 10px 15px;
-  display: block;
-  text-decoration: none;
-}
-
-nav ul li:hover a {
-  background-color: #917c06;
-}
-
-body {
-  font-family: Arial, sans-serif;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  min-height: 100vh;
-  padding: 0;
-  background-color: transparent;
-  color: #0840fa;
-}
-
+/* HTML & Body height/overflow - Helps body's min-height work correctly */
 html, body {
-  height: 100%;
-  overflow: auto;
-  margin: 0;
-  padding: 0;
+    height: 100%; /* Ensures HTML element provides full height reference */
 }
 
+/* .dark-band - Kept as is, as it's set to display: none */
 .dark-band {
-  display: none;
+    display: none;
 }
 
+/* --- Main Content Wrapper Styles --- */
+/* This wrapper holds header, nav, main, footer.
+   It creates the inner content area.
+   It also carries the page-specific transparent background that is fixed within it. */
+.main-content-wrapper {
+    max-width: 900px; /* Controls the width of your main content area */
+    margin: 0 auto; /* Centers the content wrapper horizontally within the body's padding */
+
+    /* Re-added flex-grow to push footer down */
+    flex-grow: 1; /* Allows the wrapper to grow and push the footer to the bottom */
+    
+    position: relative; /* Needed for positioning of page-specific background */
+    background-color: rgba(1, 19, 30, 0.8); /* Uniform dark background for content area */
+    box-shadow: 0 0 15px rgba(0,0,0,0.5); /* Optional: Adds a subtle shadow to separate from margin */
+}
+
+
+/* --- Page-Specific Transparent Backgrounds for .main-content-wrapper --- */
+/* These now apply to the .main-content-wrapper and are fixed within it. */
+
+.home-page .main-content-wrapper {
+    background-image: url('images/icont.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed; /* Transparent overlay is FIXED within the wrapper */
+}
+
+.projects-page .main-content-wrapper {
+    background-image: url('images/github.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed; /* Transparent overlay is FIXED within the wrapper */
+}
+
+.about-page .main-content-wrapper {
+    background-image: url('images/about.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed; /* Transparent overlay is FIXED within the wrapper */
+}
+
+.contact-page .main-content-wrapper {
+    background-image: url('images/contact.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed; /* Transparent overlay is FIXED within the wrapper */
+}
+
+
+/* Header Styles - Now truly transparent */
 header.header-container {
-  background-color: #01131e;
-  color: rgb(31, 5, 227);
-  padding: 1rem;
-  display: flex;
-  justify-content: space-between; /* Distribute space evenly */
-  align-items: center; /* Vertically align the sections */
-  height: auto; /* Ensure header adjusts to its content */
-  margin-bottom: 0;
+    background: transparent;
+    color: rgb(31, 5, 227);
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: auto;
+    margin-bottom: 0;
 }
 
 .header-left {
-  display: flex;
-  flex-direction: column; /* Stack icon and text vertically */
-  align-items: center; /* Center icon and text horizontally */
-  justify-content: center; /* Center content vertically within the container */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .header-left img.header-icon {
-  width: 80px; /* Same size as profile picture */
-  height: 80px; /* Same size as profile picture */
-  margin-bottom: 5px; /* Add some space between icon and text */
+    width: 80px;
+    height: 80px;
+    margin-bottom: 5px;
 }
 
 .header-left p.icon-label {
-  margin-top: 0; /* Remove default top margin */
-  margin-bottom: 0; /* Remove default bottom margin */
-  font-size: 0.9em; /* Adjust size as needed */
-  color: gold; /* Set the color to gold */
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 0.9em;
+    color: gold;
 }
 
 .header-middle {
-  text-align: center; /* Center the text within the middle section */
+    text-align: center;
 }
 
 .header-middle h1 {
-  margin-top: 0;
-  margin-bottom: 5px;
-  font-size: 1.8em; /* Slightly reduced font size */
+    margin-top: 0;
+    margin-bottom: 5px;
+    font-size: 1.8em;
 }
 
 .header-middle h2 {
-  margin-top: 0;
-  margin-bottom: 0;
-  font-size: 1.3em; /* Slightly reduced font size */
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 1.3em;
 }
 
 .header-right {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .header-right img.profile-pic {
-  width: 80px; /* Consistent size */
-  height: 80px; /* Consistent size */
-  border-radius: 50%;
-  margin-left: 0;
-  margin-bottom: 5px;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-left: 0;
+    margin-bottom: 5px;
 }
 
 .header-right a.linkedin-link {
-  display: block;
-  margin-top: 0;
-  font-size: 14px; /* Slightly reduced font size */
-  color: #e70cdc;
-  text-decoration: none;
-}
-
-.header-right a.linkedin-link:hover {
-  text-decoration: underline;
-}
-
-main {
-  padding-top: 0;
-  margin-top: 0;
-}
-
-footer {
-  background: #01131e;
-  color: rgb(244, 245, 251);
-  text-align: center;
-  padding: 10px 0;
-  width: 100%;
-  margin: 0;
-  position: absolute;
-  height: auto;
-  bottom: 0;
-}
-
-#contacts {
-  padding: 20px;
-  background-color: #292b2d;
-  text-align: left;
-}
-
-.contact-list {
-  list-style-type: none;
-  padding: 0;
-}
-
-.contact-list li {
-  margin: 10px 0;
+    display: block;
+    margin-top: 0;
+    font-size: 14px;
+    color: #e70cdc;
+    text-decoration: none;
 }
 
 .contact-link {
-  color: #410239;
-  text-decoration: none;
+    color: #410239; /* Consider making this color lighter for readability on transparent background */
+    text-decoration: none;
 }
 
-.contact-link:hover {
-  text-decoration: underline;
+.header-right a.linkedin-link:hover {
+    text-decoration: underline;
+}
+
+/* Navbar Styles - Now truly transparent */
+nav.navbar {
+    background: transparent;
+    color: rgb(224, 198, 6);
+    padding: 10px;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center; /* Center navbar items horizontally */
+}
+
+nav ul li {
+    position: relative;
+}
+
+nav ul li a {
+    font-weight: bold;
+    color: rgb(247, 4, 4);
+    padding: 10px 15px;
+    display: block;
+    text-decoration: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+nav ul li:hover a {
+    background-color: rgba(145, 124, 6, 0.7); /* Adjust transparency if desired */
+}
+
+/* KEY CHANGE: Style for the active navigation tab */
+nav ul li.active a {
+    background-color: rgb(180, 150, 10); /* A distinct golden color for the active tab */
+    color: #FFF; /* Ensure text is readable on the active background */
+}
+
+
+/* Main Content Area */
+main {
+    padding: 20px; /* Padding for content inside main */
+    padding-top: 0;
+    margin-top: 0;
+}
+
+/* Footer Styles - Now transparent and sticky to viewport if content is short */
+footer {
+    background: transparent;
+    color: rgb(244, 245, 251);
+    text-align: center;
+    padding: 10px 0;
+    width: 100%;
+    /* Re-added margin-top: auto; to push footer to the bottom */
+    margin-top: auto; /* Pushes footer to the bottom when using flex-direction: column on parent */
+    height: auto;
+}
+
+/* Section Styles - Ensure content colors are readable against transparent backgrounds */
+/* These sections are now transparent, as the main-content-wrapper provides the darker background color */
+#home, #projects, #about, #contact {
+    background-color: transparent;
+    padding: 20px;
+    min-height: auto;
+    margin-bottom: 20px; /* Add some space between sections if they are stacked */
+    border-radius: 8px; /* Give sections a slight rounded corner if desired */
 }
 
 #home {
-  background-color: transparent;
-  background-image: url('images/hback.png');
-  background-size: cover;
-  color: #03d7f7;
-  padding: 20px;
-  min-height: 100vh;
+    color: #03d7f7;
 }
-
-#home h3 {
-  font-family: 'Arial', sans-serif;
-  font-size: 24px;
-  text-align: center;
-}
-
-#home p {
-  font-size: 16px;
-  line-height: 1.5;
-  margin: 10px 0;
-}
-
 #projects {
-  background-color: transparent;
-  background-image: url('images/github.png');
-  background-size: cover;
-  color: #08cef6;
-  padding: 20px;
-  min-height: 100vh;
+    color: #08cef6;
 }
-
-#projects h3 {
-  font-family: 'Arial', sans-serif;
-  font-size: 24px;
-  text-align: center;
-}
-
-#projects p {
-  font-size: 16px;
-  line-height: 1.5;
-  margin: 10px 0;
-}
-
 #about {
-  background-color: transparent;
-  background-image: url('images/about.jpg');
-  background-size: cover;
-  color: #24a4ee;
-  padding: 20px;
-  min-height: 100vh;
+    color: #24a4ee;
 }
-
-#about h3 {
-  font-family: 'Arial', sans-serif;
-  font-size: 24px;
-  text-align: center;
-}
-
-#about p {
-  font-size: 16px;
-  line-height: 1.5;
-  margin: 10px 0;
-}
-
 #contact {
-  background-color: transparent;
-  background-image: url('images/contact.jpg');
-  background-size: cover;
-  color: #3e89f1;
-  padding: 20px;
-  min-height: 100vh;
+    color: #3e89f1;
 }
 
-#contact h3 {
-  font-family: 'Arial', sans-serif;
-  font-size: 24px;
-  text-align: center;
+/* Headings and Paragraphs within Sections */
+#home h3, #projects h3, #about h3, #contact h3 {
+    font-family: 'Arial', sans-serif;
+    font-size: 24px;
+    text-align: center;
+}
+#home p, #projects p, #about p, #contact p {
+    font-size: 16px;
+    line-height: 1.5;
+    margin: 10px 0;
 }
 
-#contact p {
-  font-size: 16px;
-  line-height: 1.5;
-  margin: 10px 0;
+/* Contact Section Specifics */
+#contact {
+    text-align: left;
 }
 
-body {
-  min-height: 100vh;
+#contact h3, #contact p {
+    text-align: center;
+    margin-bottom: 15px;
+    color: #FFF;
+}
+
+.contact-item {
+    background-color: rgba(0, 0, 0, 0.6); /* Slightly darker for contact items */
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.contact-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.contact-list li {
+    margin: 10px 0;
+}
+
+
+.contact-link:hover {
+    text-decoration: underline;
+}
+
+/* --- Responsive Navigation Styles --- */
+
+/* Initially hide the toggle button */
+.nav-toggle {
+    display: none;
+    font-size: 30px;
+    background: none;
+    border: none;
+    color: rgb(224, 198, 6); /* Navbar text color */
+    cursor: pointer;
+    padding: 5px 10px;
+    z-index: 1001; /* Ensure it's above other content */
+}
+
+/* Adjustments for the navbar on smaller screens */
+@media (max-width: 768px) { /* Adjust breakpoint as needed */
+    nav.navbar ul {
+        flex-direction: column; /* Stack items vertically */
+        position: absolute;
+        top: 100%; /* Position below the navbar itself */
+        left: 0;
+        width: 100%;
+        background-color: rgba(1, 31, 32, 0.95); /* Semi-transparent background for dropdown */
+        border-top: 1px solid rgba(224, 198, 6, 0.2); /* Separator line */
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+        display: none; /* Hidden by default */
+        z-index: 1000;
+        padding: 10px 0;
+        border-radius: 0; /* No radius if it spans full width */
+        text-align: center; /* Center links in dropdown */
+        max-height: 0; /* For collapse animation */
+        overflow: hidden; /* Hide overflow during collapse */
+        transition: max-height 0.4s ease-out, padding 0.4s ease-out, background-color 0.3s ease; /* Smooth transition */
+    }
+
+    nav.navbar ul.active {
+        display: flex; /* Show when active */
+        max-height: 300px; /* Needs to be larger than content height for animation */
+        padding: 10px 0;
+    }
+
+    nav.navbar ul li {
+        margin: 5px 0; /* Spacing between stacked links */
+        width: 100%;
+    }
+
+    nav.navbar ul li a {
+        padding: 12px 15px;
+        font-size: 1.1em;
+        color: rgb(247, 4, 4); /* Ensure visibility */
+    }
+
+    nav.navbar ul li:hover a {
+        background-color: rgba(145, 124, 6, 0.7);
+    }
+    /* Style for the active tab in responsive view */
+    nav.navbar ul li.active a {
+        background-color: rgb(180, 150, 10); /* Active color in responsive view */
+        color: #FFF;
+    }
+
+    /* Show the toggle button on small screens */
+    .nav-toggle {
+        display: block; /* Show the hamburger button */
+    }
+
+    /* Position the nav toggle button */
+    nav.navbar {
+        display: flex;
+        justify-content: flex-end; /* Push toggle to the right */
+        align-items: center;
+        position: relative; /* Needed for absolute positioning of ul */
+    }
 }
