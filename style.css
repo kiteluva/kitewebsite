@@ -242,7 +242,7 @@ main {
 /* Footer Styles */
 footer {
     background: transparent;
-    color: rgb(5, 210, 247);
+    color: rgb(244, 245, 251);
     text-align: center;
     width: 100%;
     margin-top: auto;
@@ -272,7 +272,7 @@ footer {
 /* Headings and Paragraphs within Sections */
 /* Global h4 rule to make ALL h4s dark purple */
 h4 {
-    color: #c003f5; /* Dark Purple for ALL h4s */
+    color: #58006E; /* Dark Purple for ALL h4s */
 }
 
 #home h3, #projects h3, #about h3, #contact h3 {
@@ -362,7 +362,7 @@ h4 {
 } */
 
 
-/* --- Responsive Navigation Styles (fine, but commenting on the white-space tweak) --- */
+/* --- Responsive Navigation Styles --- */
 .nav-toggle {
     display: none;
     font-size: 30px;
@@ -390,13 +390,14 @@ h4 {
         border-radius: 0;
         text-align: center;
         max-height: 0;
-        overflow: hidden;
+        overflow: hidden; /* Ensures content is hidden when collapsed */
         transition: max-height 0.4s ease-out, padding 0.4s ease-out, background-color 0.3s ease;
     }
 
     nav.navbar ul.active {
         display: flex;
-        max-height: 300px;
+        max-height: 60vh; /* UPDATED: Menu will take max 60% of viewport height */
+        overflow-y: auto; /* ADDED: Enables vertical scrolling if content exceeds max-height */
         padding: 10px 0;
     }
 
@@ -432,29 +433,48 @@ h4 {
 
     /* Adjust header layout for very small screens */
     header.header-container {
-        flex-direction: column; /* Stack header sections vertically */
+        flex-direction: row; /* Keep them in a row */
+        flex-wrap: wrap; /* Allow them to wrap to the next line if needed */
         align-items: center; /* Center items when stacked */
         padding: 0.5rem; /* Reduced padding for very small screens */
+        justify-content: space-around; /* Distribute items evenly in the row */
     }
 
     .header-left,
     .header-middle,
     .header-right {
-        min-width: unset; /* Remove min-width when stacked */
-        width: 100%; /* Take full width */
+        min-width: unset; /* Remove min-width to allow more flexibility */
+        flex: 1 1 auto; /* Allow items to grow/shrink based on content, but maintain some flexibility */
         margin-bottom: clamp(5px, 2vw, 10px); /* Fluid margin between stacked sections */
         padding: 0; /* Remove internal padding if stacking */
+        text-align: center; /* Ensure content inside is centered when wrapping */
     }
     /* Reordered elements for mobile for potentially better flow */
     .header-right {
         order: 1; /* Profile pic / LinkedIn first */
     }
-    .header-left {
-        order: 2; /* Icon and label second */
-    }
     .header-middle {
-        order: 3; /* Main title and subtitle last */
+        order: 2; /* Main title and subtitle second */
     }
+    .header-left {
+        order: 3; /* Icon and label last */
+    }
+
+
+    /* NEW: Fine-tune font sizes for header on very small screens to help with wrapping */
+    .header-middle h1 {
+        font-size: clamp(1em, 3.5vw, 1.8em); /* Smaller min size for H1 */
+    }
+
+    .header-middle h2 {
+        font-size: clamp(0.8em, 2.2vw, 1.4em); /* Smaller min size for H2 */
+    }
+
+    .header-left p.icon-label,
+    .header-right a.linkedin-link {
+        font-size: clamp(0.6em, 1.8vw, 0.8em); /* Even smaller for labels/links */
+    }
+
 
     /* NEW: Adjust contact grid for small screens (single column) */
     .contact-grid {
