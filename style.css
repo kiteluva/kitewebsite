@@ -242,7 +242,7 @@ main {
 /* Footer Styles */
 footer {
     background: transparent;
-    color: rgb(244, 245, 251);
+    color: rgb(91, 113, 241);
     text-align: center;
     width: 100%;
     margin-top: auto;
@@ -260,14 +260,6 @@ footer {
     margin-bottom: 20px;
     border-radius: 8px;
 }
-
-/* Removed specific colors for h3/p inside sections, relying on main section color */
-/* If you want to keep them, ensure they are very readable against the background */
-/* #home { color: #03d7f7; } */
-/* #projects { color: #08cef6; } */
-/* #about { color: #24a4ee; } */
-/* #contact { color: #3e89f1; } */
-
 
 /* Headings and Paragraphs within Sections */
 /* Global h4 rule to make ALL h4s dark purple */
@@ -296,12 +288,6 @@ h4 {
     text-align: left;
 }
 
-/*#contact h3, #contact p {
-    text-align: center;
-    margin-bottom: 15px;
-    color: #FFF;
-}*/
-
 /* NEW: Styles for the contact grid container */
 .contact-grid {
     display: grid; /* Use CSS Grid for layout */
@@ -322,11 +308,7 @@ h4 {
     flex-direction: column;
     align-items: flex-start;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    /* max-width: 400px; */ /* REMOVED: Grid handles item sizing */
-    /* width: 90%; */ /* REMOVED: Grid handles item sizing */
-    /* margin-left: auto; */ /* REMOVED: Grid handles item centering */
-    /* margin-right: auto; */ /* REMOVED: Grid handles item centering */
-
+    
     /* Ensure text within contact-item is centered for phone/tablet if desired, or left-aligned */
     text-align: left; /* Keep text left-aligned within the item */
 }
@@ -344,23 +326,6 @@ h4 {
     font-size: clamp(0.9em, 2.5vw, 1.1em); /* Fluid font size for links */
     word-break: break-word; /* Ensure long emails/URLs break if needed */
 }
-
-.contact-item a:hover {
-    text-decoration: underline;
-}
-
-/* Removed .contact-list as it's no longer necessary with direct .contact-item styling */
-/* .contact-list {
-    list-style-type: none;
-    padding: 0;
-    width: 100%;
-}
-
-.contact-list li {
-    margin: clamp(5px, 2vw, 10px) 0;
-    font-size: clamp(0.8em, 2.5vw, 1em);
-} */
-
 
 /* --- Responsive Navigation Styles --- */
 .nav-toggle {
