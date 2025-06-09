@@ -296,11 +296,11 @@ h4 {
     text-align: left;
 }
 
-#contact h3, #contact p {
+/*#contact h3, #contact p {
     text-align: center;
     margin-bottom: 15px;
     color: #FFF;
-}
+}*/
 
 /* NEW: Styles for the contact grid container */
 .contact-grid {
