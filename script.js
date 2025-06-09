@@ -22,6 +22,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 // on the current page for a non-existent ID.
                 window.location.href = this.getAttribute('href');
             }
+
+            // **NEW: Close the mobile menu if it's open after clicking a link**
+            const navList = document.querySelector('nav.navbar ul');
+            if (navList && navList.classList.contains('active')) {
+                navList.classList.remove('active');
+            }
         });
     });
 
@@ -38,18 +44,20 @@ document.addEventListener('DOMContentLoaded', () => {
             // Get the current scroll position relative to the top of the viewport
             // Subtract a small offset (e.g., 100px) to activate the link
             // slightly before the section fully enters the viewport.
-            const sectionTop = section.offsetTop - 100;
+            const sectionTop = section.offsetTop - 100; // Adjusted offset for fixed header
             const sectionHeight = section.clientHeight;
 
+            // Make sure the section is in view
             if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
                 current = section.getAttribute('id');
             }
         });
 
         navLinks.forEach(link => {
-            link.classList.remove('active-nav'); // Remove active class from all links first
+            link.classList.remove('active'); // **Changed:** Use 'active' class as per your CSS
+            // Check if the link's href matches the current section's ID
             if (link.getAttribute('href').includes(current)) {
-                link.classList.add('active-nav'); // Add active class to the current link
+                link.classList.add('active'); // **Changed:** Use 'active' class as per your CSS
             }
         });
     };
@@ -66,13 +74,12 @@ document.addEventListener('DOMContentLoaded', () => {
         const currentYear = new Date().getFullYear();
         // Assuming your copyright text is like "© 2025 by Kiteluva. All rights reserved."
         // We'll replace the existing year (2025 in your HTML) with the current year.
+        // This regex ensures it replaces exactly the "© YYYY" pattern.
         footerYear.textContent = footerYear.textContent.replace(/© \d{4}/, `© ${currentYear}`);
     }
 
 
     // --- 4. Basic Contact Form Handling (If you plan to add a form) ---
-    // This is client-side validation and a simulated submission.
-    // For a real contact form, you'd need a backend (e.g., PHP, Node.js) to send emails.
     const contactForm = document.getElementById('contact-form'); // Assuming your form has this ID
 
     if (contactForm) {
@@ -88,14 +95,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 return;
             }
 
-            // Simple email validation regex (can be more robust)
             const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
             if (!emailPattern.test(email)) {
                 alert('Please enter a valid email address.');
                 return;
             }
 
-            // Simulate form submission
             console.log('Form submitted successfully!');
             console.log('Name:', name);
             console.log('Email:', email);
@@ -103,12 +108,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
             alert('Thank you for your message! I will get back to you soon.');
             contactForm.reset(); // Clear the form
-            // In a real application, you would send this data to a server here using fetch() or XMLHttpRequest
         });
     }
 
     // --- 5. Project Card Hover Effect (Example - can be expanded with more interactivity) ---
-    // Adds a subtle class on hover that CSS can use for effects.
     document.querySelectorAll('.project-card').forEach(card => {
         card.addEventListener('mouseenter', () => {
             card.classList.add('hovered');
@@ -118,4 +121,13 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // --- 6. Hamburger Menu Toggle (NEW SECTION) ---
+    const navToggle = document.getElementById('navToggle'); // Ensure your hamburger button has id="navToggle"
+    const navList = document.querySelector('nav.navbar ul'); // Ensure this selects your navigation <ul>
+
+    if (navToggle && navList) {
+        navToggle.addEventListener('click', function() {
+            navList.classList.toggle('active');
+        });
+    }
 });

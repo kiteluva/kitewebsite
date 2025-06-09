@@ -8,7 +8,8 @@
 /* Consolidated Body Styles - Handles the universal fixed background and sticky footer */
 body {
     margin: 0;
-    padding: 1cm; /* Uniform 1cm padding around the entire page, showing hback.png */
+    /* Adjusted padding for smaller screens via clamp, keeping desktop 1cm */
+    padding: clamp(0.5cm, 3vw, 1cm); /* Min 0.5cm, preferred 3vw, max 1cm */
     font-family: Arial, sans-serif;
     color: #FFF; /* Default text color for the page */
     min-height: 100vh; /* Ensures body takes at least full viewport height */
@@ -32,7 +33,6 @@ html, body {
     height: 100%; /* Ensures HTML element provides full height reference */
 }
 
-/* .dark-band - Kept as is, as it's set to display: none */
 .dark-band {
     display: none;
 }
@@ -40,25 +40,26 @@ html, body {
 /* --- Main Content Wrapper Styles --- */
 .main-content-wrapper {
     max-width: 900px; /* Controls the width of your main content area */
-    width: 95%; /* **NEW:** Added fluid width to adapt to smaller screens */
+    width: 95%; /* Fluid width to adapt to smaller screens */
     margin: 0 auto; /* Centers the content wrapper horizontally within the body's padding */
     flex-grow: 1; /* Allows the wrapper to grow and push the footer to the bottom */
 
     position: relative; /* Needed for positioning of page-specific background */
     background-color: rgba(1, 19, 30, 0.8); /* Uniform dark background for content area */
     box-shadow: 0 0 15px rgba(0,0,0,0.5); /* Optional: Adds a subtle shadow to separate from margin */
+
+    /* Added fluid padding to the wrapper itself */
+    padding: clamp(10px, 3vw, 20px); /* Ensures content inside has space */
 }
 
 
 /* --- Page-Specific Transparent Backgrounds for .main-content-wrapper --- */
-/* These now apply to the .main-content-wrapper and are fixed within it. */
-
 .home-page .main-content-wrapper {
     background-image: url('images/icont.png');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    background-attachment: fixed; /* Transparent overlay is FIXED within the wrapper */
+    background-attachment: fixed;
 }
 
 .projects-page .main-content-wrapper {
@@ -66,7 +67,7 @@ html, body {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    background-attachment: fixed; /* Transparent overlay is FIXED within the wrapper */
+    background-attachment: fixed;
 }
 
 .about-page .main-content-wrapper {
@@ -74,7 +75,7 @@ html, body {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    background-attachment: fixed; /* Transparent overlay is FIXED within the wrapper */
+    background-attachment: fixed;
 }
 
 .contact-page .main-content-wrapper {
@@ -82,30 +83,30 @@ html, body {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    background-attachment: fixed; /* Transparent overlay is FIXED within the wrapper */
+    background-attachment: fixed;
 }
 
 
 /* Header Styles - Now truly transparent */
 header.header-container {
     background: transparent;
-    color: rgb(31, 5, 227);
+    color: rgb(31, 5, 227); /* Header text color */
     padding: 1rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
     height: auto;
     margin-bottom: 0;
-    flex-wrap: wrap; /* **NEW:** Allow header items to wrap on smaller screens */
-    text-align: center; /* **NEW:** Center text by default for responsive */
+    flex-wrap: wrap; /* Allow header items to wrap on smaller screens */
+    text-align: center; /* Center text by default for responsive */
 }
 
 .header-left,
 .header-middle,
 .header-right {
-    flex: 1; /* **NEW:** Allow items to take equal space */
-    min-width: 150px; /* **NEW:** Set a minimum width for header sections before wrapping */
-    padding: 5px; /* **NEW:** Add a little padding to header sections */
+    flex: 1; /* Allow items to take equal space */
+    min-width: 150px; /* Set a minimum width for header sections before wrapping */
+    padding: 5px; /* Add a little padding to header sections */
 }
 
 .header-left {
@@ -120,15 +121,15 @@ header.header-container {
     width: 80px;
     height: 80px;
     margin-bottom: 5px;
-    /* **NEW:** Ensure images are responsive within their containers */
-    max-width: 100%;
+    max-width: 100%; /* Ensure images are responsive within their containers */
     height: auto;
     display: block; /* Remove extra space below image */
+    object-fit: cover; /* Ensures images fill their area without distortion */
 }
 
 .header-right img.profile-pic {
     border-radius: 50%;
-    margin-left: 0; /* Original */
+    margin-left: 0;
 }
 
 
@@ -137,6 +138,7 @@ header.header-container {
     margin-bottom: 0;
     font-size: 0.9em;
     color: gold;
+    font-size: clamp(0.7em, 2vw, 0.9em); /* Fluid font size */
 }
 
 .header-middle {
@@ -146,17 +148,15 @@ header.header-container {
 .header-middle h1 {
     margin-top: 0;
     margin-bottom: 5px;
-    font-size: 1.8em;
-    /* **NEW:** Fluid font sizing for h1 */
-    font-size: clamp(1.5em, 4vw, 2.5em); /* Min 1.5em, ideal 4vw, max 2.5em */
+    font-size: clamp(1.2em, 4vw, 2.5em); /* Adjusted Clamp: Smaller min for better fit */
+    line-height: 1.2; /* Improve line spacing for better readability */
 }
 
 .header-middle h2 {
     margin-top: 0;
     margin-bottom: 0;
-    font-size: 1.3em;
-    /* **NEW:** Fluid font sizing for h2 */
-    font-size: clamp(1em, 2.5vw, 1.8em); /* Min 1em, ideal 2.5vw, max 1.8em */
+    font-size: clamp(0.9em, 2.5vw, 1.8em); /* Adjusted Clamp: Smaller min for better fit */
+    line-height: 1.2; /* Improve line spacing */
 }
 
 .header-right {
@@ -171,18 +171,20 @@ header.header-container {
     font-size: 14px;
     color: #e70cdc;
     text-decoration: none;
+    font-size: clamp(0.7em, 2vw, 0.9em); /* Fluid font size */
 }
 
-.contact-link {
-    color: #410239;
+.contact-link { /* This class is on your contact section links, not related to general header links */
+    color: #410239; /* Consider making this match your new contact link color or remove if not used */
     text-decoration: none;
 }
+
 
 .header-right a.linkedin-link:hover {
     text-decoration: underline;
 }
 
-/* Navbar Styles - Now truly transparent */
+/* Navbar Styles */
 nav.navbar {
     background: transparent;
     color: rgb(224, 198, 6);
@@ -198,12 +200,11 @@ nav ul {
     padding: 0;
     display: flex;
     justify-content: center; /* Center navbar items horizontally */
-    flex-wrap: wrap; /* **NEW:** Allow navigation items to wrap on smaller screens */
+    flex-wrap: wrap; /* Allow navigation items to wrap on smaller screens */
 }
 
 nav ul li {
     position: relative;
-    /* **NEW:** Add flexible sizing for list items */
     flex: 1 1 auto; /* Allow items to grow/shrink, but not below content size */
     text-align: center; /* Center text within list items */
 }
@@ -215,86 +216,84 @@ nav ul li a {
     display: block;
     text-decoration: none;
     transition: background-color 0.3s ease, color 0.3s ease;
-    white-space: nowrap; /* **NEW:** Prevent navigation links from breaking onto multiple lines */
+    /* white-space: nowrap; */ /* This can cause overflow on very small screens for long nav items, removed for better fluidity */
+    font-size: clamp(0.9em, 2vw, 1.1em); /* Fluid font size for nav links */
 }
 
 nav ul li:hover a {
-    background-color: rgba(145, 124, 6, 0.7); /* Adjust transparency if desired */
+    background-color: rgba(145, 124, 6, 0.7);
 }
 
 /* KEY CHANGE: Style for the active navigation tab */
 nav ul li.active a {
-    background-color: rgb(180, 150, 10); /* A distinct golden color for the active tab */
-    color: #FFF; /* Ensure text is readable on the active background */
+    background-color: rgb(180, 150, 10);
+    color: #FFF;
 }
 
 
 /* Main Content Area */
 main {
-    padding: 20px; /* Padding for content inside main */
-    padding-top: 0;
-    margin-top: 0;
-    /* **NEW:** Fluid padding for main content */
+    /* Fluid padding for main content */
     padding: clamp(10px, 4vw, 20px);
-    padding-top: 0;
+    padding-top: 0; /* Keep padding-top at 0 as it's handled by main-content-wrapper padding */
+    margin-top: 0;
 }
 
-/* Footer Styles - Now transparent and sticky to viewport if content is short */
+/* Footer Styles */
 footer {
     background: transparent;
-    color: rgb(244, 245, 251);
+    color: rgb(5, 210, 247);
     text-align: center;
-    padding: 10px 0;
     width: 100%;
-    margin-top: auto; /* Pushes footer to the bottom when using flex-direction: column on parent */
+    margin-top: auto;
     height: auto;
-    /* **NEW:** Fluid padding for footer */
     padding: clamp(5px, 2vw, 10px) 0;
-    font-size: clamp(0.7em, 2vw, 0.9em); /* **NEW:** Fluid font size for footer */
+    font-size: clamp(0.7em, 2vw, 0.9em);
 }
 
-/* Section Styles - Ensure content colors are readable against transparent backgrounds */
+/* Section Styles */
 #home, #projects, #about, #contact {
     background-color: transparent;
-    /* **NEW:** Fluid padding for sections */
+    /* Fluid padding for sections */
     padding: clamp(15px, 5vw, 30px);
     min-height: auto;
     margin-bottom: 20px;
     border-radius: 8px;
 }
 
-#home {
-    color: #03d7f7;
-}
-#projects {
-    color: #08cef6;
-}
-#about {
-    color: #24a4ee;
-}
-#contact {
-    color: #3e89f1;
-}
+/* Removed specific colors for h3/p inside sections, relying on main section color */
+/* If you want to keep them, ensure they are very readable against the background */
+/* #home { color: #03d7f7; } */
+/* #projects { color: #08cef6; } */
+/* #about { color: #24a4ee; } */
+/* #contact { color: #3e89f1; } */
+
 
 /* Headings and Paragraphs within Sections */
+/* Global h4 rule to make ALL h4s dark purple */
+h4 {
+    color: #c003f5; /* Dark Purple for ALL h4s */
+}
+
 #home h3, #projects h3, #about h3, #contact h3 {
     font-family: 'Arial', sans-serif;
-    font-size: 24px;
-    text-align: center;
-    /* **NEW:** Fluid font size for section headings */
     font-size: clamp(1.5em, 5vw, 2em);
+    text-align: center;
+    margin-bottom: clamp(10px, 3vw, 20px); /* Fluid margin-bottom */
+    color: gold; /* NEW: Sets the h3 color to gold */
 }
 #home p, #projects p, #about p, #contact p {
-    font-size: 16px;
     line-height: 1.5;
-    margin: 10px 0;
-    /* **NEW:** Fluid font size for section paragraphs */
+    margin: clamp(10px, 3vw, 20px) 0; /* Fluid margin */
     font-size: clamp(0.9em, 3vw, 1.1em);
+    word-wrap: break-word; /* Allows long words to break if they overflow */
+    overflow-wrap: break-word; /* Alternative for word-wrap */
+    hyphens: auto; /* Allows hyphenation for better text flow (requires lang attribute on html) */
 }
 
 /* Contact Section Specifics */
 #contact {
-    text-align: left; /* Keep original */
+    text-align: left;
 }
 
 #contact h3, #contact p {
@@ -303,119 +302,139 @@ footer {
     color: #FFF;
 }
 
+/* NEW: Styles for the contact grid container */
+.contact-grid {
+    display: grid; /* Use CSS Grid for layout */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Auto-fit columns, min 250px wide */
+    gap: 20px; /* Space between grid items */
+    justify-content: center; /* Center items horizontally if they don't fill the row */
+    max-width: 800px; /* Limit the grid width for better readability on large screens */
+    margin: 0 auto 30px auto; /* Center the grid and add bottom margin */
+    padding: clamp(10px, 3vw, 20px); /* Add some padding inside the grid */
+}
+
 .contact-item {
     background-color: rgba(0, 0, 0, 0.6);
-    padding: 15px;
+    padding: clamp(10px, 4vw, 15px); /* Fluid padding */
     border-radius: 8px;
-    margin-bottom: 15px;
-    display: flex;
+    /* margin-bottom: 15px; */ /* REMOVED: Gap handles spacing now */
+    display: flex; /* Keep flex for content within the item */
     flex-direction: column;
     align-items: flex-start;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    /* **NEW:** Make contact items take up more width on smaller screens */
-    max-width: 400px;
-    width: 90%; /* Fluid width */
-    margin-left: auto;
-    margin-right: auto;
-    /* **NEW:** Fluid padding for contact items */
-    padding: clamp(10px, 4vw, 15px);
+    /* max-width: 400px; */ /* REMOVED: Grid handles item sizing */
+    /* width: 90%; */ /* REMOVED: Grid handles item sizing */
+    /* margin-left: auto; */ /* REMOVED: Grid handles item centering */
+    /* margin-right: auto; */ /* REMOVED: Grid handles item centering */
+
+    /* Ensure text within contact-item is centered for phone/tablet if desired, or left-aligned */
+    text-align: left; /* Keep text left-aligned within the item */
 }
 
-.contact-list {
-    list-style-type: none;
-    padding: 0;
-    width: 100%; /* **NEW:** Ensure list takes full width of parent */
+.contact-item h4 {
+    margin-top: 0;
+    margin-bottom: 5px;
+    /* color: gold; -- REMOVED THIS LINE TO INHERIT GLOBAL H4 COLOR -- */
+    font-size: clamp(1em, 3vw, 1.2em); /* Fluid font size */
 }
 
-.contact-list li {
-    margin: 10px 0;
-    /* **NEW:** Fluid margin for list items */
-    margin: clamp(5px, 2vw, 10px) 0;
+.contact-item a {
+    color: #00BFFF; /* A clear, readable color for links */
+    text-decoration: none;
+    font-size: clamp(0.9em, 2.5vw, 1.1em); /* Fluid font size for links */
+    word-break: break-word; /* Ensure long emails/URLs break if needed */
 }
 
-
-.contact-link:hover {
+.contact-item a:hover {
     text-decoration: underline;
 }
 
-/* --- Responsive Navigation Styles (already good, minor tweaks) --- */
+/* Removed .contact-list as it's no longer necessary with direct .contact-item styling */
+/* .contact-list {
+    list-style-type: none;
+    padding: 0;
+    width: 100%;
+}
 
-/* Initially hide the toggle button */
+.contact-list li {
+    margin: clamp(5px, 2vw, 10px) 0;
+    font-size: clamp(0.8em, 2.5vw, 1em);
+} */
+
+
+/* --- Responsive Navigation Styles (fine, but commenting on the white-space tweak) --- */
 .nav-toggle {
     display: none;
     font-size: 30px;
     background: none;
     border: none;
-    color: rgb(224, 198, 6); /* Navbar text color */
+    color: rgb(224, 198, 6);
     cursor: pointer;
     padding: 5px 10px;
-    z-index: 1001; /* Ensure it's above other content */
+    z-index: 1001;
 }
 
-/* Adjustments for the navbar on smaller screens */
-@media (max-width: 768px) { /* Adjust breakpoint as needed */
+@media (max-width: 768px) {
     nav.navbar ul {
-        flex-direction: column; /* Stack items vertically */
+        flex-direction: column;
         position: absolute;
-        top: 100%; /* Position below the navbar itself */
+        top: 100%;
         left: 0;
         width: 100%;
-        background-color: rgba(1, 31, 32, 0.95); /* Semi-transparent background for dropdown */
-        border-top: 1px solid rgba(224, 198, 6, 0.2); /* Separator line */
+        background-color: rgba(1, 31, 32, 0.95);
+        border-top: 1px solid rgba(224, 198, 6, 0.2);
         box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
-        display: none; /* Hidden by default */
+        display: none;
         z-index: 1000;
         padding: 10px 0;
-        border-radius: 0; /* No radius if it spans full width */
-        text-align: center; /* Center links in dropdown */
-        max-height: 0; /* For collapse animation */
-        overflow: hidden; /* Hide overflow during collapse */
-        transition: max-height 0.4s ease-out, padding 0.4s ease-out, background-color 0.3s ease; /* Smooth transition */
+        border-radius: 0;
+        text-align: center;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s ease-out, padding 0.4s ease-out, background-color 0.3s ease;
     }
 
     nav.navbar ul.active {
-        display: flex; /* Show when active */
-        max-height: 300px; /* Needs to be larger than content height for animation */
+        display: flex;
+        max-height: 300px;
         padding: 10px 0;
     }
 
     nav.navbar ul li {
-        margin: 5px 0; /* Spacing between stacked links */
+        margin: 5px 0;
         width: 100%;
     }
 
     nav.navbar ul li a {
         padding: 12px 15px;
         font-size: 1.1em;
-        color: rgb(247, 4, 4); /* Ensure visibility */
+        color: rgb(247, 4, 4);
     }
 
     nav.navbar ul li:hover a {
         background-color: rgba(145, 124, 6, 0.7);
     }
-    /* Style for the active tab in responsive view */
     nav.navbar ul li.active a {
-        background-color: rgb(180, 150, 10); /* Active color in responsive view */
+        background-color: rgb(180, 150, 10);
         color: #FFF;
     }
 
-    /* Show the toggle button on small screens */
     .nav-toggle {
-        display: block; /* Show the hamburger button */
+        display: block;
     }
 
-    /* Position the nav toggle button */
     nav.navbar {
         display: flex;
-        justify-content: flex-end; /* Push toggle to the right */
+        justify-content: flex-end;
         align-items: center;
-        position: relative; /* Needed for absolute positioning of ul */
+        position: relative;
     }
 
-    /* **NEW:** Adjust header layout for very small screens */
+    /* Adjust header layout for very small screens */
     header.header-container {
         flex-direction: column; /* Stack header sections vertically */
         align-items: center; /* Center items when stacked */
+        padding: 0.5rem; /* Reduced padding for very small screens */
     }
 
     .header-left,
@@ -423,44 +442,65 @@ footer {
     .header-right {
         min-width: unset; /* Remove min-width when stacked */
         width: 100%; /* Take full width */
-        margin-bottom: 10px; /* Add some space between stacked sections */
+        margin-bottom: clamp(5px, 2vw, 10px); /* Fluid margin between stacked sections */
+        padding: 0; /* Remove internal padding if stacking */
     }
+    /* Reordered elements for mobile for potentially better flow */
     .header-right {
-        order: 1; /* **NEW:** Move profile pic/LinkedIn link to the top for smaller screens if desired */
+        order: 1; /* Profile pic / LinkedIn first */
     }
     .header-left {
-        order: 2;
+        order: 2; /* Icon and label second */
     }
     .header-middle {
-        order: 3;
+        order: 3; /* Main title and subtitle last */
+    }
+
+    /* NEW: Adjust contact grid for small screens (single column) */
+    .contact-grid {
+        grid-template-columns: 1fr; /* Force single column on small screens */
+        gap: 15px; /* Slightly less gap on mobile */
+        max-width: 95%; /* Adjust width to fit within wrapper */
+        padding: 0; /* Remove extra padding within the grid itself */
+    }
+
+    .contact-item {
+        max-width: unset; /* Remove max-width on mobile as it will take full width */
+        margin-left: auto; /* Ensure centering is maintained if needed */
+        margin-right: auto;
     }
 }
 
-/* **NEW:** Additional Media Queries for Tablets/Medium Screens */
+/* Additional Media Queries for Tablets/Medium Screens */
 @media (min-width: 769px) and (max-width: 1024px) {
     body {
-        padding: 0.5cm; /* Slightly less padding on tablets */
+        padding: clamp(0.5cm, 2vw, 0.8cm); /* Slightly less padding on tablets */
     }
 
     .main-content-wrapper {
         max-width: 90%; /* Increase width for tablets */
+        padding: clamp(15px, 3vw, 25px); /* Adjusted padding for tablets */
     }
 
-    /* Adjust header layout if needed for tablets */
     header.header-container {
         padding: 0.8rem;
     }
 
     .header-middle h1 {
-        font-size: 2em;
+        font-size: clamp(1.8em, 3.5vw, 2.2em); /* Adjusted clamp for tablets */
     }
 
     .header-middle h2 {
-        font-size: 1.5em;
+        font-size: clamp(1.2em, 2vw, 1.6em); /* Adjusted clamp for tablets */
     }
 
-    /* Ensure navigation stays horizontal but items might get a bit more space */
     nav ul li a {
         padding: 10px 12px;
+    }
+
+    /* NEW: Adjust contact grid for tablets */
+    .contact-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Adjust min width for tablets */
+        gap: 15px;
     }
 }
