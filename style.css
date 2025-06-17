@@ -543,4 +543,15 @@ h4 {
     text-decoration: underline;
 }
 
+/* Style for the GitHub link under the icon */
+.github-link {
+    color: #007bff; /* Example: A common link blue color */
+    text-decoration: none; /* Removes the underline from the link */
+    /* You might want to adjust font-size, font-weight, etc. */
+    font-weight: bold; /* Make the text bold */
+}
 
+.github-link:hover {
+    text-decoration: underline; /* Adds an underline when hovering over the link */
+    color: #0056b3; /* Example: A slightly darker blue on hover */
+}
