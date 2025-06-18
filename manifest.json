@@ -2,10 +2,10 @@
   "name": "Kiteluva Analysis",
   "short_name": "Kiteluva",
   "description": "Experience mind-blowing analysis and valuable insights from Kiteluva.",
-  "start_url": "/",
+  "start_url": "https://kiteluva.github.io/kitewebsite/",
   "display": "standalone",
-  "background_color": "#01131e",
-  "theme_color": "#01131e",
+  "background_color": "#020249",
+  "theme_color": "#1b0250",
   "icons": [
     {
       "src": "/images/icons/android-icon-144x144.png",
