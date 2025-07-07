@@ -369,52 +369,50 @@ h4 {
 }
 
 /* --- Responsive Navigation Styles --- */
+/* The nav-toggle button is now hidden by default and removed from HTML */
 .nav-toggle {
-    display: none;
-    font-size: 30px;
-    background: none;
-    border: none;
-    color: rgb(224, 198, 6);
-    cursor: pointer;
-    padding: 5px 10px;
-    z-index: 1001;
+    display: none; /* Ensure it's hidden */
 }
 
 @media (max-width: 768px) {
     nav.navbar ul {
-        flex-direction: column;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        background-color: rgba(1, 31, 32, 0.95);
-        border-top: 1px solid rgba(224, 198, 6, 0.2);
-        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
-        display: none;
-        z-index: 1000;
-        padding: 10px 0;
-        border-radius: 0;
-        text-align: center;
-        max-height: 0;
-        overflow: hidden; /* Ensures content is hidden when collapsed */
-        transition: max-height 0.4s ease-out, padding 0.4s ease-out, background-color 0.3s ease;
+        flex-direction: row; /* Make items arrange in a single row */
+        justify-content: space-around; /* Distribute items evenly with space around them */
+        align-items: center; /* Vertically align items in the middle of the nav bar */
+        flex-wrap: wrap; /* Allow items to wrap to the next line if they absolutely cannot fit */
+        padding: 5px 0; /* Add some vertical padding for the entire nav list */
+
+        /* Properties adjusted for always-visible horizontal menu */
+        position: static;
+        background-color: transparent;
+        max-height: none;
+        overflow-y: visible;
+        box-shadow: none;
+        z-index: auto;
+        transition: none;
     }
 
+    /* The .active rule for nav.navbar ul is removed as it's no longer toggled */
+    /*
     nav.navbar ul.active {
         display: flex;
-        max-height: 60vh; /* UPDATED: Menu will take max 60% of viewport height */
-        overflow-y: auto; /* ADDED: Enables vertical scrolling if content exceeds max-height */
+        max-height: 60vh;
+        overflow-y: auto;
         padding: 10px 0;
     }
+    */
 
     nav.navbar ul li {
-        margin: 5px 0;
-        width: 100%;
+        margin: 0 2px; /* Add a small horizontal margin between navigation items */
+        width: auto; /* Allow items to take only necessary width */
+        flex-shrink: 1; /* Allow items to shrink */
+        flex-grow: 0; /* Prevent items from growing too much */
     }
 
     nav.navbar ul li a {
-        padding: 12px 15px;
-        font-size: 1.1em;
+        padding: 4px 6px; /* Reduce padding around links */
+        font-size: 0.7em; /* Significantly reduce font size for links */
+        white-space: nowrap; /* Prevent the text inside links from wrapping */
         color: rgb(247, 4, 4);
     }
 
@@ -424,17 +422,6 @@ h4 {
     nav.navbar ul li.active a {
         background-color: rgb(180, 150, 10);
         color: #FFF;
-    }
-
-    .nav-toggle {
-        display: block;
-    }
-
-    nav.navbar {
-        display: flex;
-        justify-content: flex-end;
-        align-items: center;
-        position: relative;
     }
 
     /* Adjust header layout for very small screens */

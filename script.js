@@ -74,10 +74,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 window.location.href = this.getAttribute('href');
             }
 
-            const navList = document.querySelector('nav.navbar ul');
-            if (navList && navList.classList.contains('active')) {
-                navList.classList.remove('active');
-            }
+            // Removed the code that toggled the 'active' class on navList
+            // as the nav bar is no longer collapsible.
         });
     });
 
@@ -158,15 +156,8 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // --- 6. Hamburger Menu Toggle ---
-    const navToggle = document.getElementById('navToggle');
-    const navList = document.querySelector('nav.navbar ul');
-
-    if (navToggle && navList) {
-        navToggle.addEventListener('click', function() {
-            navList.classList.toggle('active');
-        });
-    }
+    // --- Removed: Hamburger Menu Toggle Logic ---
+    // The nav toggle button and its associated JavaScript logic have been removed.
 
     // --- NEW: Gmail Link Confirmation using Custom Modal ---
     const gmailContactItem = document.getElementById('gmail-contact-item');
