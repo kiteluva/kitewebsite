@@ -251,6 +251,47 @@ footer {
     font-size: clamp(0.7em, 2vw, 0.9em);
 }
 
+/* NEW: Footer Social Icons Styling */
+footer .footer-content {
+    display: flex;
+    flex-direction: column; /* Changed to column to stack icons above copyright */
+    align-items: center; /* Center items horizontally */
+    justify-content: center; /* Center content vertically */
+    gap: 10px; /* Reduced gap for a tighter stack */
+    flex-wrap: wrap; /* Allow wrapping on very small screens if necessary */
+    padding: 0 20px; /* Add some horizontal padding */
+}
+
+footer .footer-content p {
+    order: 2; /* Ensure copyright message is second (below icons) */
+}
+
+footer .social-icons {
+    order: 1; /* Ensure social icons are first (above copyright) */
+    display: flex;
+    justify-content: center; /* Center icons within the social-icons div */
+    align-items: center;
+    flex-wrap: wrap; /* Allow icons to wrap to the next line on smaller screens */
+    gap: 15px; /* Space between individual icons */
+}
+
+footer .social-icons i {
+    font-size: 24px; /* Size for Font Awesome icons */
+    color: #00BFFF; /* Default color for icons */
+    transition: color 0.3s ease, transform 0.3s ease; /* Smooth hover effect */
+}
+
+footer .social-icons a:hover i {
+    transform: scale(1.1); /* Slightly enlarge icon on hover */
+    color: gold; /* Change color on hover for visual feedback */
+}
+
+/* Adjust footer copyright text color if needed */
+footer p {
+    color: rgb(91, 113, 241); /* Your existing footer text color */
+    margin-bottom: 0; /* Remove default paragraph margin */
+}
+
 /* Section Styles */
 #home, #projects, #about, #contact {
     background-color: transparent;
@@ -455,7 +496,6 @@ h4 {
         margin-right: auto;
     }
 }
-
 /* Additional Media Queries for Tablets/Medium Screens */
 @media (min-width: 769px) and (max-width: 1024px) {
     body {
@@ -554,4 +594,102 @@ h4 {
 .github-link:hover {
     text-decoration: underline; /* Adds an underline when hovering over the link */
     color: #0056b3; /* Example: A slightly darker blue on hover */
+}
+
+/* --- Custom Modal Styles (for alerts/confirms) --- */
+.custom-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Dark overlay */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000; /* Ensure it's on top of everything */
+    opacity: 0; /* Start hidden */
+    visibility: hidden; /* Start hidden */
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.custom-modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.custom-modal-content {
+    background-color: #1a1a2e; /* Dark background for modal */
+    color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    max-width: 400px;
+    width: 90%; /* Responsive width */
+    transform: translateY(-20px); /* Start slightly above center */
+    transition: transform 0.3s ease;
+}
+
+.custom-modal-overlay.active .custom-modal-content {
+    transform: translateY(0); /* Slide into place */
+}
+
+.custom-modal-content h4 {
+    color: gold; /* Title color */
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 1.5em;
+}
+
+.custom-modal-content p {
+    font-size: 1em;
+    margin-bottom: 25px;
+    line-height: 1.5;
+}
+
+.custom-modal-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.modal-button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1em;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.confirm-button {
+    background-color: #28a745; /* Green for confirm */
+    color: white;
+}
+
+.confirm-button:hover {
+    background-color: #218838;
+    transform: translateY(-2px);
+}
+
+.cancel-button {
+    background-color: #dc3545; /* Red for cancel */
+    color: white;
+}
+
+.cancel-button:hover {
+    background-color: #c82333;
+    transform: translateY(-2px);
+}
+
+.ok-button {
+    background-color: #007bff; /* Blue for OK */
+    color: white;
+}
+
+.ok-button:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
 }

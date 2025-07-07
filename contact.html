@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="images/contactb.png" type="image/x-icon">
     <link rel="manifest" href="/manifest.json">
+    <!-- Font Awesome CDN for social media icons - Updated to a more recent version -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body class="contact-page">
     <div class="main-content-wrapper">
@@ -41,9 +43,11 @@
                 <h3>CONTACT:</h3>
 
                 <div class="contact-grid">
-                    <div class="contact-item">
+                    <!-- Added id="gmail-contact-item" to target this specific item -->
+                    <div class="contact-item" id="gmail-contact-item">
                         <h4>Gmail:</h4>
-                        <a href="mailto:kitennykiluva@gmail.com">kitennykiluva@gmail.com</a>
+                        <!-- The mailto link will now be opened via JavaScript after confirmation -->
+                        <a href="mailto:kitennykiluva@gmail.com" id="gmail-link">kitennykiluva@gmail.com</a>
                     </div>
                     <div class="contact-item">
                         <h4>Phone:</h4>
@@ -62,9 +66,33 @@
         </main>
 
         <footer>
-            <p>© 2025 by Kiteluva. All rights reserved.</p>
+            <div class="footer-content">
+                <p>© <span id="current-year">2025</span> by Kiteluva. All rights reserved.</p>
+                <div class="social-icons">
+                    <a href="mailto:kitennykiluva@gmail.com" target="_blank" aria-label="Gmail"><i class="fa-solid fa-envelope"></i></a>
+                    <a href="tel:+254115939757" aria-label="Phone"><i class="fa-solid fa-phone"></i></a>
+                    <a href="https://instagram.com/itskite_luva" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://twitter.com/@KitenyeK" target="_blank" aria-label="X (Twitter)"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="https://www.linkedin.com/in/kiteluva08" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="https://github.com/kiteluva" target="_blank" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                </div>
+            </div>
         </footer>
     </div>
+
+    <!-- Custom Modal Structure -->
+    <div id="custom-modal" class="custom-modal-overlay">
+        <div class="custom-modal-content">
+            <h4 id="modal-title"></h4>
+            <p id="modal-message"></p>
+            <div class="custom-modal-buttons">
+                <button id="modal-confirm-btn" class="modal-button confirm-button">Yes</button>
+                <button id="modal-cancel-btn" class="modal-button cancel-button">No</button>
+                <button id="modal-ok-btn" class="modal-button ok-button">OK</button>
+            </div>
+        </div>
+    </div>
+
     <script src="script.js"></script>
 </body>
 </html>

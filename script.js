@@ -1,29 +1,79 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // --- Custom Modal Elements ---
+    const customModal = document.getElementById('custom-modal');
+    const modalTitle = document.getElementById('modal-title');
+    const modalMessage = document.getElementById('modal-message');
+    const modalConfirmBtn = document.getElementById('modal-confirm-btn');
+    const modalCancelBtn = document.getElementById('modal-cancel-btn');
+    const modalOkBtn = document.getElementById('modal-ok-btn');
+
+    let currentModalCallback = null; // Stores the callback function for confirm/cancel actions
+
+    // Function to show the custom message box
+    function showCustomMessage(title, message, type, callback = null) {
+        modalTitle.textContent = title;
+        modalMessage.textContent = message;
+        currentModalCallback = callback;
+
+        // Reset button visibility
+        modalConfirmBtn.style.display = 'none';
+        modalCancelBtn.style.display = 'none';
+        modalOkBtn.style.display = 'none';
+
+        if (type === 'confirm') {
+            modalConfirmBtn.style.display = 'inline-block';
+            modalCancelBtn.style.display = 'inline-block';
+        } else { // 'alert' type
+            modalOkBtn.style.display = 'inline-block';
+        }
+
+        customModal.classList.add('active'); // Show the modal
+    }
+
+    // Function to hide the custom message box
+    function hideCustomMessage() {
+        customModal.classList.remove('active'); // Hide the modal
+        currentModalCallback = null; // Clear the callback
+    }
+
+    // Event listeners for modal buttons
+    modalConfirmBtn.addEventListener('click', () => {
+        if (currentModalCallback) {
+            currentModalCallback(true); // Pass true for confirmation
+        }
+        hideCustomMessage();
+    });
+
+    modalCancelBtn.addEventListener('click', () => {
+        if (currentModalCallback) {
+            currentModalCallback(false); // Pass false for cancellation
+        }
+        hideCustomMessage();
+    });
+
+    modalOkBtn.addEventListener('click', () => {
+        if (currentModalCallback) {
+            currentModalCallback(); // No specific value for OK
+        }
+        hideCustomMessage();
+    });
+
+
     // --- 1. Smooth Scrolling for Navigation Links ---
-    // This allows for a smooth animation when clicking internal navigation links.
     document.querySelectorAll('nav.navbar ul li a').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
-            // Prevent default jump behavior
             e.preventDefault();
-
-            // Get the target section's ID from the href attribute
-            const targetId = this.getAttribute('href').substring(1); // Remove '#'
+            const targetId = this.getAttribute('href').substring(1);
             const targetElement = document.getElementById(targetId);
 
             if (targetElement) {
-                // Use scrollIntoView with smooth behavior
                 targetElement.scrollIntoView({
                     behavior: 'smooth'
                 });
             } else {
-                // If the link is for a different page (e.g., index.html),
-                // navigate normally. This handles cases where you're on 'home'
-                // and click 'projects', and the JS shouldn't try to scroll
-                // on the current page for a non-existent ID.
                 window.location.href = this.getAttribute('href');
             }
 
-            // **NEW: Close the mobile menu if it's open after clicking a link**
             const navList = document.querySelector('nav.navbar ul');
             if (navList && navList.classList.contains('active')) {
                 navList.classList.remove('active');
@@ -32,72 +82,58 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
 
-    // --- 2. Active Navigation Link on Scroll (for single-page feel, or when navigating between sections within a page) ---
-    // Highlights the current active section in the navigation bar as the user scrolls.
-    const sections = document.querySelectorAll('main section'); // Select all main content sections
-    const navLinks = document.querySelectorAll('nav.navbar ul li a'); // Select all navigation links
+    // --- 2. Active Navigation Link on Scroll ---
+    const sections = document.querySelectorAll('main section');
+    const navLinks = document.querySelectorAll('nav.navbar ul li a');
 
     const activateNavLink = () => {
         let current = '';
-
         sections.forEach(section => {
-            // Get the current scroll position relative to the top of the viewport
-            // Subtract a small offset (e.g., 100px) to activate the link
-            // slightly before the section fully enters the viewport.
-            const sectionTop = section.offsetTop - 100; // Adjusted offset for fixed header
+            const sectionTop = section.offsetTop - 100;
             const sectionHeight = section.clientHeight;
-
-            // Make sure the section is in view
             if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
                 current = section.getAttribute('id');
             }
         });
 
         navLinks.forEach(link => {
-            link.classList.remove('active'); // **Changed:** Use 'active' class as per your CSS
-            // Check if the link's href matches the current section's ID
+            link.classList.remove('active');
             if (link.getAttribute('href').includes(current)) {
-                link.classList.add('active'); // **Changed:** Use 'active' class as per your CSS
+                link.classList.add('active');
             }
         });
     };
 
-    // Add scroll event listener to the window
     window.addEventListener('scroll', activateNavLink);
-    // Call it once on load to set the initial active link
     activateNavLink();
 
     // --- 3. Dynamic Footer Year ---
-    // Automatically updates the copyright year in the footer.
-    const footerYear = document.querySelector('footer p');
-    if (footerYear) {
+    const currentYearSpan = document.getElementById('current-year');
+    if (currentYearSpan) {
         const currentYear = new Date().getFullYear();
-        // Assuming your copyright text is like "© 2025 by Kiteluva. All rights reserved."
-        // We'll replace the existing year (2025 in your HTML) with the current year.
-        // This regex ensures it replaces exactly the "© YYYY" pattern.
-        footerYear.textContent = footerYear.textContent.replace(/© \d{4}/, `© ${currentYear}`);
+        currentYearSpan.textContent = currentYear;
     }
 
 
-    // --- 4. Basic Contact Form Handling (If you plan to add a form) ---
-    const contactForm = document.getElementById('contact-form'); // Assuming your form has this ID
+    // --- 4. Basic Contact Form Handling (Using custom modal instead of alert) ---
+    const contactForm = document.getElementById('contact-form');
 
     if (contactForm) {
         contactForm.addEventListener('submit', function(event) {
-            event.preventDefault(); // Prevent default form submission
+            event.preventDefault();
 
             const name = contactForm.querySelector('#name').value.trim();
             const email = contactForm.querySelector('#email').value.trim();
             const message = contactForm.querySelector('#message').value.trim();
 
             if (name === '' || email === '' || message === '') {
-                alert('Please fill in all fields.');
+                showCustomMessage('Input Error', 'Please fill in all fields.', 'alert');
                 return;
             }
 
             const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
             if (!emailPattern.test(email)) {
-                alert('Please enter a valid email address.');
+                showCustomMessage('Input Error', 'Please enter a valid email address.', 'alert');
                 return;
             }
 
@@ -106,12 +142,13 @@ document.addEventListener('DOMContentLoaded', () => {
             console.log('Email:', email);
             console.log('Message:', message);
 
-            alert('Thank you for your message! I will get back to you soon.');
-            contactForm.reset(); // Clear the form
+            showCustomMessage('Success', 'Thank you for your message! I will get back to you soon.', 'alert', () => {
+                contactForm.reset(); // Clear the form after OK is clicked
+            });
         });
     }
 
-    // --- 5. Project Card Hover Effect (Example - can be expanded with more interactivity) ---
+    // --- 5. Project Card Hover Effect ---
     document.querySelectorAll('.project-card').forEach(card => {
         card.addEventListener('mouseenter', () => {
             card.classList.add('hovered');
@@ -121,13 +158,41 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // --- 6. Hamburger Menu Toggle (NEW SECTION) ---
-    const navToggle = document.getElementById('navToggle'); // Ensure your hamburger button has id="navToggle"
-    const navList = document.querySelector('nav.navbar ul'); // Ensure this selects your navigation <ul>
+    // --- 6. Hamburger Menu Toggle ---
+    const navToggle = document.getElementById('navToggle');
+    const navList = document.querySelector('nav.navbar ul');
 
     if (navToggle && navList) {
         navToggle.addEventListener('click', function() {
             navList.classList.toggle('active');
+        });
+    }
+
+    // --- NEW: Gmail Link Confirmation using Custom Modal ---
+    const gmailContactItem = document.getElementById('gmail-contact-item');
+    const gmailLink = document.getElementById('gmail-link'); // Get the actual mailto link
+
+    if (gmailContactItem && gmailLink) {
+        gmailContactItem.addEventListener('click', (e) => {
+            // Prevent the default link behavior if the click originated from the link itself
+            e.preventDefault();
+
+            showCustomMessage(
+                'Open Email Client?',
+                'Do you want to open your default email client to send an email?',
+                'confirm',
+                (response) => {
+                    if (response) {
+                        console.log('User confirmed to open email client.');
+                        console.log('Attempting to open mailto:', gmailLink.href);
+                        // If user confirms, programmatically navigate to the mailto link
+                        // Using window.location.href is the standard way to do this.
+                        window.location.href = gmailLink.href;
+                    } else {
+                        console.log('User cancelled opening email client.');
+                    }
+                }
+            );
         });
     }
 });
