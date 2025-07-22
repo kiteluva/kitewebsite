@@ -26,6 +26,8 @@ body {
     /* Re-added flexbox properties for sticky footer */
     display: flex;
     flex-direction: column; /* Stacks children vertically */
+
+    position: relative; /* Needed for pseudo-element backgrounds */
 }
 
 /* HTML & Body height/overflow - Helps body's min-height work correctly */
@@ -50,10 +52,12 @@ html, body {
 
     /* Added fluid padding to the wrapper itself */
     padding: clamp(10px, 3vw, 20px); /* Ensures content inside has space */
+    z-index: 1; /* Ensure content is above blurred background */
 }
 
 
 /* --- Page-Specific Transparent Backgrounds for .main-content-wrapper --- */
+/* These are for the main pages and will be overridden by the new body::before for detail pages */
 .home-page .main-content-wrapper {
     background-image: url('images/icont.png');
     background-position: center;
@@ -293,7 +297,7 @@ footer p {
 }
 
 /* Section Styles */
-#home, #projects, #about, #contact {
+#home, #projects, #about, #contact, #school-projects-content, #internship-projects-content, #personal-projects-content {
     background-color: transparent;
     /* Fluid padding for sections */
     padding: clamp(15px, 5vw, 30px);
@@ -308,14 +312,16 @@ h4 {
     color: #58006E; /* Dark Purple for ALL h4s */
 }
 
-#home h3, #projects h3, #about h3, #contact h3 {
+#home h3, #projects h3, #about h3, #contact h3,
+#school-projects-content h3, #internship-projects-content h3, #personal-projects-content h3 {
     font-family: 'Arial', sans-serif;
     font-size: clamp(1.5em, 5vw, 2em);
     text-align: center;
     margin-bottom: clamp(10px, 3vw, 20px); /* Fluid margin-bottom */
     color: gold; /* NEW: Sets the h3 color to gold */
 }
-#home p, #projects p, #about p, #contact p {
+#home p, #projects p, #about p, #contact p,
+#school-projects-content p, #internship-projects-content p, #personal-projects-content p {
     line-height: 1.5;
     margin: clamp(10px, 3vw, 20px) 0; /* Fluid margin */
     font-size: clamp(0.9em, 3vw, 1.1em);
@@ -516,7 +522,9 @@ h4 {
         gap: 15px;
     }
 }
-/* --- Project Cards Two-Column Grid Layout --- */
+
+/* --- Project Cards Two-Column Grid Layout (Previous Projects Section) --- */
+/* Kept this for reference, but it's replaced by project-categories-grid for projects.html */
 .projects-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Two or more columns depending on screen */
@@ -524,7 +532,7 @@ h4 {
     padding: clamp(10px, 3vw, 20px);
 }
 
-/* Individual Project Card Styling */
+/* Individual Project Card Styling (Previous Projects Section) */
 .project-card {
     background-color: rgba(0, 0, 0, 0.6);
     border-radius: 12px;
@@ -574,7 +582,6 @@ h4 {
 .github-link {
     color: #007bff; /* Example: A common link blue color */
     text-decoration: none; /* Removes the underline from the link */
-    /* You might want to adjust font-size, font-weight, etc. */
     font-weight: bold; /* Make the text bold */
 }
 
@@ -744,8 +751,270 @@ h4 {
 
 .mission-statement p,
 .welcome-message p {
-    color: #ddd; /* Lighter text color for readability */
+    color: #ddd; /* Lighter text for readability */
     line-height: 1.6; /* Improved line spacing */
     font-size: clamp(1em, 2.5vw, 1.2em); /* Fluid font size for paragraphs */
     margin-bottom: 10px; /* Space between paragraphs */
+}
+
+/* --- New Styles for Project Categories on projects.html --- */
+.project-categories-grid {
+    display: grid;
+    /* Two columns for larger screens, one for smaller */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px; /* Space between category cards */
+    padding: clamp(10px, 3vw, 20px);
+    justify-content: center; /* Center the grid items if there's extra space */
+    max-width: 800px; /* Limit the grid width for better readability */
+    margin: 0 auto; /* Center the grid on the page */
+}
+
+.project-category-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center content horizontally */
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.7); /* Darker background for distinct cards */
+    border-radius: 15px; /* Softer rounded corners */
+    padding: clamp(20px, 5vw, 30px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    text-decoration: none; /* Remove underline from the link */
+    color: #FFF; /* Default text color for the card */
+}
+
+.project-category-card:hover {
+    transform: translateY(-10px); /* Lift card on hover */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+    background-color: rgba(0, 0, 0, 0.85); /* Slightly darker on hover */
+}
+
+.project-category-card img {
+    width: 100px; /* Adjust size of category icons */
+    height: 100px;
+    object-fit: contain; /* Ensure image fits without cropping */
+    margin-bottom: 15px;
+    transition: transform 0.3s ease;
+}
+
+.project-category-card:hover img {
+    transform: scale(1.1); /* Slightly enlarge image on hover */
+}
+
+.project-category-card h4 {
+    color: gold; /* Category title color */
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: clamp(1.2em, 3vw, 1.6em);
+}
+
+.project-category-card p {
+    color: #ccc; /* Lighter text for descriptions */
+    font-size: clamp(0.9em, 2.2vw, 1.1em);
+    line-height: 1.5;
+    margin-bottom: 20px;
+    flex-grow: 1; /* Allows paragraph to take available space */
+}
+
+.project-category-card .explore-link {
+    color: #00BFFF; /* Link color */
+    font-weight: bold;
+    text-decoration: none;
+    font-size: clamp(0.9em, 2.2vw, 1.1em);
+    transition: color 0.3s ease;
+}
+
+.project-category-card .explore-link:hover {
+    color: #66d9ff; /* Lighter blue on hover */
+    text-decoration: underline;
+}
+
+/* Media Query for single column on smaller screens */
+@media (max-width: 600px) {
+    .project-categories-grid {
+        grid-template-columns: 1fr; /* Single column on very small screens */
+        gap: 20px; /* Slightly less gap when stacked */
+    }
+}
+
+/* --- CSS for Shapes (Optional, apply these classes to .project-category-card if desired) --- */
+
+/* Example: Rhombus Shape using transform skew */
+.rhombus-shape {
+    /* Use clip-path for a cleaner rhombus */
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+    border-radius: 0; /* Remove border-radius if using clip-path for sharp corners */
+}
+
+/* Example: Trapezium Shape using clip-path */
+.trapezium-shape {
+    clip-path: polygon(20% 0%, 80% 0%, 100% 100%, 0% 100%);
+    border-radius: 0; /* Remove border-radius if using clip-path for sharp corners */
+}
+
+/* Regarding Hyperbola Shape: */
+/* Directly creating a hyperbola shape with pure CSS for a div is **not feasible** for interactive elements */
+/* without using complex SVG or canvas. CSS `clip-path` can only create polygons or circles/ellipses. */
+/* If you want a *visual suggestion* of a curve, you could potentially use gradients or background images, */
+/* but this won't change the actual bounding box of the element. */
+/* For a hyperbola-like visual, you'd typically need to use SVG or a canvas element, which is beyond */
+/* the scope of simple CSS shape manipulation for a standard HTML element. */
+
+/* --- NEW: Styles for Project Detail Pages (School, Internship, Personal) --- */
+
+/* Hide the main site header and navbar when on detail pages */
+.school-projects-detail-page header.header-container,
+.internship-projects-detail-page header.header-container,
+.personal-projects-detail-page header.header-container,
+.school-projects-detail-page nav.navbar,
+.internship-projects-detail-page nav.navbar,
+.personal-projects-detail-page nav.navbar {
+    display: none;
+}
+
+/* Style for the new simplified header on detail pages */
+.detail-page-header {
+    background: transparent;
+    color: rgb(31, 5, 227);
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    text-align: center;
+    margin-bottom: 20px; /* Space below header */
+}
+
+.detail-page-header .header-left,
+.detail-page-header .header-middle,
+.detail-page-header .header-right {
+    flex: 1;
+    min-width: 100px; /* Smaller min-width for detail page header sections */
+    padding: 5px;
+}
+
+.detail-page-header .header-middle h1 {
+    font-size: clamp(1.5em, 5vw, 2.8em); /* Larger title for detail pages */
+    color: gold; /* Gold color for the title */
+}
+
+.back-to-categories-link {
+    color: #00BFFF;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: clamp(0.9em, 2.5vw, 1.1em);
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.back-to-categories-link:hover {
+    color: #66d9ff;
+    transform: translateX(-5px);
+}
+
+/* Style for the new navigation between project categories */
+.detail-page-navbar {
+    background: transparent;
+    padding: 10px;
+    margin-bottom: 20px; /* Space below navbar */
+}
+
+.detail-page-navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px; /* Space between links */
+}
+
+.detail-page-navbar ul li a {
+    font-weight: bold;
+    color: rgb(247, 4, 4);
+    padding: 8px 15px;
+    display: block;
+    text-decoration: none;
+    border-radius: 8px;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background for links */
+    transition: background-color 0.3s ease, color 0.3s ease;
+    font-size: clamp(0.9em, 2vw, 1.1em);
+}
+
+.detail-page-navbar ul li a:hover {
+    background-color: rgba(145, 124, 6, 0.7);
+    color: #FFF;
+}
+
+.detail-page-navbar ul li.active a {
+    background-color: rgb(180, 150, 10);
+    color: #FFF;
+}
+
+/* --- Blurred Backgrounds for Detail Pages --- */
+
+/* Common styles for the pseudo-element background */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: -1; /* Place behind content */
+    filter: blur(8px); /* Adjust blur amount as needed */
+    transform: scale(1.05); /* Slightly scale to hide blur edges */
+    transition: background-image 0.5s ease; /* Smooth transition if background changes */
+}
+
+/* Specific background images for each detail page */
+.school-projects-detail-page::before {
+    background-image: url('images/school.png'); /* Replace with your school specific image */
+}
+
+.internship-projects-detail-page::before {
+    background-image: url('images/intern.png'); /* Replace with your internship specific image */
+}
+
+.personal-projects-detail-page::before {
+    background-image: url('images/personal.png'); /* Replace with your personal specific image */
+}
+
+/* Ensure main-content-wrapper has a background to sit on top of the blur */
+.school-projects-detail-page .main-content-wrapper,
+.internship-projects-detail-page .main-content-wrapper,
+.personal-projects-detail-page .main-content-wrapper {
+    background-color: rgba(1, 19, 30, 0.85); /* Slightly less transparent to stand out against blur */
+}
+
+/* Media query for smaller screens for detail page header */
+@media (max-width: 768px) {
+    .detail-page-header {
+        flex-direction: column;
+        align-items: center;
+        padding: 0.8rem;
+    }
+
+    .detail-page-header .header-left,
+    .detail-page-header .header-middle,
+    .detail-page-header .header-right {
+        margin-bottom: 10px;
+        min-width: unset;
+        flex: none; /* Do not grow/shrink, take content width */
+    }
+
+    .detail-page-header .header-right {
+        margin-top: 10px; /* Add space above back link */
+    }
+
+    .detail-page-navbar ul {
+        gap: 8px; /* Reduce gap on small screens */
+    }
+
+    .detail-page-navbar ul li a {
+        padding: 6px 10px;
+        font-size: 0.8em;
+    }
 }
