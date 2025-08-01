@@ -297,7 +297,7 @@ footer p {
 }
 
 /* Section Styles */
-#home, #projects, #about, #contact, #school-projects-content, #internship-projects-content, #personal-projects-content {
+#home, #projects, #about, #contact, #services, #school-projects-content, #internship-projects-content, #personal-projects-content {
     background-color: transparent;
     /* Fluid padding for sections */
     padding: clamp(15px, 5vw, 30px);
@@ -312,7 +312,7 @@ h4 {
     color: #58006E; /* Dark Purple for ALL h4s */
 }
 
-#home h3, #projects h3, #about h3, #contact h3,
+#home h3, #projects h3, #about h3, #contact h3, #services h3,
 #school-projects-content h3, #internship-projects-content h3, #personal-projects-content h3 {
     font-family: 'Arial', sans-serif;
     font-size: clamp(1.5em, 5vw, 2em);
@@ -320,7 +320,7 @@ h4 {
     margin-bottom: clamp(10px, 3vw, 20px); /* Fluid margin-bottom */
     color: gold; /* NEW: Sets the h3 color to gold */
 }
-#home p, #projects p, #about p, #contact p,
+#home p, #projects p, #about p, #contact p, #services p,
 #school-projects-content p, #internship-projects-content p, #personal-projects-content p {
     line-height: 1.5;
     margin: clamp(10px, 3vw, 20px) 0; /* Fluid margin */
@@ -328,6 +328,44 @@ h4 {
     word-wrap: break-word; /* Allows long words to break if they overflow */
     overflow-wrap: break-word; /* Alternative for word-wrap */
     hyphens: auto; /* Allows hyphenation for better text flow (requires lang attribute on html) */
+}
+
+/* --- NEW: Services Section Specifics --- */
+#services {
+    text-align: left;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    justify-content: center;
+    max-width: 800px;
+    margin: 0 auto 30px auto;
+    padding: clamp(10px, 3vw, 20px);
+}
+
+.service-item {
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: clamp(10px, 4vw, 15px);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    text-align: left;
+}
+
+.service-item h4 {
+    margin-top: 0;
+    margin-bottom: 5px;
+    color: gold; /* Set h4 color to gold specifically for services items */
+    font-size: clamp(1em, 3vw, 1.2em);
+}
+
+.service-item p {
+    font-size: clamp(0.9em, 2.5vw, 1.1em);
+    color: #ddd; /* Lighter text for the description */
 }
 
 /* Contact Section Specifics */
@@ -523,8 +561,6 @@ h4 {
     }
 }
 
-/* --- Project Cards Two-Column Grid Layout (Previous Projects Section) --- */
-/* Kept this for reference, but it's replaced by project-categories-grid for projects.html */
 .projects-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Two or more columns depending on screen */
@@ -837,8 +873,6 @@ h4 {
     }
 }
 
-/* --- CSS for Shapes (Optional, apply these classes to .project-category-card if desired) --- */
-
 /* Example: Rhombus Shape using transform skew */
 .rhombus-shape {
     /* Use clip-path for a cleaner rhombus */
@@ -851,16 +885,6 @@ h4 {
     clip-path: polygon(20% 0%, 80% 0%, 100% 100%, 0% 100%);
     border-radius: 0; /* Remove border-radius if using clip-path for sharp corners */
 }
-
-/* Regarding Hyperbola Shape: */
-/* Directly creating a hyperbola shape with pure CSS for a div is **not feasible** for interactive elements */
-/* without using complex SVG or canvas. CSS `clip-path` can only create polygons or circles/ellipses. */
-/* If you want a *visual suggestion* of a curve, you could potentially use gradients or background images, */
-/* but this won't change the actual bounding box of the element. */
-/* For a hyperbola-like visual, you'd typically need to use SVG or a canvas element, which is beyond */
-/* the scope of simple CSS shape manipulation for a standard HTML element. */
-
-/* --- NEW: Styles for Project Detail Pages (School, Internship, Personal) --- */
 
 /* Hide the main site header and navbar when on detail pages */
 .school-projects-detail-page header.header-container,
