@@ -1,4 +1,4 @@
-/* style.css */
+/* style.css - Updated Version */
 
 /* Universal Box Sizing - Essential for consistent layout calculations */
 * {
@@ -8,109 +8,99 @@
 /* Consolidated Body Styles - Handles the universal fixed background and sticky footer */
 body {
     margin: 0;
-    /* Adjusted padding for smaller screens via clamp, keeping desktop 1cm */
-    padding: clamp(0.5cm, 3vw, 1cm); /* Min 0.5cm, preferred 3vw, max 1cm */
+    padding: clamp(0.5cm, 3vw, 1cm);
     font-family: Arial, sans-serif;
-    color: #FFF; /* Default text color for the page */
-    min-height: 100vh; /* Ensures body takes at least full viewport height */
-    overflow-x: hidden; /* Prevents horizontal scrollbar */
-
-    /* Universal fixed background for the entire page (will show in the 1cm margins) */
-    background-image: url('images/hback.png');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed; /* Makes the universal background fixed */
-    background-color: transparent; /* No solid background color on body itself */
-
-    /* Re-added flexbox properties for sticky footer */
+    color: #FFF;
+    min-height: 100vh;
+    overflow-x: hidden;
+    background-color: transparent;
     display: flex;
-    flex-direction: column; /* Stacks children vertically */
-
-    position: relative; /* Needed for pseudo-element backgrounds */
+    flex-direction: column;
+    position: relative;
 }
 
-/* HTML & Body height/overflow - Helps body's min-height work correctly */
+/* Page-specific background images restored using a pseudo-element */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    z-index: -1;
+    filter: brightness(0.4);
+}
+
+/* --- Main Page Backgrounds --- */
+.home-page::before {
+    background-image: url('images/hback.png');
+}
+
+.projects-page::before {
+    background-image: url('images/hback.png');
+}
+
+.about-page::before {
+    background-image: url('images/hback.png');
+}
+
+.contact-page::before {
+    background-image: url('images/hback.png');
+}
+
+/* --- Project Detail Page Backgrounds --- */
+.school-projects-detail-page::before {
+    background-image: url('images/school.png');
+}
+
+.internship-projects-detail-page::before {
+    background-image: url('images/intern.png');
+}
+
+.personal-projects-detail-page::before {
+    background-image: url('images/personal.png');
+}
+
+/* HTML & Body height/overflow */
 html, body {
-    height: 100%; /* Ensures HTML element provides full height reference */
+    height: 100%;
 }
 
-.dark-band {
-    display: none;
-}
-
-/* --- Main Content Wrapper Styles --- */
+/* Main Content Wrapper Styles */
 .main-content-wrapper {
-    max-width: 900px; /* Controls the width of your main content area */
-    width: 95%; /* Fluid width to adapt to smaller screens */
-    margin: 0 auto; /* Centers the content wrapper horizontally within the body's padding */
-    flex-grow: 1; /* Allows the wrapper to grow and push the footer to the bottom */
-
-    position: relative; /* Needed for positioning of page-specific background */
-    background-color: rgba(1, 19, 30, 0.8); /* Uniform dark background for content area */
-    box-shadow: 0 0 15px rgba(0,0,0,0.5); /* Optional: Adds a subtle shadow to separate from margin */
-
-    /* Added fluid padding to the wrapper itself */
-    padding: clamp(10px, 3vw, 20px); /* Ensures content inside has space */
-    z-index: 1; /* Ensure content is above blurred background */
+    max-width: 900px;
+    width: 95%;
+    margin: 0 auto;
+    flex-grow: 1;
+    position: relative;
+    background-color: rgba(1, 19, 30, 0.8);
+    box-shadow: 0 0 15px rgba(0,0,0,0.5);
+    padding: clamp(10px, 3vw, 20px);
+    z-index: 1;
 }
 
-
-/* --- Page-Specific Transparent Backgrounds for .main-content-wrapper --- */
-/* These are for the main pages and will be overridden by the new body::before for detail pages */
-.home-page .main-content-wrapper {
-    background-image: url('images/icont.png');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
-}
-
-.projects-page .main-content-wrapper {
-    background-image: url('images/github.png');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
-}
-
-.about-page .main-content-wrapper {
-    background-image: url('images/about.jpg');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
-}
-
-.contact-page .main-content-wrapper {
-    background-image: url('images/contactc.png');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
-}
-
-
-/* Header Styles - Now truly transparent */
-header.header-container {
+/* Header Styles */
+header.header-container, header.detail-page-header {
     background: transparent;
-    color: rgb(31, 5, 227); /* Header text color */
+    color: rgb(31, 5, 227);
     padding: 1rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
     height: auto;
     margin-bottom: 0;
-    flex-wrap: wrap; /* Allow header items to wrap on smaller screens */
-    text-align: center; /* Center text by default for responsive */
+    flex-wrap: wrap;
+    text-align: center;
 }
 
-.header-left,
-.header-middle,
-.header-right {
-    flex: 1; /* Allow items to take equal space */
-    min-width: 150px; /* Set a minimum width for header sections before wrapping */
-    padding: 5px; /* Add a little padding to header sections */
+.header-left, .header-middle, .header-right {
+    flex: 1;
+    min-width: 150px;
+    padding: 5px;
 }
 
 .header-left {
@@ -120,15 +110,14 @@ header.header-container {
     justify-content: center;
 }
 
-.header-left img.header-icon,
-.header-right img.profile-pic {
+.header-left img.header-icon, .header-right img.profile-pic {
     width: 80px;
     height: 80px;
     margin-bottom: 5px;
-    max-width: 100%; /* Ensure images are responsive within their containers */
+    max-width: 100%;
     height: auto;
-    display: block; /* Remove extra space below image */
-    object-fit: cover; /* Ensures images fill their area without distortion */
+    display: block;
+    object-fit: cover;
 }
 
 .header-right img.profile-pic {
@@ -136,13 +125,12 @@ header.header-container {
     margin-left: 0;
 }
 
-
 .header-left p.icon-label {
     margin-top: 0;
     margin-bottom: 0;
     font-size: 0.9em;
     color: gold;
-    font-size: clamp(0.7em, 2vw, 0.9em); /* Fluid font size */
+    font-size: clamp(0.7em, 2vw, 0.9em);
 }
 
 .header-middle {
@@ -152,15 +140,15 @@ header.header-container {
 .header-middle h1 {
     margin-top: 0;
     margin-bottom: 5px;
-    font-size: clamp(1.2em, 4vw, 2.5em); /* Adjusted Clamp: Smaller min for better fit */
-    line-height: 1.2; /* Improve line spacing for better readability */
+    font-size: clamp(1.2em, 4vw, 2.5em);
+    line-height: 1.2;
 }
 
 .header-middle h2 {
     margin-top: 0;
     margin-bottom: 0;
-    font-size: clamp(0.9em, 2.5vw, 1.8em); /* Adjusted Clamp: Smaller min for better fit */
-    line-height: 1.2; /* Improve line spacing */
+    font-size: clamp(0.9em, 2.5vw, 1.8em);
+    line-height: 1.2;
 }
 
 .header-right {
@@ -175,27 +163,21 @@ header.header-container {
     font-size: 14px;
     color: #e70cdc;
     text-decoration: none;
-    font-size: clamp(0.7em, 2vw, 0.9em); /* Fluid font size */
+    font-size: clamp(0.7em, 2vw, 0.9em);
 }
-
-.contact-link { /* This class is on your contact section links, not related to general header links */
-    color: #410239; /* Consider making this match your new contact link color or remove if not used */
-    text-decoration: none;
-}
-
 
 .header-right a.linkedin-link:hover {
     text-decoration: underline;
 }
 
 /* Navbar Styles */
-nav.navbar {
+nav.navbar, nav.detail-page-navbar {
     background: transparent;
     color: rgb(224, 198, 6);
     padding: 10px;
     margin-top: 0;
     margin-bottom: 0;
-    position: relative; /* Keep for toggle positioning */
+    position: relative;
 }
 
 nav ul {
@@ -203,14 +185,14 @@ nav ul {
     margin: 0;
     padding: 0;
     display: flex;
-    justify-content: center; /* Center navbar items horizontally */
-    flex-wrap: wrap; /* Allow navigation items to wrap on smaller screens */
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 nav ul li {
     position: relative;
-    flex: 1 1 auto; /* Allow items to grow/shrink, but not below content size */
-    text-align: center; /* Center text within list items */
+    flex: 1 1 auto;
+    text-align: center;
 }
 
 nav ul li a {
@@ -220,26 +202,22 @@ nav ul li a {
     display: block;
     text-decoration: none;
     transition: background-color 0.3s ease, color 0.3s ease;
-    /* white-space: nowrap; */ /* This can cause overflow on very small screens for long nav items, removed for better fluidity */
-    font-size: clamp(0.9em, 2vw, 1.1em); /* Fluid font size for nav links */
+    font-size: clamp(0.9em, 2vw, 1.1em);
 }
 
 nav ul li:hover a {
     background-color: rgba(145, 124, 6, 0.7);
 }
 
-/* KEY CHANGE: Style for the active navigation tab */
 nav ul li.active a {
     background-color: rgb(180, 150, 10);
     color: #FFF;
 }
 
-
 /* Main Content Area */
 main {
-    /* Fluid padding for main content */
     padding: clamp(10px, 4vw, 20px);
-    padding-top: 0; /* Keep padding-top at 0 as it's handled by main-content-wrapper padding */
+    padding-top: 0;
     margin-top: 0;
 }
 
@@ -255,51 +233,45 @@ footer {
     font-size: clamp(0.7em, 2vw, 0.9em);
 }
 
-/* NEW: Footer Social Icons Styling */
 footer .footer-content {
     display: flex;
-    flex-direction: column; /* Changed to column to stack icons above copyright */
-    align-items: center; /* Center items horizontally */
-    justify-content: center; /* Center content vertically */
-    gap: 10px; /* Reduced gap for a tighter stack */
-    flex-wrap: wrap; /* Allow wrapping on very small screens if necessary */
-    padding: 0 20px; /* Add some horizontal padding */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    padding: 0 20px;
 }
 
 footer .footer-content p {
-    order: 2; /* Ensure copyright message is second (below icons) */
+    order: 2;
+    color: rgb(91, 113, 241);
+    margin-bottom: 0;
 }
 
 footer .social-icons {
-    order: 1; /* Ensure social icons are first (above copyright) */
+    order: 1;
     display: flex;
-    justify-content: center; /* Center icons within the social-icons div */
+    justify-content: center;
     align-items: center;
-    flex-wrap: wrap; /* Allow icons to wrap to the next line on smaller screens */
-    gap: 15px; /* Space between individual icons */
+    flex-wrap: wrap;
+    gap: 15px;
 }
 
 footer .social-icons i {
-    font-size: 24px; /* Size for Font Awesome icons */
-    color: #00BFFF; /* Default color for icons */
-    transition: color 0.3s ease, transform 0.3s ease; /* Smooth hover effect */
+    font-size: 24px;
+    color: #00BFFF;
+    transition: color 0.3s ease, transform 0.3s ease;
 }
 
 footer .social-icons a:hover i {
-    transform: scale(1.1); /* Slightly enlarge icon on hover */
-    color: gold; /* Change color on hover for visual feedback */
-}
-
-/* Adjust footer copyright text color if needed */
-footer p {
-    color: rgb(91, 113, 241); /* Your existing footer text color */
-    margin-bottom: 0; /* Remove default paragraph margin */
+    transform: scale(1.1);
+    color: gold;
 }
 
 /* Section Styles */
-#home, #projects, #about, #contact, #services, #school-projects-content, #internship-projects-content, #personal-projects-content {
+section {
     background-color: transparent;
-    /* Fluid padding for sections */
     padding: clamp(15px, 5vw, 30px);
     min-height: auto;
     margin-bottom: 20px;
@@ -307,37 +279,54 @@ footer p {
 }
 
 /* Headings and Paragraphs within Sections */
-/* Global h4 rule to make ALL h4s dark purple */
 h4 {
-    color: #58006E; /* Dark Purple for ALL h4s */
+    color: #58006E;
 }
 
-#home h3, #projects h3, #about h3, #contact h3, #services h3,
-#school-projects-content h3, #internship-projects-content h3, #personal-projects-content h3 {
+section h3 {
     font-family: 'Arial', sans-serif;
     font-size: clamp(1.5em, 5vw, 2em);
     text-align: center;
-    margin-bottom: clamp(10px, 3vw, 20px); /* Fluid margin-bottom */
-    color: gold; /* NEW: Sets the h3 color to gold */
-}
-#home p, #projects p, #about p, #contact p, #services p,
-#school-projects-content p, #internship-projects-content p, #personal-projects-content p {
-    line-height: 1.5;
-    margin: clamp(10px, 3vw, 20px) 0; /* Fluid margin */
-    font-size: clamp(0.9em, 3vw, 1.1em);
-    word-wrap: break-word; /* Allows long words to break if they overflow */
-    overflow-wrap: break-word; /* Alternative for word-wrap */
-    hyphens: auto; /* Allows hyphenation for better text flow (requires lang attribute on html) */
+    margin-bottom: clamp(10px, 3vw, 20px);
+    color: gold;
 }
 
-/* --- NEW: Services Section Specifics --- */
+section p {
+    line-height: 1.5;
+    margin: clamp(10px, 3vw, 20px) 0;
+    font-size: clamp(0.9em, 3vw, 1.1em);
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+}
+
+/* --- Layouts Changed to Single-Column --- */
+
+/* Home Page Grid for two sections */
+.home-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+/* Style for the home page sections to give them transparent containers */
+.home-grid section {
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: clamp(15px, 5vw, 30px);
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Services Section Specifics */
 #services {
     text-align: left;
 }
 
 .services-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    /* Changed to single column */
+    grid-template-columns: 1fr;
     gap: 20px;
     justify-content: center;
     max-width: 800px;
@@ -359,686 +348,152 @@ h4 {
 .service-item h4 {
     margin-top: 0;
     margin-bottom: 5px;
-    color: gold; /* Set h4 color to gold specifically for services items */
+    color: gold;
     font-size: clamp(1em, 3vw, 1.2em);
 }
 
 .service-item p {
     font-size: clamp(0.9em, 2.5vw, 1.1em);
-    color: #ddd; /* Lighter text for the description */
-}
-
-/* Contact Section Specifics */
-#contact {
-    text-align: left;
-}
-
-/* NEW: Styles for the contact grid container */
-.contact-grid {
-    display: grid; /* Use CSS Grid for layout */
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Auto-fit columns, min 250px wide */
-    gap: 20px; /* Space between grid items */
-    justify-content: center; /* Center items horizontally if they don't fill the row */
-    max-width: 800px; /* Limit the grid width for better readability on large screens */
-    margin: 0 auto 30px auto; /* Center the grid and add bottom margin */
-    padding: clamp(10px, 3vw, 20px); /* Add some padding inside the grid */
-}
-
-.contact-item {
-    background-color: rgba(0, 0, 0, 0.6);
-    padding: clamp(10px, 4vw, 15px); /* Fluid padding */
-    border-radius: 8px;
-    /* margin-bottom: 15px; */ /* REMOVED: Gap handles spacing now */
-    display: flex; /* Keep flex for content within the item */
-    flex-direction: column;
-    align-items: flex-start;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    
-    /* Ensure text within contact-item is centered for phone/tablet if desired, or left-aligned */
-    text-align: left; /* Keep text left-aligned within the item */
-}
-
-.contact-item h4 {
-    margin-top: 0;
-    margin-bottom: 5px;
-    /* color: gold; -- REMOVED THIS LINE TO INHERIT GLOBAL H4 COLOR -- */
-    font-size: clamp(1em, 3vw, 1.2em); /* Fluid font size */
-}
-
-.contact-item a {
-    color: #00BFFF; /* A clear, readable color for links */
-    text-decoration: none;
-    font-size: clamp(0.9em, 2.5vw, 1.1em); /* Fluid font size for links */
-    word-break: break-word; /* Ensure long emails/URLs break if needed */
-}
-
-/* --- Responsive Navigation Styles --- */
-/* The nav-toggle button is now hidden by default and removed from HTML */
-.nav-toggle {
-    display: none; /* Ensure it's hidden */
-}
-
-@media (max-width: 768px) {
-    nav.navbar ul {
-        flex-direction: row; /* Make items arrange in a single row */
-        justify-content: space-around; /* Distribute items evenly with space around them */
-        align-items: center; /* Vertically align items in the middle of the nav bar */
-        flex-wrap: wrap; /* Allow items to wrap to the next line if they absolutely cannot fit */
-        padding: 5px 0; /* Add some vertical padding for the entire nav list */
-
-        /* Properties adjusted for always-visible horizontal menu */
-        position: static;
-        background-color: transparent;
-        max-height: none;
-        overflow-y: visible;
-        box-shadow: none;
-        z-index: auto;
-        transition: none;
-    }
-
-    /* The .active rule for nav.navbar ul is removed as it's no longer toggled */
-    /*
-    nav.navbar ul.active {
-        display: flex;
-        max-height: 60vh;
-        overflow-y: auto;
-        padding: 10px 0;
-    }
-    */
-
-    nav.navbar ul li {
-        margin: 0 2px; /* Add a small horizontal margin between navigation items */
-        width: auto; /* Allow items to take only necessary width */
-        flex-shrink: 1; /* Allow items to shrink */
-        flex-grow: 0; /* Prevent items from growing too much */
-    }
-
-    nav.navbar ul li a {
-        padding: 4px 6px; /* Reduce padding around links */
-        font-size: 0.7em; /* Significantly reduce font size for links */
-        white-space: nowrap; /* Prevent the text inside links from wrapping */
-        color: rgb(247, 4, 4);
-    }
-
-    nav.navbar ul li:hover a {
-        background-color: rgba(145, 124, 6, 0.7);
-    }
-    nav.navbar ul li.active a {
-        background-color: rgb(180, 150, 10);
-        color: #FFF;
-    }
-
-    /* Adjust header layout for very small screens */
-    header.header-container {
-        flex-direction: row; /* Keep them in a row */
-        flex-wrap: wrap; /* Allow them to wrap to the next line if needed */
-        align-items: center; /* Center items when stacked */
-        padding: 0.5rem; /* Reduced padding for very small screens */
-        justify-content: space-around; /* Distribute items evenly in the row */
-    }
-
-    .header-left,
-    .header-middle,
-    .header-right {
-        min-width: unset; /* Remove min-width to allow more flexibility */
-        flex: 1 1 auto; /* Allow items to grow/shrink based on content, but maintain some flexibility */
-        margin-bottom: clamp(5px, 2vw, 10px); /* Fluid margin between stacked sections */
-        padding: 0; /* Remove internal padding if stacking */
-        text-align: center; /* Ensure content inside is centered when wrapping */
-    }
-    /* Reordered elements for mobile for potentially better flow */
-    .header-right {
-        order: 1; /* Profile pic / LinkedIn first */
-    }
-    .header-middle {
-        order: 2; /* Main title and subtitle second */
-    }
-    .header-left {
-        order: 3; /* Icon and label last */
-    }
-
-
-    /* NEW: Fine-tune font sizes for header on very small screens to help with wrapping */
-    .header-middle h1 {
-        font-size: clamp(1em, 3.5vw, 1.8em); /* Smaller min size for H1 */
-    }
-
-    .header-middle h2 {
-        font-size: clamp(0.8em, 2.2vw, 1.4em); /* Smaller min size for H2 */
-    }
-
-    .header-left p.icon-label,
-    .header-right a.linkedin-link {
-        font-size: clamp(0.6em, 1.8vw, 0.8em); /* Even smaller for labels/links */
-    }
-
-
-    /* NEW: Adjust contact grid for small screens (single column) */
-    .contact-grid {
-        grid-template-columns: 1fr; /* Force single column on small screens */
-        gap: 15px; /* Slightly less gap on mobile */
-        max-width: 95%; /* Adjust width to fit within wrapper */
-        padding: 0; /* Remove extra padding within the grid itself */
-    }
-
-    .contact-item {
-        max-width: unset; /* Remove max-width on mobile as it will take full width */
-        margin-left: auto; /* Ensure centering is maintained if needed */
-        margin-right: auto;
-    }
-}
-/* Additional Media Queries for Tablets/Medium Screens */
-@media (min-width: 769px) and (max-width: 1024px) {
-    body {
-        padding: clamp(0.5cm, 2vw, 0.8cm); /* Slightly less padding on tablets */
-    }
-
-    .main-content-wrapper {
-        max-width: 90%; /* Increase width for tablets */
-        padding: clamp(15px, 3vw, 25px); /* Adjusted padding for tablets */
-    }
-
-    header.header-container {
-        padding: 0.8rem;
-    }
-
-    .header-middle h1 {
-        font-size: clamp(1.8em, 3.5vw, 2.2em); /* Adjusted clamp for tablets */
-    }
-
-    .header-middle h2 {
-        font-size: clamp(1.2em, 2vw, 1.6em); /* Adjusted clamp for tablets */
-    }
-
-    nav ul li a {
-        padding: 10px 12px;
-    }
-
-    /* NEW: Adjust contact grid for tablets */
-    .contact-grid {
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Adjust min width for tablets */
-        gap: 15px;
-    }
-}
-
-.projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Two or more columns depending on screen */
-    gap: 20px;
-    padding: clamp(10px, 3vw, 20px);
-}
-
-/* Individual Project Card Styling (Previous Projects Section) */
-.project-card {
-    background-color: rgba(0, 0, 0, 0.6);
-    border-radius: 12px;
-    padding: clamp(15px, 4vw, 20px);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    text-align: left;
-}
-
-.project-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
-}
-
-/* Project Title */
-.project-card h4 {
-    margin-top: 0;
-    margin-bottom: 10px;
-    color: gold;
-    font-size: clamp(1.1em, 2.5vw, 1.4em);
-}
-
-/* Project Description */
-.project-card p {
-    font-size: clamp(0.9em, 2.2vw, 1em);
-    line-height: 1.5;
-    margin-bottom: 10px;
     color: #ddd;
 }
 
-/* Project Link */
-.project-card a {
-    color: #00BFFF;
-    font-weight: bold;
-    text-decoration: none;
-    font-size: clamp(0.9em, 2.2vw, 1em);
-}
-
-.project-card a:hover {
-    text-decoration: underline;
-}
-
-/* Style for the GitHub link under the icon */
-.github-link {
-    color: #007bff; /* Example: A common link blue color */
-    text-decoration: none; /* Removes the underline from the link */
-    font-weight: bold; /* Make the text bold */
-}
-
-.github-link:hover {
-    text-decoration: underline; /* Adds an underline when hovering over the link */
-    color: #0056b3; /* Example: A slightly darker blue on hover */
-}
-
-/* --- Custom Modal Styles (for alerts/confirms) --- */
-.custom-modal-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.7); /* Dark overlay */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 10000; /* Ensure it's on top of everything */
-    opacity: 0; /* Start hidden */
-    visibility: hidden; /* Start hidden */
-    transition: opacity 0.3s ease, visibility 0.3s ease;
-}
-
-.custom-modal-overlay.active {
-    opacity: 1;
-    visibility: visible;
-}
-
-.custom-modal-content {
-    background-color: #1a1a2e; /* Dark background for modal */
-    color: #fff;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
-    text-align: center;
-    max-width: 400px;
-    width: 90%; /* Responsive width */
-    transform: translateY(-20px); /* Start slightly above center */
-    transition: transform 0.3s ease;
-}
-
-.custom-modal-overlay.active .custom-modal-content {
-    transform: translateY(0); /* Slide into place */
-}
-
-.custom-modal-content h4 {
-    color: gold; /* Title color */
-    margin-top: 0;
-    margin-bottom: 15px;
-    font-size: 1.5em;
-}
-
-.custom-modal-content p {
-    font-size: 1em;
-    margin-bottom: 25px;
-    line-height: 1.5;
-}
-
-.custom-modal-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-}
-
-.modal-button {
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-weight: bold;
-    font-size: 1em;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-.confirm-button {
-    background-color: #28a745; /* Green for confirm */
-    color: white;
-}
-
-.confirm-button:hover {
-    background-color: #218838;
-    transform: translateY(-2px);
-}
-
-.cancel-button {
-    background-color: #dc3545; /* Red for cancel */
-    color: white;
-}
-
-.cancel-button:hover {
-    background-color: #c82333;
-    transform: translateY(-2px);
-}
-
-.ok-button {
-    background-color: #007bff; /* Blue for OK */
-    color: white;
-}
-
-.ok-button:hover {
-    background-color: #0056b3;
-    transform: translateY(-2px);
-}
-
-/* NEW: About Cards Two-Column Grid Layout */
+/* About Page Specifics - Changed to single column */
 .about-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Two or more columns depending on screen */
+    /* Changed to single column */
+    grid-template-columns: 1fr;
     gap: 20px;
-    padding: clamp(10px, 3vw, 20px);
+    margin-top: 20px;
 }
 
-/* Individual About Card Styling */
 .about-card {
     background-color: rgba(0, 0, 0, 0.6);
-    border-radius: 12px;
-    padding: clamp(15px, 4vw, 20px);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    padding: clamp(10px, 4vw, 20px);
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     text-align: left;
 }
 
-.about-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
-}
-
-/* About Card Title */
 .about-card h4 {
-    margin-top: 0;
-    margin-bottom: 10px;
     color: gold;
-    font-size: clamp(1.1em, 2.5vw, 1.4em);
-}
-
-/* About Card Description */
-.about-card p {
-    font-size: clamp(0.9em, 2.2vw, 1em);
-    line-height: 1.5;
-    margin-bottom: 10px;
-    color: #ddd;
-}
-
-/* NEW: Styles for the Mission Statement and Welcome Message on the Home Page */
-.mission-statement,
-.welcome-message {
-    background-color: rgba(0, 0, 0, 0.6); /* Slightly transparent dark background */
-    border-radius: 12px;
-    padding: clamp(20px, 5vw, 30px); /* Fluid padding */
-    margin-bottom: 20px; /* Space between the two sections */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Subtle shadow */
-    text-align: center; /* Center align text within these sections */
-}
-
-.mission-statement h3,
-.welcome-message h3 {
-    color: gold; /* Consistent gold color for headings */
     margin-top: 0;
-    margin-bottom: 15px;
-    font-size: clamp(1.8em, 4vw, 2.5em); /* Larger fluid font size for these main headings */
 }
 
-.mission-statement p,
-.welcome-message p {
-    color: #ddd; /* Lighter text for readability */
-    line-height: 1.6; /* Improved line spacing */
-    font-size: clamp(1em, 2.5vw, 1.2em); /* Fluid font size for paragraphs */
-    margin-bottom: 10px; /* Space between paragraphs */
-}
-
-/* --- New Styles for Project Categories on projects.html --- */
-.project-categories-grid {
-    display: grid;
-    /* Two columns for larger screens, one for smaller */
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px; /* Space between category cards */
-    padding: clamp(10px, 3vw, 20px);
-    justify-content: center; /* Center the grid items if there's extra space */
-    max-width: 800px; /* Limit the grid width for better readability */
-    margin: 0 auto; /* Center the grid on the page */
-}
-
+/* Project Category Cards Specifics (on projects.html) */
 .project-category-card {
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    /* Adjusted min-height to make images way smaller */
+    min-height: 80px; /* Reduced from 150px to 80px */
     display: flex;
     flex-direction: column;
-    align-items: center; /* Center content horizontally */
-    text-align: center;
-    background-color: rgba(0, 0, 0, 0.7); /* Darker background for distinct cards */
-    border-radius: 15px; /* Softer rounded corners */
-    padding: clamp(20px, 5vw, 30px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
-    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
-    text-decoration: none; /* Remove underline from the link */
-    color: #FFF; /* Default text color for the card */
+    justify-content: flex-end;
 }
 
 .project-category-card:hover {
-    transform: translateY(-10px); /* Lift card on hover */
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
-    background-color: rgba(0, 0, 0, 0.85); /* Slightly darker on hover */
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6);
 }
 
-.project-category-card img {
-    width: 100px; /* Adjust size of category icons */
-    height: 100px;
-    object-fit: contain; /* Ensure image fits without cropping */
-    margin-bottom: 15px;
-    transition: transform 0.3s ease;
+.project-category-card.school-projects {
+    background-image: url('images/school.png');
+    background-size: cover;
+    background-position: center;
 }
 
-.project-category-card:hover img {
-    transform: scale(1.1); /* Slightly enlarge image on hover */
+.project-category-card.internship-projects {
+    background-image: url('images/intern.png');
+    background-size: cover;
+    background-position: center;
+}
+
+.project-category-card.personal-projects {
+    background-image: url('images/personal.png');
+    background-size: cover;
+    background-position: center;
+}
+
+.project-category-card .card-content {
+    background-color: rgba(0, 0, 0, 0.7);
+    /* Adjusted padding to fit smaller cards */
+    padding: 10px; /* Reduced from 20px to 10px */
+    color: #FFF;
+    border-radius: 0 0 8px 8px;
 }
 
 .project-category-card h4 {
-    color: gold; /* Category title color */
     margin-top: 0;
-    margin-bottom: 10px;
-    font-size: clamp(1.2em, 3vw, 1.6em);
+    color: gold;
+    font-size: clamp(1em, 2.5vw, 1.2em); /* Adjusted font size for smaller cards */
 }
 
 .project-category-card p {
-    color: #ccc; /* Lighter text for descriptions */
-    font-size: clamp(0.9em, 2.2vw, 1.1em);
-    line-height: 1.5;
-    margin-bottom: 20px;
-    flex-grow: 1; /* Allows paragraph to take available space */
+    margin-bottom: 5px; /* Reduced margin */
+    font-size: 0.8em; /* Adjusted font size for smaller cards */
+    color: #ccc;
 }
 
 .project-category-card .explore-link {
-    color: #00BFFF; /* Link color */
+    color: #00BFFF;
     font-weight: bold;
     text-decoration: none;
-    font-size: clamp(0.9em, 2.2vw, 1.1em);
+    font-size: 0.8em; /* Adjusted font size for smaller cards */
     transition: color 0.3s ease;
 }
 
-.project-category-card .explore-link:hover {
-    color: #66d9ff; /* Lighter blue on hover */
-    text-decoration: underline;
+.project-category-card a:hover .explore-link {
+    color: gold;
 }
 
-/* Media Query for single column on smaller screens */
-@media (max-width: 600px) {
-    .project-categories-grid {
-        grid-template-columns: 1fr; /* Single column on very small screens */
-        gap: 20px; /* Slightly less gap when stacked */
-    }
-}
-
-/* Example: Rhombus Shape using transform skew */
-.rhombus-shape {
-    /* Use clip-path for a cleaner rhombus */
-    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
-    border-radius: 0; /* Remove border-radius if using clip-path for sharp corners */
-}
-
-/* Example: Trapezium Shape using clip-path */
-.trapezium-shape {
-    clip-path: polygon(20% 0%, 80% 0%, 100% 100%, 0% 100%);
-    border-radius: 0; /* Remove border-radius if using clip-path for sharp corners */
-}
-
-/* Hide the main site header and navbar when on detail pages */
-.school-projects-detail-page header.header-container,
-.internship-projects-detail-page header.header-container,
-.personal-projects-detail-page header.header-container,
-.school-projects-detail-page nav.navbar,
-.internship-projects-detail-page nav.navbar,
-.personal-projects-detail-page nav.navbar {
-    display: none;
-}
-
-/* Style for the new simplified header on detail pages */
-.detail-page-header {
-    background: transparent;
-    color: rgb(31, 5, 227);
-    padding: 1rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    text-align: center;
-    margin-bottom: 20px; /* Space below header */
-}
-
-.detail-page-header .header-left,
-.detail-page-header .header-middle,
-.detail-page-header .header-right {
-    flex: 1;
-    min-width: 100px; /* Smaller min-width for detail page header sections */
-    padding: 5px;
-}
-
-.detail-page-header .header-middle h1 {
-    font-size: clamp(1.5em, 5vw, 2.8em); /* Larger title for detail pages */
-    color: gold; /* Gold color for the title */
-}
-
-.back-to-categories-link {
-    color: #00BFFF;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: clamp(0.9em, 2.5vw, 1.1em);
-    transition: color 0.3s ease, transform 0.3s ease;
-}
-
-.back-to-categories-link:hover {
-    color: #66d9ff;
-    transform: translateX(-5px);
-}
-
-/* Style for the new navigation between project categories */
-.detail-page-navbar {
-    background: transparent;
-    padding: 10px;
-    margin-bottom: 20px; /* Space below navbar */
-}
-
-.detail-page-navbar ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
+/* The project categories grid layout itself - Changed to single column */
+.project-categories-grid {
+    display: grid;
+    /* Changed to single column */
+    grid-template-columns: 1fr;
+    gap: 30px;
+    margin-top: 30px;
     justify-content: center;
-    flex-wrap: wrap;
-    gap: 15px; /* Space between links */
 }
 
-.detail-page-navbar ul li a {
-    font-weight: bold;
-    color: rgb(247, 4, 4);
-    padding: 8px 15px;
-    display: block;
-    text-decoration: none;
-    border-radius: 8px;
-    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background for links */
-    transition: background-color 0.3s ease, color 0.3s ease;
-    font-size: clamp(0.9em, 2vw, 1.1em);
-}
-
-.detail-page-navbar ul li a:hover {
-    background-color: rgba(145, 124, 6, 0.7);
-    color: #FFF;
-}
-
-.detail-page-navbar ul li.active a {
-    background-color: rgb(180, 150, 10);
-    color: #FFF;
-}
-
-/* --- Blurred Backgrounds for Detail Pages --- */
-
-/* Common styles for the pseudo-element background */
-body::before {
-    content: '';
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    z-index: -1; /* Place behind content */
-    filter: blur(8px); /* Adjust blur amount as needed */
-    transform: scale(1.05); /* Slightly scale to hide blur edges */
-    transition: background-image 0.5s ease; /* Smooth transition if background changes */
-}
-
-/* Specific background images for each detail page */
-.school-projects-detail-page::before {
-    background-image: url('images/school.png'); /* Replace with your school specific image */
-}
-
-.internship-projects-detail-page::before {
-    background-image: url('images/intern.png'); /* Replace with your internship specific image */
-}
-
-.personal-projects-detail-page::before {
-    background-image: url('images/personal.png'); /* Replace with your personal specific image */
-}
-
-/* Ensure main-content-wrapper has a background to sit on top of the blur */
-.school-projects-detail-page .main-content-wrapper,
-.internship-projects-detail-page .main-content-wrapper,
-.personal-projects-detail-page .main-content-wrapper {
-    background-color: rgba(1, 19, 30, 0.85); /* Slightly less transparent to stand out against blur */
-}
-
-/* Media query for smaller screens for detail page header */
+/* Media query for smaller screens */
 @media (max-width: 768px) {
-    .detail-page-header {
+    .header-container, .detail-page-header {
         flex-direction: column;
-        align-items: center;
-        padding: 0.8rem;
+        text-align: center;
     }
-
-    .detail-page-header .header-left,
-    .detail-page-header .header-middle,
-    .detail-page-header .header-right {
+    .header-left, .header-middle, .header-right {
+        min-width: 100%;
         margin-bottom: 10px;
-        min-width: unset;
-        flex: none; /* Do not grow/shrink, take content width */
     }
-
-    .detail-page-header .header-right {
-        margin-top: 10px; /* Add space above back link */
+    .header-right {
+        flex-direction: row;
+        justify-content: center;
     }
-
-    .detail-page-navbar ul {
-        gap: 8px; /* Reduce gap on small screens */
+    .header-right a.linkedin-link {
+        margin-top: 5px;
     }
-
-    .detail-page-navbar ul li a {
-        padding: 6px 10px;
-        font-size: 0.8em;
+    nav ul {
+        flex-direction: column;
+    }
+    nav ul li {
+        margin-bottom: 5px;
+    }
+    /* Specific adjustments for project category cards on smaller screens */
+    .project-category-card {
+        min-height: 100px; /* Slightly larger on very small screens to remain readable */
+    }
+    .project-category-card .card-content {
+        padding: 8px; /* Further reduce padding on very small screens */
+    }
+    .project-category-card h4 {
+        font-size: 1em;
+    }
+    .project-category-card p,
+    .project-category-card .explore-link {
+        font-size: 0.75em;
     }
 }
