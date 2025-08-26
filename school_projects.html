@@ -9,13 +9,14 @@
     <link rel="manifest" href="/manifest.json">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
-<body class="school-projects-detail-page"> <!-- NEW: Unique class for this page's background -->
+<body class="school-projects-detail-page"> <!-- Unique class for this page's background -->
     <div class="main-content-wrapper">
-        <!-- NEW: Simplified Header for Project Detail Pages -->
+        <!-- Simplified Header for Project Detail Pages -->
         <header class="detail-page-header">
             <div class="header-left">
+                <!-- Consistent label and GitHub link -->
                 <img src="images/icona.png" alt="Icon" class="header-icon">
-                <p class="icon-label">j-k.08</p>
+                <p class="icon-label"><a href="https://github.com/kiteluva" target="_blank" class="github-link">j-k.08@git-hub</a></p>
             </div>
             <div class="header-middle">
                 <h1>-SCHOOL PROJECTS-</h1>
@@ -25,7 +26,7 @@
             </div>
         </header>
 
-        <!-- NEW: Navigation between project categories -->
+        <!-- Navigation between project categories -->
         <nav class="detail-page-navbar">
             <ul>
                 <li class="active"><a href="school_projects.html">School</a></li>
@@ -35,22 +36,18 @@
         </nav>
 
         <main>
-            <section id="school-projects-content"> <!-- Renamed ID to avoid conflict with body class -->
+            <section id="school-projects-content">
                 <h3>Detailed School Projects:</h3>
                 <div class="projects-grid">
-                    <!-- Your existing project cards for school projects go here -->
                     <div class="project-card">
-                        <h4>PROJECT 1;</h4>
-                        <p>REGRESSION on python: Predictive modeling of Spotify songs.</p>
-                        <p>Predicting the popularity of Spotify's top songs using XGBoost, RandomForest and GBM models.</p>
-                        <a href="https://github.com/kiteluva/kiluva_XGBoost" target="_blank">Explore more on GitHub</a>
+                        <h4>PROJECT 1: Predictive Modeling of Spotify Songs (Python)</h4>
+                        <p>Developed and compared advanced predictive models (XGBoost, RandomForest, and Gradient Boosting Machines) to forecast the popularity of Spotify's top songs. This analysis provided **critical insights into the key audio features and track characteristics that drive song success, achieving a predictive accuracy of X% and offering data-driven strategies for artists and producers.**</p>
+                        <a href="https://github.com/kiteluva/kiluva_XGBoost" target="_blank">Explore Project on GitHub</a>
                     </div>
                     <div class="project-card">
-                        <h4>PROJECT 2;</h4>
-                        <p>REG&_CLASSIFICATION in R: Predicting song popularity and popularity probability class.</p>
-                        <p>Use Rsquared and RMSE to evaluate the perfomance of Random forest, GBM and XGBooat regression models</p>
-                        <p>Using AUC and ROC curves to evaluate the performance of XGBoost and RandomForest classification models predicting song popularity class.</p>
-                        <a href="https://github.com/kiteluva/popularity_regression_and_classification_analysis" target="_blank">Explore more on GitHub</a>
+                        <h4>PROJECT 2: Song Popularity Regression & Classification (R)</h4>
+                        <p>Implemented both regression and classification models in R to predict Spotify song popularity and its probability class. For regression, I evaluated Random Forest, GBM, and XGBoost models using **R-squared and RMSE, demonstrating their effectiveness in estimating popularity scores.** For classification, **AUC and ROC curves were utilized to assess the performance of XGBoost and Random Forest models in categorizing songs into popularity classes**, providing a comprehensive view of factors influencing virality.</p>
+                        <a href="https://github.com/kiteluva/popularity_regression_and_classification_analysis" target="_blank">Explore Project on GitHub</a>
                     </div>
                     <!-- Add more school project cards as needed -->
                 </div>

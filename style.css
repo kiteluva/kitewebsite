@@ -133,6 +133,15 @@ header.header-container, header.detail-page-header {
     font-size: clamp(0.7em, 2vw, 0.9em);
 }
 
+.header-right a.github-link { /* Added for consistent styling of j-k.08@git-hub */
+    color: gold;
+    text-decoration: none;
+}
+
+.header-right a.github-link:hover {
+    text-decoration: underline;
+}
+
 .header-middle {
     text-align: center;
 }
@@ -318,6 +327,25 @@ section p {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
+/* Styling for the new Call to Action button */
+.cta-button {
+    background-color: #e70cdc; /* A vibrant purple color */
+    color: white;
+    padding: 12px 25px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    display: inline-block; /* Ensure it behaves like a button */
+    font-size: clamp(1em, 3vw, 1.2em);
+}
+
+.cta-button:hover {
+    background-color: #c00cbb; /* Slightly darker purple on hover */
+    transform: scale(1.05); /* Slight scale effect on hover */
+}
+
+
 /* Services Section Specifics */
 #services {
     text-align: left;
@@ -392,6 +420,7 @@ section p {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
+    text-decoration: none; /* Ensure the entire card link doesn't have default underline */
 }
 
 .project-category-card:hover {
@@ -423,6 +452,7 @@ section p {
     padding: 10px; /* Reduced from 20px to 10px */
     color: #FFF;
     border-radius: 0 0 8px 8px;
+    width: 100%; /* Ensure content fills the card width */
 }
 
 .project-category-card h4 {
@@ -458,6 +488,56 @@ section p {
     margin-top: 30px;
     justify-content: center;
 }
+
+/* Project Card Styling for detail pages (school_projects.html, etc.) */
+.projects-grid {
+    display: grid;
+    grid-template-columns: 1fr; /* Single column for detailed projects */
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.project-card {
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: clamp(15px, 5vw, 25px);
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+.project-card h4 {
+    color: gold;
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: clamp(1.1em, 3.5vw, 1.4em);
+}
+
+.project-card p {
+    font-size: clamp(0.9em, 2.5vw, 1.1em);
+    color: #ddd;
+    margin-bottom: 10px;
+}
+
+.project-card a {
+    color: #00BFFF;
+    text-decoration: none;
+    font-weight: bold;
+    display: block; /* Ensures each link gets its own line */
+    margin-top: 5px;
+    font-size: clamp(0.85em, 2.3vw, 1em);
+}
+
+.project-card a:hover {
+    color: #e70cdc; /* Hover color for project links */
+    text-decoration: underline;
+}
+
 
 /* Media query for smaller screens */
 @media (max-width: 768px) {
@@ -496,4 +576,15 @@ section p {
     .project-category-card .explore-link {
         font-size: 0.75em;
     }
+    .cta-button {
+        padding: 10px 20px;
+        font-size: 0.9em;
+    }
+    .project-card h4 {
+        font-size: 1em;
+    }
+    .project-card p, .project-card a {
+        font-size: 0.85em;
+    }
 }
+/* End of style.css */
