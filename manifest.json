@@ -8,6 +8,11 @@
   "theme_color": "#1b0250",
   "icons": [
     {
+      "scr":"/images/icons/contactb.png",
+      "sizes": "72x72",
+      "type": "image/png"
+    },
+    {
       "src": "/images/icons/android-icon-144x144.png",
       "sizes": "144x144",
       "type": "image/png"
