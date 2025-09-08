@@ -8,8 +8,8 @@
   "theme_color": "#1b0250",
   "icons": [
     {
-      "scr":"/images/icons/contactb.png",
-      "sizes": "72x72",
+      "src":"/images/icons/contactb.png",
+      "sizes": "640x480",
       "type": "image/png"
     },
     {
