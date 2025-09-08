@@ -1,6 +1,6 @@
 {
   "name": "Kiteluva Analysis",
-  "short_name": "Kite-luvaz",
+  "short_name": "Kite's",
   "description": "Experience mind-blowing analysis and valuable insights from Kiluva.",
   "start_url": "https://kiteluva.github.io/kitewebsite/",
   "display": "standalone",
@@ -10,29 +10,32 @@
     {
       "src":"/images/icons/contactb.png",
       "sizes": "640x480",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any"
     },
     {
       "src": "/images/icons/android-icon-144x144.png",
       "sizes": "144x144",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any"
     },
     {
       "src": "/images/icons/android-icon-192x192.png",
       "sizes": "192x192",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any"
     },
     {
       "src": "/images/icons/ms-icon-144x144.png",
       "sizes": "144x144",
       "type": "image/png",
-      "purpose": "maskable"
+      "purpose": "any maskable"
     },
     {
       "src": "/images/icons/ms-icon-310x310.png",
       "sizes": "310x310",
       "type": "image/png",
-      "purpose": "maskable"
+      "purpose": "any maskable"
     }
   ]
 }
