@@ -31,32 +31,32 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Function to hide the custom message box
-    function hideCustomMessage() {
-        customModal.classList.remove('active'); // Hide the modal
-        currentModalCallback = null; // Clear the callback
-    }
+    //function hideCustomMessage() {
+    //    customModal.classList.remove('active'); // Hide the modal
+    //    currentModalCallback = null; // Clear the callback
+    //}
 
     // Event listeners for modal buttons
-    modalConfirmBtn.addEventListener('click', () => {
-        if (currentModalCallback) {
-            currentModalCallback(true); // Pass true for confirmation
-        }
-        hideCustomMessage();
-    });
+    //modalConfirmBtn.addEventListener('click', () => {
+    //    if (currentModalCallback) {
+    //        currentModalCallback(true); // Pass true for confirmation
+    //    }
+    //    hideCustomMessage();
+    //});
 
-    modalCancelBtn.addEventListener('click', () => {
-        if (currentModalCallback) {
-            currentModalCallback(false); // Pass false for cancellation
-        }
-        hideCustomMessage();
-    });
+    //modalCancelBtn.addEventListener('click', () => {
+    //    if (currentModalCallback) {
+    //        currentModalCallback(false); // Pass false for cancellation
+    //    }
+    //    hideCustomMessage();
+    //});
 
-    modalOkBtn.addEventListener('click', () => {
-        if (currentModalCallback) {
-            currentModalCallback(); // No specific value for OK
-        }
-        hideCustomMessage();
-    });
+    //modalOkBtn.addEventListener('click', () => {
+    //    if (currentModalCallback) {
+    //        currentModalCallback(); // No specific value for OK
+    //    }
+    //    hideCustomMessage();
+    //});
 
 
     // --- 1. Smooth Scrolling for Navigation Links ---
