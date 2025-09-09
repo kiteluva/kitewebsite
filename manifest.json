@@ -6,16 +6,10 @@
   "display": "standalone",
   "background_color": "#020249",
   "theme_color": "#1b0250",
-  "icons": [
+  "icon": [
     {
       "src":"/images/contactb.png",
-      "sizes": "640x480",
-      "type": "image/png",
-      "purpose": "any"
-    },
-    {
-      "src": "/images/icona.png",
-      "sizes": "640x480",
+      "sizes": "442x444",
       "type": "image/png",
       "purpose": "any"
     }
