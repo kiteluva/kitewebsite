@@ -60,7 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     // --- 1. Smooth Scrolling for Navigation Links ---
-    document.querySelectorAll('nav.navbar ul li a').forEach(anchor => {
+    document.querySelectorAll('nav.navbar ul li a, nav.detail-page-navbar ul li a').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
             const targetId = this.getAttribute('href').substring(1);
@@ -73,9 +73,6 @@ document.addEventListener('DOMContentLoaded', () => {
             } else {
                 window.location.href = this.getAttribute('href');
             }
-
-            // Removed the code that toggled the 'active' class on navList
-            // as the nav bar is no longer collapsible.
         });
     });
 
@@ -156,7 +153,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // --- Removed: Hamburger Menu Toggle Logic ---
     // The nav toggle button and its associated JavaScript logic have been removed.
 
     // --- NEW: Gmail Link Confirmation using Custom Modal ---
