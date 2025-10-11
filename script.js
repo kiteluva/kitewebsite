@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const modalCancelBtn = document.getElementById('modal-cancel-btn');
     const modalOkBtn = document.getElementById('modal-ok-btn');
 
-    let currentModalCallback = null; // Stores the callback function for confirm/cancel actions
+    let currentModalCallback = null; 
 
     // Function to show the custom message box
     function showCustomMessage(title, message, type, callback = null) {
@@ -29,35 +29,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
         customModal.classList.add('active'); // Show the modal
     }
-
-    // Function to hide the custom message box
-    //function hideCustomMessage() {
-    //    customModal.classList.remove('active'); // Hide the modal
-    //    currentModalCallback = null; // Clear the callback
-    //}
-
-    // Event listeners for modal buttons
-    //modalConfirmBtn.addEventListener('click', () => {
-    //    if (currentModalCallback) {
-    //        currentModalCallback(true); // Pass true for confirmation
-    //    }
-    //    hideCustomMessage();
-    //});
-
-    //modalCancelBtn.addEventListener('click', () => {
-    //    if (currentModalCallback) {
-    //        currentModalCallback(false); // Pass false for cancellation
-    //    }
-    //    hideCustomMessage();
-    //});
-
-    //modalOkBtn.addEventListener('click', () => {
-    //    if (currentModalCallback) {
-    //        currentModalCallback(); // No specific value for OK
-    //    }
-    //    hideCustomMessage();
-    //});
-
 
     // --- 1. Smooth Scrolling for Navigation Links ---
     document.querySelectorAll('nav.navbar ul li a, nav.detail-page-navbar ul li a').forEach(anchor => {
@@ -153,9 +124,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // The nav toggle button and its associated JavaScript logic have been removed.
-
-    // --- NEW: Gmail Link Confirmation using Custom Modal ---
+    // --- Gmail Link Confirmation using Custom Modal ---
     const gmailContactItem = document.getElementById('gmail-contact-item');
     const gmailLink = document.getElementById('gmail-link'); // Get the actual mailto link
 
@@ -181,5 +150,30 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             );
         });
+    }
+
+    // =========================================================================
+    // Service Worker Registration Logic
+    // =========================================================================
+    if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+            navigator.serviceWorker.register('/service-worker.js')
+                .then((registration) => {
+                    console.log('Service Worker registered successfully with scope:', registration.scope);
+                    // Optional: Show a message that the app is now available offline
+                    if (registration.active) {
+                        showCustomMessage(
+                            'Offline Ready!',
+                            'This portfolio is now cached and should work offline!',
+                            'alert'
+                        );
+                    }
+                })
+                .catch((error) => {
+                    console.log('Service Worker registration failed:', error);
+                });
+        });
+    } else {
+        console.log('Service Workers are not supported in this browser.');
     }
 });

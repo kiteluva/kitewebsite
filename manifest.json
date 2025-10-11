@@ -1,0 +1,26 @@
+{
+"name": "Kiteluva Analysis Portfolio",
+"short_name": "Kiteluva",
+"description": "The personal web portfolio for Kiluva, featuring data science and web development projects.",
+"start_url": "https://kiteluva.github.io/kitewebsite/",
+"display": "standalone",
+"background_color": "#1a1a1a",
+"theme_color": "#e70cdc",
+"icons": [
+{
+"src": "images/contactc.png",
+"sizes": "250x260",
+"type": "image/png"
+},
+{
+"src": "images/icona.png",
+"sizes": "640x480",
+"type": "image/png"
+},
+{
+"src": "images/app.png",
+"sizes": "192x192",
+"type": "image/png",
+"purpose": "maskable"
+}
+]}
