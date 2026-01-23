@@ -81,7 +81,7 @@ const HomeView: React.FC<{ setActiveTab: (id: string) => void }> = ({ setActiveT
       </div>
       <div className="relative group">
         <div className="absolute inset-0 bg-purple-600/20 blur-[100px] rounded-full group-hover:bg-purple-600/30 transition-all duration-700"></div>
-        <ProjectCardImage text="Profile & Identity" imageSrc="/images/kiluva.jpeg" height="h-[500px]" />
+        <ProjectCardImage text="Profile & Identity" imageSrc="/images/profile.jpg" height="h-[500px]" />
       </div>
     </section>
 
@@ -109,7 +109,7 @@ const HomeView: React.FC<{ setActiveTab: (id: string) => void }> = ({ setActiveT
     <section className="bg-neutral-900/20 rounded-3xl p-8 md:p-12 border border-neutral-800/50">
       <div className="flex flex-col md:flex-row gap-12 items-center text-left">
         <div className="w-full md:w-1/3">
-          <ProjectCardImage text="Creative" imageSrc="/images/profile.jpg" height="h-72" />
+          <ProjectCardImage text="Creative" imageSrc="/images/about.jpg" height="h-72" />
         </div>
         <div className="w-full md:w-2/3">
           <h3 className="text-2xl font-bold mb-6 flex items-center gap-3">
@@ -408,7 +408,7 @@ const App: React.FC = () => {
           <div className="flex items-center gap-3">
             <div className="w-10 h-10 rounded-full bg-gradient-to-tr from-purple-600 to-blue-500 flex items-center justify-center overflow-hidden shadow-lg shadow-purple-500/20">
                <img 
-                src="/images/kiluva.jpg" 
+                src="/images/kiluva.jpeg" 
                 alt="Profile" 
                 className="w-full h-full object-cover" 
                 onError={(e: any) => { e.target.src = "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400"; }}
