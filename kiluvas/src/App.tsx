@@ -109,7 +109,7 @@ const HomeView: React.FC<{ setActiveTab: (id: string) => void }> = ({ setActiveT
     <section className="bg-neutral-900/20 rounded-3xl p-8 md:p-12 border border-neutral-800/50">
       <div className="flex flex-col md:flex-row gap-12 items-center text-left">
         <div className="w-full md:w-1/3">
-          <ProjectCardImage text="Creative" imageSrc="/images/about.jpg" height="h-72" />
+          <ProjectCardImage text="Creative" imageSrc="/images/profile.jpg" height="h-72" />
         </div>
         <div className="w-full md:w-2/3">
           <h3 className="text-2xl font-bold mb-6 flex items-center gap-3">
@@ -408,7 +408,7 @@ const App: React.FC = () => {
           <div className="flex items-center gap-3">
             <div className="w-10 h-10 rounded-full bg-gradient-to-tr from-purple-600 to-blue-500 flex items-center justify-center overflow-hidden shadow-lg shadow-purple-500/20">
                <img 
-                src="/images/profile.jpg" 
+                src="/images/kiluva.jpg" 
                 alt="Profile" 
                 className="w-full h-full object-cover" 
                 onError={(e: any) => { e.target.src = "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400"; }}
@@ -465,6 +465,8 @@ const App: React.FC = () => {
             <div className="flex gap-4">
               <a href="https://instagram.com/itskite_luva" target="_blank" rel="noreferrer" className="p-2 bg-neutral-900 rounded-lg hover:bg-neutral-800 transition-colors"><Instagram size={18} /></a>
               <a href="https://twitter.com/@KitenyeK" target="_blank" rel="noreferrer" className="p-2 bg-neutral-900 rounded-lg hover:bg-neutral-800 transition-colors"><Twitter size={18} /></a>
+              <a href="https://linkedin.com/in/kiteluva08" target="_blank" rel="noreferrer" className="p-2 bg-neutral-900 rounded-lg hover:bg-neutral-800 transition-colors"><Linkedin size={18} /></a>
+              <a href="https://github.com/kiteluva" target="_blank" rel="noreferrer" className="p-2 bg-neutral-900 rounded-lg hover:bg-neutral-800 transition-colors"><Github size={18} /></a>
             </div>
           </div>
           
@@ -493,14 +495,6 @@ const App: React.FC = () => {
               <li className="flex items-center gap-3 text-neutral-400">
                 <Github size={16} className="text-purple-500" />
                 <span>kiluvaJames</span>
-              </li>
-              <li className="flex items-center gap-3 text-neutral-400">
-                <Instagram size={16} className="text-purple-500" />
-                <span>@itskite_luva</span>
-              </li>
-              <li className="flex items-center gap-3 text-neutral-400">
-                <Twitter size={16} className="text-purple-500" />
-                <span>@KitenyeK</span>
               </li>
               <li className="flex items-center gap-3 text-neutral-400">
                 <Phone size={16} className="text-purple-500" />
