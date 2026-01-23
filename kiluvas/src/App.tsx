@@ -147,32 +147,10 @@ const ProjectsView: React.FC<{ setSelectedProject: (p: Project) => void }> = ({ 
       live: "https://csv-xls-data-analyzer.vercel.app/"
     },
     { 
-      title: "KADA; KADSA's Automated Data Analyzer", 
-      category: "tech", 
-      origin: "KADSA",
-      imageUrl: "/images/kada.png",
-      desc: "Automated tool for extraction and analysis of multi-sector Data.", 
-      longDesc: "Designed as a Progressive Web application (PWA) so it can serve even those who do not have access to a traditional desktops, simplified for compatibility even with smartphones.",
-      tags: ["JavaScript", "HTML", "CSS", "Data Analysis", "ReactJS", "PWA"],
-      github: "https://github.com/kiteluva/CSV_XLS_DATA_ANALYZER",
-      live: "https://csv-xls-data-analyzer.vercel.app/"
-    },
-    { 
-      title: "KADA; KADSA's Automated Data Analyzer", 
-      category: "ai", 
-      origin: "KADSA",
-      imageUrl: "/images/kada.png",
-      desc: "Automated tool for extraction and analysis of multi-sector Data.", 
-      longDesc: "Designed to help Non-technical users Interprete their findings and give simplified actionable insights from the data being worked on, Most users don't have the technical expertise to operate complicted systems not with KADA.",
-      tags: ["Generative AI", "Chatbot" , "Python", "Gemini", "Automation", "Data Analysis", "FastAPI", "React"],
-      github: "https://github.com/kiteluva/CSV_XLS_DATA_ANALYZER",
-      live: "https://csv-xls-data-analyzer.vercel.app/"
-    }, 
-    { 
       title: "Student Retention Analysis", 
       category: "data", 
       origin: "Future Interns",
-      imageUrl: "/images/POWER BI 01.png",
+      imageUrl: "/images/POWER BI 03.png",
       desc: "An in-depth study of student demographics and behaviors to predict and improve retention rates.", 
       longDesc: "Leveraged descriptive and diagnostic analytics to identify risk factors. Provided a clear roadmap for administration to improve student experiences.",
       tags: ["Python", "Pandas", "Analytics"],
@@ -210,6 +188,17 @@ const ProjectsView: React.FC<{ setSelectedProject: (p: Project) => void }> = ({ 
       live: "https://jsf0vd-james-kitenye.shinyapps.io/Popularity_Predictor/"
     },
     { 
+      title: "KADA; KADSA's Automated Data Analyzer", 
+      category: "tech", 
+      origin: "KADSA",
+      imageUrl: "/images/kada.png",
+      desc: "Automated tool for extraction and analysis of multi-sector Data.", 
+      longDesc: "Designed as a Progressive Web application (PWA) so it can serve even those who do not have access to a traditional desktops, simplified for compatibility even with smartphones.",
+      tags: ["JavaScript", "HTML", "CSS", "Data Analysis", "ReactJS", "PWA"],
+      github: "https://github.com/kiteluva/CSV_XLS_DATA_ANALYZER",
+      live: "https://csv-xls-data-analyzer.vercel.app/"
+    },
+    { 
       title: "KADSA Tech Solutions", 
       category: "tech", 
       origin: "Professional",
@@ -242,6 +231,17 @@ const ProjectsView: React.FC<{ setSelectedProject: (p: Project) => void }> = ({ 
       github: "https://kiteluva.github.io/clini-q/",
       live: "https://clini-q-sigma.vercel.app/"
     },
+    { 
+      title: "KADA; KADSA's Automated Data Analyzer", 
+      category: "ai", 
+      origin: "KADSA",
+      imageUrl: "/images/kada.png",
+      desc: "Automated tool for extraction and analysis of multi-sector Data.", 
+      longDesc: "Designed to help Non-technical users Interprete their findings and give simplified actionable insights from the data being worked on, Most users don't have the technical expertise to operate complicted systems not with KADA.",
+      tags: ["Generative AI", "Chatbot" , "Python", "Gemini", "Automation", "Data Analysis", "FastAPI", "React"],
+      github: "https://github.com/kiteluva/CSV_XLS_DATA_ANALYZER",
+      live: "https://csv-xls-data-analyzer.vercel.app/"
+    }, 
     { 
       title: "Kiluvaz Portfolio", 
       category: "tech", 
