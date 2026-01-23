@@ -1,0 +1,48 @@
+/* kiluvas/src/index.css */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+color-scheme: dark;
+}
+
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box; 
+}
+
+body {
+background-color: #000000;
+color: #ffffff;
+font-family: 'Inter', system-ui, -apple-system, sans-serif;
+overflow-x: hidden;
+}
+
+/* Custom Blue Scrollbar */
+::-webkit-scrollbar {
+width: 8px;
+}
+::-webkit-scrollbar-track {
+background: #000000;
+}
+::-webkit-scrollbar-thumb {
+background: #1e40af; 
+border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+background: #2563eb; 
+}
+
+/* Glassmorphism Container */
+.glass-container {
+background: rgba(10, 10, 10, 0.7);
+backdrop-filter: blur(12px);
+border: 1px solid rgba(30, 58, 138, 0.2);
+}
+
+#app {
+width: 100%;
+}
