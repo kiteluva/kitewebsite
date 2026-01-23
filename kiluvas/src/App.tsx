@@ -488,11 +488,11 @@ const App: React.FC = () => {
               </li>
               <li className="flex items-center gap-3 text-neutral-400">
                 <Linkedin size={16} className="text-purple-500" />
-                <span>/in/kiteluva08</span>
+                <span>James Kiluva</span>
               </li>
               <li className="flex items-center gap-3 text-neutral-400">
                 <Github size={16} className="text-purple-500" />
-                <span>/kiteluva</span>
+                <span>kiluvaJames</span>
               </li>
               <li className="flex items-center gap-3 text-neutral-400">
                 <Instagram size={16} className="text-purple-500" />
@@ -514,7 +514,7 @@ const App: React.FC = () => {
           <p>© {new Date().getFullYear()} KITELUVA. ALL RIGHTS RESERVED.</p>
         </div>
         <a href="https://the-website-chi.vercel.app" target="_blank" rel="noopener noreferrer" className="text-sm font-bold hover:text-blue-400 transition-colors duration-200 flex items-center gap-1.5">
-          <img src="assets/images/icon2.png" alt="icon" className="w-4 h-4 inline-block" onError={(e: any) => { e.target.src = "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400"; }}/> 
+          <img src="/images/icon2.png" alt="icon" className="w-4 h-4 inline-block" onError={(e: any) => { e.target.src = "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400"; }}/> 
             ~a -<strong>KADSA</strong>- make~
         </a>
       </footer>
