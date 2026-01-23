@@ -1,24 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { 
-  Github, 
-  Linkedin, 
-  Mail, 
-  Phone, 
-  Instagram, 
-  Twitter, 
-  ExternalLink, 
-  Database, 
-  Cpu, 
-  BrainCircuit, 
-  Code2, 
-  BarChart3, 
-  UserCircle2,
-  ChevronRight,
-  Send,
-  X,
-  Globe,
-  Award,
-  BookOpen
+  Github, Linkedin, Mail, Phone, Instagram, Twitter, 
+  ExternalLink, Database, Cpu, BrainCircuit, Code2, 
+  BarChart3, UserCircle2, ChevronRight, Send, X, 
+  Globe, Award, BookOpen 
 } from 'lucide-react';
 
 const App = () => {
@@ -35,10 +20,23 @@ const App = () => {
     { id: 'contact', label: 'Contact' }
   ];
 
-  const ImagePlaceholder = ({ text, height = "h-48" }) => (
-    <div className={`w-full ${height} bg-neutral-800 border border-neutral-700 rounded-lg flex flex-col items-center justify-center text-neutral-500 p-4 text-center group-hover:border-purple-500/50 transition-all`}>
-      <div className="mb-2 opacity-20"><Code2 size={48} /></div>
-      <span className="text-xs uppercase tracking-widest font-semibold">{text}</span>
+  // UPDATED: Now accepts an imageSrc prop. Renders image if present, otherwise placeholder.
+  const ProjectCardImage = ({ text, imageSrc, height = "h-48" }) => (
+    <div className={`w-full ${height} bg-neutral-800 border border-neutral-700 rounded-lg overflow-hidden relative group`}>
+      {imageSrc ? (
+        <img 
+          src={imageSrc} 
+          alt={text} 
+          className="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500"
+        />
+      ) : (
+        <div className="w-full h-full flex flex-col items-center justify-center text-neutral-500 p-4 text-center">
+          <div className="mb-2 opacity-20"><Code2 size={48} /></div>
+          <span className="text-xs uppercase tracking-widest font-semibold">{text}</span>
+        </div>
+      )}
+      {/* Overlay gradient */}
+      <div className="absolute inset-0 bg-gradient-to-t from-neutral-900 via-transparent to-transparent opacity-60"></div>
     </div>
   );
 
@@ -48,8 +46,9 @@ const App = () => {
       <header className="sticky top-0 z-40 bg-black/80 backdrop-blur-md border-b border-neutral-800">
         <div className="max-w-6xl mx-auto px-6 py-4 flex flex-col md:flex-row justify-between items-center gap-4">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-full bg-gradient-to-tr from-purple-600 to-blue-500 flex items-center justify-center font-bold text-lg shadow-lg shadow-purple-500/20">
-              <img src="images/profile.jpg" alt="Kiluva Logo" className="w-9 h-9 rounded-full" />   
+            <div className="w-10 h-10 rounded-full bg-gradient-to-tr from-purple-600 to-blue-500 flex items-center justify-center overflow-hidden shadow-lg shadow-purple-500/20">
+               {/* Ensure you have this image or use a placeholder URL */}
+               <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?fit=crop&w=100&h=100" alt="Profile" className="w-full h-full object-cover" />   
             </div>
             <div>
               <h1 className="text-xl font-bold tracking-tight">KILUVA J. ANALYSIS</h1>
@@ -88,8 +87,8 @@ const App = () => {
 
       {/* --- MAIN CONTENT --- */}
       <main className="max-w-6xl mx-auto px-6 py-12 min-h-[70vh]">
-        {activeTab === 'home' && <HomeView setActiveTab={setActiveTab} ImagePlaceholder={ImagePlaceholder} />}
-        {activeTab === 'projects' && <ProjectsView setSelectedProject={setSelectedProject} ImagePlaceholder={ImagePlaceholder} />}
+        {activeTab === 'home' && <HomeView setActiveTab={setActiveTab} ProjectCardImage={ProjectCardImage} />}
+        {activeTab === 'projects' && <ProjectsView setSelectedProject={setSelectedProject} ProjectCardImage={ProjectCardImage} />}
         {activeTab === 'contact' && <ContactView />}
       </main>
 
@@ -114,10 +113,6 @@ const App = () => {
               <li><button onClick={() => setActiveTab('projects')} className="text-neutral-400 hover:text-white transition-colors">Tech Development</button></li>
               <li><button onClick={() => setActiveTab('projects')} className="text-neutral-400 hover:text-white transition-colors">AI & ML Solutions</button></li>
             </ul>
-            <a href="https://the-website-chi.vercel.app" target="_blank" rel="noopener noreferrer" className="text-sm font-bold hover:text-blue-400 transition-colors duration-200 flex items-center gap-1.5">
-                <img src="images/icon2.png" alt="icon" className="w-4 h-4 inline-block" onerror="this.style.display='none'" /> 
-                    ~a -<strong>KADSA</strong>- make~
-            </a>
           </div>
 
           <div>
@@ -131,22 +126,12 @@ const App = () => {
                 <Phone size={16} className="text-purple-500" />
                 <span>+254 115 939 757</span>
               </li>
-              <li className="mt-6">
-                <div className="p-4 bg-purple-500/10 border border-purple-500/20 rounded-xl">
-                  <p className="text-xs text-purple-300 font-medium italic">Available for remote work & local consultations in Nairobi.</p>
-                </div>
-              </li>
             </ul>
           </div>
         </div>
         
         <div className="max-w-6xl mx-auto px-6 pt-8 border-t border-neutral-900 flex flex-col md:flex-row justify-between items-center gap-4 text-neutral-600 text-[10px] uppercase tracking-widest">
           <p>© {new Date().getFullYear()} KITELUVA. ALL RIGHTS RESERVED.</p>
-          <div className="flex gap-6">
-            <span className="cursor-default hover:text-neutral-400 transition-colors">Innovation</span>
-            <span className="cursor-default hover:text-neutral-400 transition-colors">Precision</span>
-            <span className="cursor-default hover:text-neutral-400 transition-colors">Results</span>
-          </div>
         </div>
       </footer>
 
@@ -164,13 +149,13 @@ const App = () => {
             
             <div className="grid grid-cols-1 md:grid-cols-2">
               <div className="h-64 md:h-auto bg-neutral-900 flex items-center justify-center border-b md:border-b-0 md:border-r border-neutral-800">
-                <ImagePlaceholder text={selectedProject.title} height="h-full" />
+                <ProjectCardImage text={selectedProject.title} imageSrc={selectedProject.imageUrl} height="h-full" />
               </div>
               <div className="p-8 md:p-12">
                 <div className="flex items-center gap-2 mb-4">
                   <span className={`px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest ${
-                    selectedProject.category === 'ai' ? 'bg-purple-500/10 text-purple-400' :
-                    selectedProject.category === 'data' ? 'bg-blue-500/10 text-blue-400' :
+                    selectedProject.category.includes('ai') ? 'bg-purple-500/10 text-purple-400' :
+                    selectedProject.category.includes('data') ? 'bg-blue-500/10 text-blue-400' :
                     'bg-emerald-500/10 text-emerald-400'
                   }`}>
                     {selectedProject.category}
@@ -223,7 +208,7 @@ const App = () => {
 
 /* --- SUB-VIEWS --- */
 
-const HomeView = ({ setActiveTab, ImagePlaceholder }) => (
+const HomeView = ({ setActiveTab, ProjectCardImage }) => (
   <div className="space-y-24 animate-in fade-in duration-700">
     <section className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
       <div>
@@ -251,7 +236,8 @@ const HomeView = ({ setActiveTab, ImagePlaceholder }) => (
       </div>
       <div className="relative group">
         <div className="absolute inset-0 bg-purple-600/20 blur-[100px] rounded-full group-hover:bg-purple-600/30 transition-all duration-700"></div>
-        <ImagePlaceholder text="Profile & Identity" height="h-[500px]" />
+        {/* Placeholder for Profile - Using a tech abstraction image */}
+        <ProjectCardImage text="Profile & Identity" imageSrc="https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?auto=format&fit=crop&q=80&w=800" height="h-[500px]" />
       </div>
     </section>
 
@@ -278,7 +264,7 @@ const HomeView = ({ setActiveTab, ImagePlaceholder }) => (
     <section className="bg-neutral-900/20 rounded-3xl p-8 md:p-12 border border-neutral-800/50">
       <div className="flex flex-col md:flex-row gap-12 items-center">
         <div className="w-full md:w-1/3">
-          <ImagePlaceholder text="Creative Pursuits" height="h-72" />
+          <ProjectCardImage text="Creative" imageSrc="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=600" height="h-72" />
         </div>
         <div className="w-full md:w-2/3">
           <h3 className="text-2xl font-bold mb-6 flex items-center gap-3">
@@ -300,9 +286,10 @@ const HomeView = ({ setActiveTab, ImagePlaceholder }) => (
   </div>
 );
 
-const ProjectsView = ({ setSelectedProject, ImagePlaceholder }) => {
+const ProjectsView = ({ setSelectedProject, ProjectCardImage }) => {
   const [filter, setFilter] = useState('all');
 
+  // --- UPDATED PROJECT DATA WITH IMAGES ---
   const projectData = [
     // --- DATA ---
     
@@ -437,10 +424,7 @@ const ProjectsView = ({ setSelectedProject, ImagePlaceholder }) => {
             onClick={() => setSelectedProject(p)}
             className="group cursor-pointer border border-neutral-800 rounded-2xl overflow-hidden hover:border-purple-500/50 transition-all bg-neutral-900/20"
           >
-            <div className="relative overflow-hidden">
-              <ImagePlaceholder text={p.title} />
-              <div className="absolute inset-0 bg-purple-600/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
-            </div>
+            <ProjectCardImage text={p.title} imageSrc={p.imageUrl} />
             <div className="p-6">
               <div className="flex justify-between items-center mb-4">
                 <span className={`text-[10px] font-bold uppercase tracking-widest px-2 py-0.5 rounded ${
