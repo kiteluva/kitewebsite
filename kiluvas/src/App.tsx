@@ -87,7 +87,7 @@ const HomeView: React.FC<{ setActiveTab: (id: string) => void }> = ({ setActiveT
     </section>
 
     <section className="py-12">
-      <div className="flex flex-col md:flex-row border-l-4 border-purple-500 pl-6 text-left mb-16">
+      <div className="flex flex-col border-l-4 border-purple-500 pl-6 text-left mb-16">
         <h3 className="text-3xl font-bold mb-4">Professional Expertise</h3>
         <p className="text-neutral-500 md:ml-6 md:mt-2">
           Providing <strong>high-impact solutions</strong> for technical challenges
@@ -458,7 +458,7 @@ const App: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-black text-white font-sans selection:bg-purple-500 selection:text-white overflow-x-hidden">
-      <header className="sticky top-0 z-40 bg-black/80 backdrop-blur-md border-b border-neutral-800 text-left">
+      <header className="sticky top-0 z-50 w-full bg-black/60 backdrop-blur-md border-b border-neutral-800 text-left">
         <div className="max-w-6xl mx-auto px-6 py-4 flex flex-col md:flex-row justify-between items-center gap-4">
           <div className="flex items-center gap-3">
             <div className="w-10 h-10 rounded-full bg-gradient-to-tr from-purple-600 to-blue-500 flex items-center justify-center overflow-hidden shadow-lg shadow-purple-500/20">
