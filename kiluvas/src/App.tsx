@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { 
-  Github, Linkedin, Mail, Phone, Instagram, Twitter, 
+  Github, Linkedin, Mail, Phone, Instagram, Twitter,
   BrainCircuit, Code2, 
   BarChart3, UserCircle2, ChevronRight, Send, X, 
-  Globe, Award
+  Globe, Award,
+  CircuitBoard
 } from 'lucide-react';
 
 // --- TYPES & INTERFACES ---
@@ -86,15 +87,18 @@ const HomeView: React.FC<{ setActiveTab: (id: string) => void }> = ({ setActiveT
     </section>
 
     <section>
-      <div className="text-left mb-16">
+      <div className="flex flex-col md:flex-row justify-between items-end gap-8 mb-12 border-l-4 border-purple-500 pl-6 text-left mb-16">
         <h3 className="text-3xl font-bold mb-4">Professional Expertise</h3>
-        <p className="text-neutral-500">High-impact solutions for technical challenges</p>
+        <p className="text-neutral-500">Providing <strong>high-impact solutions</strong> for technical challenges</p>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {[
+          { icon: <BrainCircuit className="text-purple-400" />, title: "Data Science", desc: "Proficient in data cleaning, exploration, and modeling using Python, R, and SQL to drive business insights." },
           { icon: <BarChart3 className="text-pink-400" />, title: "Data Analysis", desc: "Expertise in SQL, Python, and Tableau to uncover trends and build predictive forecasting dashboards." },
+          { icon: <Award className="text-yellow-400" />, title: "Data Visualization", desc: "Creating interactive dashboards and reports using Power BI and Tableau for actionable insights." },
           { icon: <Globe className="text-blue-400" />, title: "Web development", desc: "Building responsive, high-performance web applications with modern frameworks. Be it school, company or personal portfolios." },
-          { icon: <BrainCircuit className="text-purple-400" />, title: "AI/ML Dev", desc: "Crafting custom recommendation engines, sentiment analysis tools, Predictive Models and LLM-powered automation." },
+          { icon: <CircuitBoard className="text-purple-400" />, title: "Machine learning", desc: "Crafting custom recommendation engines, sentiment analysis tools, Predictive Models and automated procedures." },
+          { icon: <BrainCircuit className="text-pink-400" />, title: "Generative AI", desc: "Developing AI models and applications for creative content generation, automation and more." },
           { icon: <Code2 className="text-emerald-400" />, title: "Digital Solutions", desc: "Responsive full-stack software applications with high performance and integrated data management." }
         ].map((s, i) => (
           <div key={i} className="p-8 bg-neutral-900/40 border border-neutral-800 rounded-2xl hover:border-neutral-700 hover:bg-neutral-900/60 transition-all group">
@@ -261,8 +265,8 @@ const ProjectsView: React.FC<{ setSelectedProject: (p: Project) => void }> = ({ 
     <div className="animate-in slide-in-from-bottom-4 duration-700 text-left">
       <div className="flex flex-col md:flex-row justify-between items-end gap-8 mb-12 border-l-4 border-purple-500 pl-6">
         <div>
-          <h2 className="text-4xl font-extrabold mb-4">Engineering Portfolio</h2>
-          <p className="text-neutral-500">Separated into technical domains for clear evaluation.</p>
+          <h2 className="text-4xl font-extrabold mb-4">Data, Tech & AI Portfolio</h2>
+          <p className="text-neutral-500">These are some of my projects. Diverse across my expertise, separated into technical domains for clear evaluation.</p>
         </div>
         <div className="flex gap-2 p-1 bg-neutral-900 rounded-lg border border-neutral-800">
           {['all', 'data', 'tech', 'ai'].map((f) => (
@@ -330,7 +334,7 @@ const ContactView: React.FC = () => (
               <span className="text-sm font-semibold">Available for Hire</span>
             </div>
             <p className="text-xs text-neutral-500 leading-relaxed">
-              Seeking: Data Analyst, Data Scientist, ML Engineer, Full-Stack Dev roles or a blend of Data and Software Engineering especially for Automation.
+              Seeking: Data Analyst, Data Scientist, ML Engineer, Full-Stack Dev roles or a blend of Data and Software Engineering, especially Automation of Data Analytics.
             </p>
           </div>
         </div>
@@ -415,8 +419,8 @@ const App: React.FC = () => {
                />   
             </div>
             <div>
-              <h1 className="text-xl font-bold tracking-tight">KILUVA J. ANALYSIS</h1>
-              <p className="text-[10px] text-neutral-400 uppercase tracking-[0.2em]">Data Scientist & Full Stack Developer</p>
+              <h1 className="text-xl font-bold tracking-tight">KILUVA JAMES</h1>
+              <p className="text-[10px] text-neutral-400 uppercase tracking-[0.2em]">Data Scientist | Full Stack Developer</p>
             </div>
           </div>
 
@@ -458,7 +462,7 @@ const App: React.FC = () => {
       <footer className="border-t border-neutral-900 bg-neutral-950 pt-16 pb-8 text-left">
         <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
           <div>
-            <h3 className="text-lg font-bold mb-4">Kiluva J. Analysis</h3>
+            <h3 className="text-lg font-bold mb-4"><img src="/images/about.jpg" alt="icon" className="w-4 h-4 inline-block" /> Kiluva J; Data, Tech and AI</h3>
             <p className="text-neutral-400 text-sm leading-relaxed mb-6">
               Empowering businesses through data-driven decisions and innovative tech solutions. Specialized in automating complex analysis for a digital-first world.
             </p>
@@ -493,10 +497,6 @@ const App: React.FC = () => {
                 <span>James Kiluva</span>
               </li>
               <li className="flex items-center gap-3 text-neutral-400">
-                <Github size={16} className="text-purple-500" />
-                <span>kiluvaJames</span>
-              </li>
-              <li className="flex items-center gap-3 text-neutral-400">
                 <Phone size={16} className="text-purple-500" />
                 <span>+254 115 939 757</span>
               </li>
@@ -506,11 +506,11 @@ const App: React.FC = () => {
         
         <div className="max-w-6xl mx-auto px-6 pt-8 border-t border-neutral-900 flex flex-col md:flex-row justify-between items-center gap-4 text-neutral-600 text-[10px] uppercase tracking-widest">
           <p>© {new Date().getFullYear()} KITELUVA. ALL RIGHTS RESERVED.</p>
+          <a href="https://the-website-chi.vercel.app" target="_blank" rel="noopener noreferrer" className="text-italic font-bold hover:text-blue-400 transition-colors duration-200 flex items-center gap-1.5">
+            <img src="/images/icon2.png" alt="icon" className="w-4 h-4 inline-block" onError={(e: any) => { e.target.src = "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400"; }}/> 
+              ~a -<strong>KADSA</strong>- make~
+          </a>
         </div>
-        <a href="https://the-website-chi.vercel.app" target="_blank" rel="noopener noreferrer" className="text-sm font-bold hover:text-blue-400 transition-colors duration-200 flex items-center gap-1.5">
-          <img src="/images/icon2.png" alt="icon" className="w-4 h-4 inline-block" onError={(e: any) => { e.target.src = "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400"; }}/> 
-            ~a -<strong>KADSA</strong>- make~
-        </a>
       </footer>
 
       {selectedProject && (
