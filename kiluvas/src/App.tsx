@@ -513,7 +513,7 @@ const App: React.FC = () => {
       <footer className="border-t border-neutral-900 bg-neutral-950 pt-16 pb-8 text-left">
         <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
           <div>
-            <h3 className="text-lg font-bold mb-4"><img src="/images/about.jpg" alt="icon" className="w-5 h-5 rounded-full border border-accent shadow-sm" /> Kiluva J; Data, Tech and AI</h3>
+            <h3 className="text-lg font-bold mb-4"><img src="/images/about.jpg" alt="icon" className="w-5 h-5 rounded-full border border-accent shadow-sm" /> Kiluva's; Data, Tech & AI</h3>
             <p className="text-neutral-400 text-sm leading-relaxed mb-6">
               Empowering businesses through data-driven decisions and innovative tech solutions. Specialized in automating complex analysis for a digital-first world.
             </p>
