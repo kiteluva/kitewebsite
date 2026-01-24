@@ -557,7 +557,7 @@ const App: React.FC = () => {
         
         <div className="max-w-6xl mx-auto px-6 pt-8 border-t border-neutral-900 flex flex-col md:flex-row justify-between items-center gap-4 text-neutral-600 text-[10px] uppercase tracking-widest">
           <p>© {new Date().getFullYear()} KITELUVA. ALL RIGHTS RESERVED.</p>
-          <a href="https://the-website-chi.vercel.app" target="_blank" rel="noopener noreferrer" className="text-sm font-bold hover:text-blue-400 transition-colors duration-200 flex items-center gap-1.5">
+          <a href="https://the-website-chi.vercel.app" target="_blank" rel="noopener noreferrer" className="text-italic font-light hover:text-blue-400 transition-colors duration-200 flex items-center gap-1.5">
             <img src="/images/icon2.png" alt="icon" className="w-4 h-4 inline-block" onError={(e: any) => { e.target.src = "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400"; }}/> 
               ~a -<strong>KADSA</strong>- make~
           </a>
