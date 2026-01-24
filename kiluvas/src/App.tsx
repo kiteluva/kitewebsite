@@ -86,25 +86,73 @@ const HomeView: React.FC<{ setActiveTab: (id: string) => void }> = ({ setActiveT
       </div>
     </section>
 
-    <section>
-      <div className="flex flex-col md:flex-row justify-between items-end gap-8 mb-12 border-l-4 border-purple-500 pl-6 text-left mb-16">
+    <section className="py-12">
+      <div className="flex flex-col md:flex-row border-l-4 border-purple-500 pl-6 text-left mb-16">
         <h3 className="text-3xl font-bold mb-4">Professional Expertise</h3>
-        <p className="text-neutral-500">Providing <strong>high-impact solutions</strong> for technical challenges</p>
+        <p className="text-neutral-500 md:ml-6 md:mt-2">
+          Providing <strong>high-impact solutions</strong> for technical challenges
+        </p>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {[
-          { icon: <BrainCircuit className="text-purple-400" />, title: "Data Science", desc: "Proficient in data cleaning, exploration, and modeling using Python, R, and SQL to drive business insights." },
-          { icon: <BarChart3 className="text-pink-400" />, title: "Data Analysis", desc: "Expertise in SQL, Python, and Tableau to uncover trends and build predictive forecasting dashboards." },
-          { icon: <Award className="text-yellow-400" />, title: "Data Visualization", desc: "Creating interactive dashboards and reports using Power BI and Tableau for actionable insights." },
-          { icon: <Globe className="text-blue-400" />, title: "Web development", desc: "Building responsive, high-performance web applications with modern frameworks. Be it school, company or personal portfolios." },
-          { icon: <CircuitBoard className="text-purple-400" />, title: "Machine learning", desc: "Crafting custom recommendation engines, sentiment analysis tools, Predictive Models and automated procedures." },
-          { icon: <BrainCircuit className="text-pink-400" />, title: "Generative AI", desc: "Developing AI models and applications for creative content generation, automation and more." },
-          { icon: <Code2 className="text-emerald-400" />, title: "Digital Solutions", desc: "Responsive full-stack software applications with high performance and integrated data management." }
+          { 
+            icon: <BrainCircuit className="text-purple-400" />, 
+            title: "Data Science", 
+            desc: "Proficient in data cleaning, exploration, and modeling to drive business insights.",
+            skills: ["Python", "R", "SQL", "Pandas"]
+          },
+          { 
+            icon: <BarChart3 className="text-pink-400" />, 
+            title: "Data Analysis", 
+            desc: "Uncovering trends and building predictive forecasting dashboards.",
+            skills: ["SQL", "Python", "Tableau", "Excel"]
+          },
+          { 
+            icon: <Award className="text-yellow-400" />, 
+            title: "Data Visualization", 
+            desc: "Creating interactive dashboards and reports for actionable insights.",
+            skills: ["Power BI", "Tableau", "D3.js"]
+          },
+          { 
+            icon: <Globe className="text-blue-400" />, 
+            title: "Web Development", 
+            desc: "Building responsive, high-performance web applications with modern frameworks.",
+            skills: ["React", "Next.js", "Tailwind", "Node.js"]
+          },
+          { 
+            icon: <CircuitBoard className="text-purple-400" />, 
+            title: "Machine Learning", 
+            desc: "Crafting custom recommendation engines and automated procedures.",
+            skills: ["Scikit-learn", "TensorFlow", "PyTorch"]
+          },
+          { 
+            icon: <BrainCircuit className="text-pink-400" />, 
+            title: "Generative AI", 
+            desc: "Developing AI models for content generation and automation.",
+            skills: ["OpenAI", "LangChain", "HuggingFace"]
+          }
         ].map((s, i) => (
-          <div key={i} className="p-8 bg-neutral-900/40 border border-neutral-800 rounded-2xl hover:border-neutral-700 hover:bg-neutral-900/60 transition-all group">
-            <div className="mb-6 p-3 bg-neutral-800 w-fit rounded-xl group-hover:scale-110 transition-transform">{s.icon}</div>
+          <div key={i} className="flex flex-col p-8 bg-neutral-900/40 border border-neutral-800 rounded-2xl hover:border-purple-500/50 hover:bg-neutral-900/60 transition-all group">
+            <div className="mb-6 p-3 bg-neutral-800 w-fit rounded-xl group-hover:scale-110 transition-transform">
+              {s.icon}
+            </div>
+        
             <h4 className="text-xl font-bold mb-3">{s.title}</h4>
-            <p className="text-neutral-400 text-sm leading-relaxed">{s.desc}</p>
+            <p className="text-neutral-400 text-sm leading-relaxed mb-6 flex-grow">
+              {s.desc}
+            </p>
+
+            {/* The Tabs/Pills Container */}
+            <div className="flex flex-wrap gap-2 mt-auto">
+              {s.skills.map((skill, idx) => (
+                <span 
+                  key={idx} 
+                  className="px-3 py-1 text-xs font-medium bg-purple-500/10 text-purple-300 border border-purple-500/20 rounded-full group-hover:border-purple-500/40 transition-colors">
+                  {skill}
+                </span>
+              ))}
+            </div>
           </div>
         ))}
       </div>
@@ -121,6 +169,9 @@ const HomeView: React.FC<{ setActiveTab: (id: string) => void }> = ({ setActiveT
           </h3>
           <p className="text-neutral-400 leading-relaxed mb-6">
             I am driven by the goal of democratizing data. My approach combines technical rigor with intuitive design. Beyond the keyboard, you'll find me swimming, exploring Nairobi's culinary scene, or diving into a film to find fresh creative perspectives.
+          </p>
+          <p className="text-neutral-400 leading-relaxed mb-6">
+            My mission is to empower businesses with data-driven insights and innovative tech solutions. I specialize in automating complex data analysis, making it accessible for decision-makers in a digital-fast evolving world.
           </p>
           <div className="flex flex-wrap gap-3">
             {['Critical Thinking', 'Fast Learner', 'Visualization', 'Strategy', 'creativity', 'programming fluency', 'Team Work'].map((skill) => (
@@ -462,7 +513,7 @@ const App: React.FC = () => {
       <footer className="border-t border-neutral-900 bg-neutral-950 pt-16 pb-8 text-left">
         <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
           <div>
-            <h3 className="text-lg font-bold mb-4"><img src="/images/about.jpg" alt="icon" className="w-4 h-4 inline-block" /> Kiluva J; Data, Tech and AI</h3>
+            <h3 className="text-lg font-bold mb-4"><img src="/images/about.jpg" alt="icon" className="w-5 h-5 rounded-full border border-accent shadow-sm" /> Kiluva J; Data, Tech and AI</h3>
             <p className="text-neutral-400 text-sm leading-relaxed mb-6">
               Empowering businesses through data-driven decisions and innovative tech solutions. Specialized in automating complex analysis for a digital-first world.
             </p>
@@ -506,7 +557,7 @@ const App: React.FC = () => {
         
         <div className="max-w-6xl mx-auto px-6 pt-8 border-t border-neutral-900 flex flex-col md:flex-row justify-between items-center gap-4 text-neutral-600 text-[10px] uppercase tracking-widest">
           <p>© {new Date().getFullYear()} KITELUVA. ALL RIGHTS RESERVED.</p>
-          <a href="https://the-website-chi.vercel.app" target="_blank" rel="noopener noreferrer" className="text-italic font-bold hover:text-blue-400 transition-colors duration-200 flex items-center gap-1.5">
+          <a href="https://the-website-chi.vercel.app" target="_blank" rel="noopener noreferrer" className="text-sm font-bold hover:text-blue-400 transition-colors duration-200 flex items-center gap-1.5">
             <img src="/images/icon2.png" alt="icon" className="w-4 h-4 inline-block" onError={(e: any) => { e.target.src = "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400"; }}/> 
               ~a -<strong>KADSA</strong>- make~
           </a>
