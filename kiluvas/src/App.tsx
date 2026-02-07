@@ -233,14 +233,13 @@ const ProjectsView: React.FC<{ setSelectedProject: (p: Project) => void }> = ({ 
     },
     { 
       title: "Popularity Regression Model", 
-      category: "ai", 
+      category: "data", 
       origin: "School",
       imageUrl: "/images/correlation.png",
-      desc: "Predictive model focused on social media virality and content performance.", 
-      longDesc: "Identifies key features that contribute to a post going viral using advanced regression techniques.",
+      desc: "Predictive model of spotify's songs' populaarity.", 
+      longDesc: "Identifies key features that contribute to a song going viral using advanced regression and classification techniques. It relates song popularity to its audio features.",
       tags: ["Scikit-Learn", "Regression", "Classification", "Math", "R", "Random Forest","Gradient Boosting", "XGBoost"],
-      github: "https://github.com/kiteluva/popularity_regression_and_classification_analysis",
-      live: "https://jsf0vd-james-kitenye.shinyapps.io/Popularity_Predictor/"
+      github: "https://github.com/kiteluva/popularity_regression_and_classification_analysis"
     },
     { 
       title: "KADA; KADSA's Automated Data Analyzer", 
@@ -292,7 +291,7 @@ const ProjectsView: React.FC<{ setSelectedProject: (p: Project) => void }> = ({ 
       origin: "KADSA",
       imageUrl: "/images/kada.png",
       desc: "Automated tool for extraction and analysis of multi-sector Data.", 
-      longDesc: "Designed to help Non-technical users Interprete their findings and give simplified actionable insights from the data being worked on, Most users don't have the technical expertise to operate complicted systems not with KADA.",
+      longDesc: "Designed and integrated a generative AI chatbot to help Non-technical users Interprete their findings and give simplified actionable insights from the data being worked on. Most users don't have the technical expertise to operate complicted systems not with KADA.",
       tags: ["Generative AI", "Chatbot" , "Python", "Gemini", "Automation", "Data Analysis", "FastAPI", "React"],
       github: "https://github.com/kiteluva/CSV_XLS_DATA_ANALYZER",
       live: "https://csv-xls-data-analyzer.vercel.app/"
@@ -307,6 +306,17 @@ const ProjectsView: React.FC<{ setSelectedProject: (p: Project) => void }> = ({ 
       tags: ["Tailwind", "JS", "Design", "CSS", "HTML", "React"],
       github: "https://kiteluva.github.io/kitewebsite/",
       live: "https://kitewebsite-nine.vercel.app/"
+    },
+    { 
+      title: "R shinny's Popularity Predictor", 
+      category: "tech", 
+      origin: "School",
+      imageUrl: "/images/r-shinny.png",
+      desc: "An R shinny application to Predict spotify's songs' populaarity.", 
+      longDesc: "Identifies key features that contribute to a song going viral using advanced regression and classification techniques. It relates song popularity to its audio features. And use user's input features to predict the likely popularity of the song, it also gives insights on how to improve the song's chances of going viral.",
+      tags: ["Scikit-Learn", "Regression", "Classification", "Math", "R", "R-shinny", "Random Forest","Gradient Boosting", "XGBoost"],
+      github: "https://github.com/kiteluva/popularity_predictor",
+      live: "https://jsf0vd-james-kitenye.shinyapps.io/Popularity_Predictor/"
     }
   ];
 
@@ -463,7 +473,7 @@ const App: React.FC = () => {
           <div className="flex items-center gap-3">
             <div className="w-10 h-10 rounded-full bg-gradient-to-tr from-purple-600 to-blue-500 flex items-center justify-center overflow-hidden shadow-lg shadow-purple-500/20">
                <img 
-                src="/images/kiluva.jpeg" 
+                src="/images/drawn.png" 
                 alt="Profile" 
                 className="w-full h-full object-cover" 
                 onError={(e: any) => { e.target.src = "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400"; }}
