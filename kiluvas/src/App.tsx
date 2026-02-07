@@ -82,7 +82,7 @@ const HomeView: React.FC<{ setActiveTab: (id: string) => void }> = ({ setActiveT
       </div>
       <div className="relative group">
         <div className="absolute inset-0 bg-purple-600/20 blur-[100px] rounded-full group-hover:bg-purple-600/30 transition-all duration-700"></div>
-        <ProjectCardImage text="Profile & Identity" imageSrc="/images/profile.jpg" height="h-[500px]" />
+        <ProjectCardImage text="Profile & Identity" imageSrc="/images/painted.png" height="h-[500px]" />
       </div>
     </section>
 
@@ -284,17 +284,6 @@ const ProjectsView: React.FC<{ setSelectedProject: (p: Project) => void }> = ({ 
       tags: ["Tailwind", "JS", "Design", "CSS", "HTML", "React"],
       github: "https://kiteluva.github.io/clini-q/",
       live: "https://clini-q-sigma.vercel.app/"
-    },
-    { 
-      title: "KADA; KADSA's Automated Data Analyzer", 
-      category: "ai", 
-      origin: "KADSA",
-      imageUrl: "/images/kada.png",
-      desc: "Automated tool for extraction and analysis of multi-sector Data.", 
-      longDesc: "Designed and integrated a generative AI chatbot to help Non-technical users Interprete their findings and give simplified actionable insights from the data being worked on. Most users don't have the technical expertise to operate complicted systems not with KADA.",
-      tags: ["Generative AI", "Chatbot" , "Python", "Gemini", "Automation", "Data Analysis", "FastAPI", "React"],
-      github: "https://github.com/kiteluva/CSV_XLS_DATA_ANALYZER",
-      live: "https://csv-xls-data-analyzer.vercel.app/"
     }, 
     { 
       title: "Kiluvaz Portfolio", 
@@ -317,7 +306,19 @@ const ProjectsView: React.FC<{ setSelectedProject: (p: Project) => void }> = ({ 
       tags: ["Scikit-Learn", "Regression", "Classification", "Math", "R", "R-shinny", "Random Forest","Gradient Boosting", "XGBoost"],
       github: "https://github.com/kiteluva/popularity_predictor",
       live: "https://jsf0vd-james-kitenye.shinyapps.io/Popularity_Predictor/"
+    },
+    { 
+      title: "KADA; KADSA's Automated Data Analyzer", 
+      category: "ai", 
+      origin: "KADSA",
+      imageUrl: "/images/kada.png",
+      desc: "Automated tool for extraction and analysis of multi-sector Data.", 
+      longDesc: "Designed and integrated a generative AI chatbot to help Non-technical users Interprete their findings and give simplified actionable insights from the data being worked on. Most users don't have the technical expertise to operate complicted systems not with KADA.",
+      tags: ["Generative AI", "Chatbot" , "Python", "Gemini", "Automation", "Data Analysis", "FastAPI", "React"],
+      github: "https://github.com/kiteluva/CSV_XLS_DATA_ANALYZER",
+      live: "https://csv-xls-data-analyzer.vercel.app/"
     }
+    
   ];
 
   const filteredProjects = filter === 'all' ? projectData : projectData.filter(p => p.category === filter);
@@ -473,7 +474,7 @@ const App: React.FC = () => {
           <div className="flex items-center gap-3">
             <div className="w-10 h-10 rounded-full bg-gradient-to-tr from-purple-600 to-blue-500 flex items-center justify-center overflow-hidden shadow-lg shadow-purple-500/20">
                <img 
-                src="/images/drawn.png" 
+                src="/images/kiluva.png" 
                 alt="Profile" 
                 className="w-full h-full object-cover" 
                 onError={(e: any) => { e.target.src = "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400"; }}
@@ -523,7 +524,7 @@ const App: React.FC = () => {
       <footer className="border-t border-neutral-900 bg-neutral-950 pt-16 pb-8 text-left">
         <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
           <div>
-            <h3 className="text-lg font-bold mb-4"><img src="/images/about.jpg" alt="icon" className="w-5 h-5 rounded-full border border-accent shadow-sm" /> Kiluva's; Data, Tech & AI</h3>
+            <h3 className="text-lg font-bold mb-4"><img src="/images/drawn.png" alt="icon" className="w-5 h-5 rounded-full border border-accent shadow-sm" /> Kiluva's; Data, Tech & AI</h3>
             <p className="text-neutral-400 text-sm leading-relaxed mb-6">
               Empowering businesses through data-driven decisions and innovative tech solutions. Specialized in automating complex analysis for a digital-first world.
             </p>
