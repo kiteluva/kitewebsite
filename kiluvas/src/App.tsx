@@ -82,7 +82,7 @@ const HomeView: React.FC<{ setActiveTab: (id: string) => void }> = ({ setActiveT
       </div>
       <div className="relative group">
         <div className="absolute inset-0 bg-purple-600/20 blur-[100px] rounded-full group-hover:bg-purple-600/30 transition-all duration-700"></div>
-        <ProjectCardImage text="Profile & Identity" imageSrc="/images/painted.png" height="h-[500px]" />
+        <ProjectCardImage text="Profile & Identity" imageSrc="/images/profile.jpg" height="h-[500px]" />
       </div>
     </section>
 
@@ -174,7 +174,7 @@ const HomeView: React.FC<{ setActiveTab: (id: string) => void }> = ({ setActiveT
             My mission is to empower businesses with data-driven insights and innovative tech solutions. I specialize in automating complex data analysis, making it accessible for decision-makers in a digital-fast evolving world.
           </p>
           <div className="flex flex-wrap gap-3">
-            {['Critical Thinking', 'Fast Learner', 'Visualization', 'Strategy', 'creativity', 'programming fluency', 'Team Work'].map((skill) => (
+            {['Critical Thinking', 'Leadership', 'Visualization', 'Strategy', 'Creativity', 'Programming Fluency', 'Team Work', 'Curiosity', 'Adaptability', 'Communication', 'Determination'].map((skill) => (
               <div key={skill} className="px-4 py-2 bg-neutral-800/50 rounded-lg text-xs font-semibold text-neutral-300 border border-neutral-700/50">
                 {skill}
               </div>
