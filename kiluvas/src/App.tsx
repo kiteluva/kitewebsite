@@ -214,7 +214,7 @@ const ProjectsView: React.FC<{ setSelectedProject: (p: Project) => void }> = ({ 
     { 
       title: "Business Performance Hub", 
       category: "data", 
-      origin: "Future Inters",
+      origin: "Future Interns",
       imageUrl: "/images/superstore.png",
       desc: "Interactive dashboard system for monitoring sales and Return on investiment.", 
       longDesc: "Created during academic tenure to simulate real-world data warehousing and visualization environments.",
@@ -279,7 +279,7 @@ const ProjectsView: React.FC<{ setSelectedProject: (p: Project) => void }> = ({ 
       category: "tech", 
       origin: "Professional",
       imageUrl: "/images/cliniq.png",
-      desc: "Full-scale Company website for a start up helth tech company.", 
+      desc: "Full-scale Company website for a start up health tech company.", 
       longDesc: "This website is Built to exclussively advertise a software the start up developed. It is equiped with a responsive design, great feel even on moble and modals for deeper contents. Themes too as per the clients requirements.",
       tags: ["Tailwind", "JS", "Design", "CSS", "HTML", "React"],
       github: "https://kiteluva.github.io/clini-q/",
