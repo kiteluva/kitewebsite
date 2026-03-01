@@ -100,37 +100,37 @@ const HomeView: React.FC<{ setActiveTab: (id: string) => void }> = ({ setActiveT
             icon: <BrainCircuit className="text-purple-400" />, 
             title: "Data Science", 
             desc: "Proficient in data cleaning, exploration, and modeling to drive business insights.",
-            skills: ["Python", "R", "SQL", "Pandas"]
+            skills: ["Python", "R", "SQL", "Pandas", "tidyverse", "Scikit-learn", "TensorFlow", "PyTorch", "Data Storytelling"]
           },
           { 
             icon: <BarChart3 className="text-pink-400" />, 
             title: "Data Analysis", 
             desc: "Uncovering trends and building predictive forecasting dashboards.",
-            skills: ["SQL", "Python", "Tableau", "Excel"]
+            skills: ["SQL", "Python", "Tableau", "Excel", "R", "Power BI", "Data Storytelling", "tidyverse", "pandas"]
           },
           { 
             icon: <Award className="text-yellow-400" />, 
             title: "Data Visualization", 
             desc: "Creating interactive dashboards and reports for actionable insights.",
-            skills: ["Power BI", "Tableau", "D3.js"]
+            skills: ["Power BI", "Tableau", "D3.js", "Matplotlib", "Seaborn", "Plotly", "Data Storytelling", "ggplot2", "Shinny"]
           },
           { 
             icon: <Globe className="text-blue-400" />, 
             title: "Web Development", 
             desc: "Building responsive, high-performance web applications with modern frameworks.",
-            skills: ["React", "Next.js", "Tailwind", "Node.js"]
+            skills: ["React", "Next.js", "Tailwind", "Node.js", "TypeScript", "Full-Stack Development", "PWA", "Performance Optimization"]
           },
           { 
             icon: <CircuitBoard className="text-purple-400" />, 
             title: "Machine Learning", 
             desc: "Crafting custom recommendation engines and automated procedures.",
-            skills: ["Scikit-learn", "TensorFlow", "PyTorch"]
+            skills: ["Scikit-learn", "TensorFlow", "PyTorch", "XGBoost", "Random Forest", "Gradient Boosting", "Custom Model Training"]
           },
           { 
             icon: <BrainCircuit className="text-pink-400" />, 
             title: "Generative AI", 
             desc: "Developing AI models for content generation and automation.",
-            skills: ["OpenAI", "LangChain", "HuggingFace"]
+            skills: ["OpenAI", "Agents", "Chatbots", "Gemini", "GPT", "Custom Model Training", "Prompt Engineering"]
           }
         ].map((s, i) => (
           <div key={i} className="flex flex-col p-8 bg-neutral-900/40 border border-neutral-800 rounded-2xl hover:border-purple-500/50 hover:bg-neutral-900/60 transition-all group">
@@ -174,7 +174,7 @@ const HomeView: React.FC<{ setActiveTab: (id: string) => void }> = ({ setActiveT
             My mission is to empower businesses with data-driven insights and innovative tech solutions. I specialize in automating complex data analysis, making it accessible for decision-makers in a digital-fast evolving world.
           </p>
           <div className="flex flex-wrap gap-3">
-            {['Critical Thinking', 'Leadership', 'Visualization', 'Strategy', 'Creativity', 'Programming Fluency', 'Team Work', 'Curiosity', 'Adaptability', 'Communication', 'Determination'].map((skill) => (
+            {['Critical Thinking', 'Leadership', 'Visualization', 'Strategy', 'Creativity', 'Programming Fluency', 'Team Work', 'Curiosity', 'Adaptability', 'Communication', 'Determination', 'Problem Solving', 'Collaboration', 'Curiosity'].map((skill) => (
               <div key={skill} className="px-4 py-2 bg-neutral-800/50 rounded-lg text-xs font-semibold text-neutral-300 border border-neutral-700/50">
                 {skill}
               </div>
@@ -197,7 +197,7 @@ const ProjectsView: React.FC<{ setSelectedProject: (p: Project) => void }> = ({ 
       imageUrl: "/images/kada.png",
       desc: "Automated tool for extraction and analysis of multi-sector Data.", 
       longDesc: "Designed to help small businesses track their performance without needing deep technical expertise. Features include data cleaning, visualization, and report generation.",
-      tags: ["Python", "BS4", "Automation", "Data Analysis", "FastAPI", "React"],
+      tags: ["Python", "BS4", "Automation", "Data Analysis", "FastAPI", "React", "PWA", "Generative AI", "Chatbot"],
       github: "https://github.com/kiteluva/CSV_XLS_DATA_ANALYZER",
       live: "https://csv-xls-data-analyzer.vercel.app/"
     },
@@ -208,7 +208,7 @@ const ProjectsView: React.FC<{ setSelectedProject: (p: Project) => void }> = ({ 
       imageUrl: "/images/POWER BI 03.png",
       desc: "An in-depth study of student demographics and behaviors to predict and improve retention rates.", 
       longDesc: "Leveraged descriptive and diagnostic analytics to identify risk factors. Provided a clear roadmap for administration to improve student experiences.",
-      tags: ["Python", "Pandas", "Analytics"],
+      tags: ["Python", "Pandas", "Analytics", "Power BI", "Data Storytelling"],
       github: "https://github.com/kiteluva/FUTURE_DS_03"
     },
     { 
@@ -218,7 +218,7 @@ const ProjectsView: React.FC<{ setSelectedProject: (p: Project) => void }> = ({ 
       imageUrl: "/images/superstore.png",
       desc: "Interactive dashboard system for monitoring sales and Return on investiment.", 
       longDesc: "Created during academic tenure to simulate real-world data warehousing and visualization environments.",
-      tags: ["SQL", "Power Bi", "Excel", "R"],
+      tags: ["SQL", "Power Bi", "Excel", "R", "Data Storytelling"],
       github: "https://github.com/FUTURE_DS_01"
     },
     { 
@@ -228,7 +228,7 @@ const ProjectsView: React.FC<{ setSelectedProject: (p: Project) => void }> = ({ 
       imageUrl: "/images/POWER BI 02.png",
       desc: "Analysis of the performance of Facebook Ads and their impact on returns.", 
       longDesc: "Did column- variable enginearing on power bi to find the actual return on investiment, there after performed an anova test to check if there is any effect accross the campaigns.",
-      tags: ["Python", "Power BI", "Analytics"],
+      tags: ["Python", "Power BI", "Analytics", "Data Storytelling"],
       github: "https://github.com/kiteluva/FUTURE_DS_02"
     },
     { 
@@ -248,7 +248,7 @@ const ProjectsView: React.FC<{ setSelectedProject: (p: Project) => void }> = ({ 
       imageUrl: "/images/kada.png",
       desc: "Automated tool for extraction and analysis of multi-sector Data.", 
       longDesc: "Designed as a Progressive Web application (PWA) so it can serve even those who do not have access to a traditional desktops, simplified for compatibility even with smartphones.",
-      tags: ["JavaScript", "HTML", "CSS", "Data Analysis", "ReactJS", "PWA"],
+      tags: ["JavaScript", "HTML", "CSS", "Data Analysis", "ReactJS", "PWA", "Generative AI", "Chatbot"],
       github: "https://github.com/kiteluva/CSV_XLS_DATA_ANALYZER",
       live: "https://csv-xls-data-analyzer.vercel.app/"
     },
@@ -259,7 +259,7 @@ const ProjectsView: React.FC<{ setSelectedProject: (p: Project) => void }> = ({ 
       imageUrl: "/images/kadsa.png",
       desc: "Full-scale corporate website for a tech consulting firm.", 
       longDesc: "Includes dynamic service listings, client intake forms, and an optimized performance architecture.",
-      tags: ["Tailwind", "JS", "Design", "CSS", "HTML", "React"],
+      tags: ["Tailwind", "JS", "Design", "CSS", "HTML", "React", "PWA", "Chatbot"],
       github: "https://kiteluva.github.io/KADSA/",
       live: "https://the-website-chi.vercel.app/"
     },
