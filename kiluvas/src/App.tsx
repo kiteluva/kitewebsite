@@ -100,13 +100,13 @@ const HomeView: React.FC<{ setActiveTab: (id: string) => void }> = ({ setActiveT
             icon: <BrainCircuit className="text-purple-400" />, 
             title: "Data Science", 
             desc: "Proficient in data cleaning, exploration, and modeling to drive business insights.",
-            skills: ["Python", "R", "SQL", "Pandas", "tidyverse", "Scikit-learn", "TensorFlow", "PyTorch", "Data Storytelling"]
+            skills: ["Python", "R", "SQL", "Pandas", "tidyverse", "Scikit-learn", "Stats-models", "TensorFlow", "PyTorch", "Data Storytelling"]
           },
           { 
             icon: <BarChart3 className="text-pink-400" />, 
             title: "Data Analysis", 
             desc: "Uncovering trends and building predictive forecasting dashboards.",
-            skills: ["SQL", "Python", "Tableau", "Excel", "R", "Power BI", "Data Storytelling", "tidyverse", "pandas"]
+            skills: ["SQL", "Python", "Tableau", "Excel", "R", "Power BI", "Data Storytelling", "tidyverse", "pandas", "numpy"]
           },
           { 
             icon: <Award className="text-yellow-400" />, 
@@ -124,7 +124,7 @@ const HomeView: React.FC<{ setActiveTab: (id: string) => void }> = ({ setActiveT
             icon: <CircuitBoard className="text-purple-400" />, 
             title: "Machine Learning", 
             desc: "Crafting custom recommendation engines and automated procedures.",
-            skills: ["Scikit-learn", "TensorFlow", "PyTorch", "XGBoost", "Random Forest", "Gradient Boosting", "Custom Model Training"]
+            skills: ["Scikit-learn", "Stats-models", "TensorFlow", "PyTorch", "XGBoost", "Ptredictive Modelling", "Time series", "Survival Analysis", "Custom Model Training"]
           },
           { 
             icon: <BrainCircuit className="text-pink-400" />, 
@@ -197,7 +197,7 @@ const ProjectsView: React.FC<{ setSelectedProject: (p: Project) => void }> = ({ 
       imageUrl: "/images/kada.png",
       desc: "Automated tool for extraction and analysis of multi-sector Data.", 
       longDesc: "Designed to help small businesses track their performance without needing deep technical expertise. Features include data cleaning, visualization, and report generation.",
-      tags: ["Python", "BS4", "Automation", "Data Analysis", "FastAPI", "React", "PWA", "Generative AI", "Chatbot"],
+      tags: ["Data Science", "Python", "Time series", "Predictive Modelling", "Survival Analysis", "BS4", "Data Automation", "Data Analysis", "FastAPI", "React", "PWA", "Generative AI", "Chatbot"],
       github: "https://github.com/kiteluva/CSV_XLS_DATA_ANALYZER",
       live: "https://csv-xls-data-analyzer.vercel.app/"
     },
@@ -292,7 +292,7 @@ const ProjectsView: React.FC<{ setSelectedProject: (p: Project) => void }> = ({ 
       imageUrl: "/images/portfolio.png",
       desc: "I designed my own personal portfolio to showcase my work.", 
       longDesc: "This portfolio highlights my skills, projects, and professional journey in data science and web development. It features a sleek design, easy navigation, and responsive layout.",
-      tags: ["Tailwind", "JS", "Design", "CSS", "HTML", "React"],
+      tags: ["Tailwind", "JS", "Design", "CSS", "Typescript", "React"],
       github: "https://kiteluva.github.io/kitewebsite/",
       live: "https://kitewebsite-nine.vercel.app/"
     },
@@ -314,7 +314,7 @@ const ProjectsView: React.FC<{ setSelectedProject: (p: Project) => void }> = ({ 
       imageUrl: "/images/kada.png",
       desc: "Automated tool for extraction and analysis of multi-sector Data.", 
       longDesc: "Designed and integrated a generative AI chatbot to help Non-technical users Interprete their findings and give simplified actionable insights from the data being worked on. Most users don't have the technical expertise to operate complicted systems not with KADA.",
-      tags: ["Generative AI", "Chatbot" , "Python", "Gemini", "Automation", "Data Analysis", "FastAPI", "React"],
+      tags: ["Generative AI", "Chatbot" , "Python", "Gemini", "Data Science", "Data Automation", "Data Analysis", "FastAPI", "React"],
       github: "https://github.com/kiteluva/CSV_XLS_DATA_ANALYZER",
       live: "https://csv-xls-data-analyzer.vercel.app/"
     }
