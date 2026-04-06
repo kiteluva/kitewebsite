@@ -275,6 +275,17 @@ const ProjectsView: React.FC<{ setSelectedProject: (p: Project) => void }> = ({ 
       live: "https://ibachottc.ac.ke/"
     },
     { 
+      title: "Brainserve Academy", 
+      category: "tech", 
+      origin: "Institutional",
+      imageUrl: "/images/bserve.png",
+      desc: "Full-scale Institutional website for a CBC school with JSS classes.", 
+      longDesc: "This is a full-scale institutional website for a CBC school. Informative, easy to navigate, and mobile-responsive. Fitted with online applications and information on all school levels. Fitted with a placeholder for a state of the art management system.",
+      tags: ["Tailwind", "JS", "Design", "CSS", "HTML", "React"],
+      github: "https://kiteluva.github.io/lukes/",
+      live: "https://ibachottc.ac.ke/"
+    },
+    { 
       title: "Clini-Q; Health start up", 
       category: "tech", 
       origin: "Professional",
@@ -306,6 +317,17 @@ const ProjectsView: React.FC<{ setSelectedProject: (p: Project) => void }> = ({ 
       tags: ["Scikit-Learn", "Regression", "Classification", "Math", "R", "R-shinny", "Random Forest","Gradient Boosting", "XGBoost"],
       github: "https://github.com/kiteluva/popularity_predictor",
       live: "https://jsf0vd-james-kitenye.shinyapps.io/Popularity_Predictor/"
+    },
+    { 
+      title: "CPC, Catholic Prayer Companion", 
+      category: "ai", 
+      origin: "Faith",
+      imageUrl: "/images/cpc.png",
+      desc: "Automated application, practical interface across devices, A guide thro' catholic prayers, The holy scriptures and Catechism", 
+      longDesc: "Designed to help Catholics all over the world keep track of their pilgrimage life. With advanced curated sacristy, You keep track of your progress, aceross daily prayers, procedural and novenas. You also get recomendations from your activity what verses to read, pragraphs of the catechism. An all in one catholic holliness; prayers Scriptures and catechism, all in sync with the catholic calendar.",
+      tags: ["Python", "Time series", "Predictive Modelling", "Magisterium AI", "BS4", "Automation", "Data Analysis", "FastAPI", "React", "PWA", "Generative AI", "Chatbot"],
+      github: "https://github.com/kiteluva/CSV_XLS_DATA_ANALYZER",
+      live: "https://c-p-c.vercel.app/"
     },
     { 
       title: "KADA; KADSA's Automated Data Analyzer", 
