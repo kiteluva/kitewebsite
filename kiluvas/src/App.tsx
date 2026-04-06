@@ -282,8 +282,8 @@ const ProjectsView: React.FC<{ setSelectedProject: (p: Project) => void }> = ({ 
       desc: "Full-scale Institutional website for a CBC school with JSS classes.", 
       longDesc: "This is a full-scale institutional website for a CBC school. Informative, easy to navigate, and mobile-responsive. Fitted with online applications and information on all school levels. Fitted with a placeholder for a state of the art management system.",
       tags: ["Tailwind", "JS", "Design", "CSS", "HTML", "React"],
-      github: "https://kiteluva.github.io/lukes/",
-      live: "https://ibachottc.ac.ke/"
+      github: "https://github.com/kiteluva/school_lukes",
+      live: "https://schoolukes.vercel.app/"
     },
     { 
       title: "Clini-Q; Health start up", 
@@ -326,7 +326,7 @@ const ProjectsView: React.FC<{ setSelectedProject: (p: Project) => void }> = ({ 
       desc: "Automated application, practical interface across devices, A guide thro' catholic prayers, The holy scriptures and Catechism", 
       longDesc: "Designed to help Catholics all over the world keep track of their pilgrimage life. With advanced curated sacristy, You keep track of your progress, aceross daily prayers, procedural and novenas. You also get recomendations from your activity what verses to read, pragraphs of the catechism. An all in one catholic holliness; prayers Scriptures and catechism, all in sync with the catholic calendar.",
       tags: ["Python", "Time series", "Predictive Modelling", "Magisterium AI", "BS4", "Automation", "Data Analysis", "FastAPI", "React", "PWA", "Generative AI", "Chatbot"],
-      github: "https://github.com/kiteluva/CSV_XLS_DATA_ANALYZER",
+      github: "https://github.com/kiteluva/c_p_c",
       live: "https://c-p-c.vercel.app/"
     },
     { 
