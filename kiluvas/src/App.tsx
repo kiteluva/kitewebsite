@@ -88,58 +88,6 @@ const HomeView: React.FC<{ setActiveTab: (id: string) => void }> = ({ setActiveT
       </div>
     </section>
 
-    {/* Expanded About Section */}
-    <section className="bg-neutral-900/20 rounded-3xl p-8 md:p-12 border border-neutral-800/50">
-      <div className="flex flex-col md:flex-row gap-12 items-start text-left">
-        <div className="w-full md:w-1/3 sticky top-24 space-y-6">
-          <ProjectCardImage text="Creative" imageSrc="/images/about.jpg" height="h-72" />
-          <div className="p-6 bg-neutral-900/50 rounded-2xl border border-neutral-800">
-             <h4 className="text-xs font-bold uppercase tracking-widest text-purple-500 mb-4 flex items-center gap-2">
-                <MapPin size={14} /> From Taveta to Tech
-             </h4>
-             <p className="text-neutral-500 text-xs leading-relaxed">
-                Born to peasant farmers on the edge of Kenya, my journey began in the shambas and charcoal kilns of the countryside[cite: 3].
-             </p>
-          </div>
-          <div className="p-6 bg-neutral-900/50 rounded-2xl border border-neutral-800">
-             <h4 className="text-xs font-bold uppercase tracking-widest text-blue-500 mb-4 flex items-center gap-2">
-                <GraduationCap size={14} /> Academic Journey
-             </h4>
-             <p className="text-neutral-500 text-xs leading-relaxed">
-                From a grassroots primary school to a Grade A national high school via Equity Wings to Fly, culminating in a Statistics degree at the University of Nairobi[cite: 3].
-             </p>
-          </div>
-        </div>
-        <div className="w-full md:w-2/3">
-          <h3 className="text-3xl font-bold mb-6 flex items-center gap-3">
-            <UserCircle2 className="text-purple-500" /> The Kiluva James Story
-          </h3>
-          <div className="space-y-6 text-neutral-400 leading-relaxed">
-            <p>
-              My background is rooted in the resilience of the Kenyan countryside. Growing up as the second born to peasant farmers in Taveta, I learned early that hard work is not an option—it is survival[cite: 3]. Whether it was herding cattle, ploughing the shamba, or the grueling labor of charcoal burning to sustain daily needs, those experiences forged a hunger to create something different[cite: 3].
-            </p>
-            <p>
-              My educational path was transformed by the Equity Wings to Fly program, which supported my transition from a grassroots primary school to a Grade A national high school[cite: 3]. This high-quality education enabled me to join the University of Nairobi, where I pursued a Bachelor's degree in Statistics[cite: 3]. It was during this time that I discovered my true passion for computing while diving into the world of Data Science[cite: 3]. God has been great—surely, GOD DID[cite: 3]!
-            </p>
-            <p>
-              In a community where only 1 in 20 children get the opportunity to step out, I’ve made it my mission to ensure that "success" isn't just personal—it's communal[cite: 3]. I am driven to build the foundations and provide the resources that marginalized young minds need to venture into the tech world[cite: 3].
-            </p>
-            <p>
-              This vision led to the founding of <strong>KADSA</strong>—a company dedicated to pushing the boundaries of Data, Tech, and AI[cite: 3]. Through the KADSA Academy and our innovation pool, we provide quality knowledge to feed the ideas of innovators who, like me, come from backgrounds where amenities are scarce but potential is infinite[cite: 3].
-            </p>
-          </div>
-          
-          <div className="mt-10 flex flex-wrap gap-3">
-            {['Critical Thinking', 'Leadership', 'Visualization', 'Strategy', 'Creativity', 'Programming Fluency', 'Team Work', 'Curiosity', 'Adaptability', 'Communication', 'Determination', 'Problem Solving', 'Collaboration'].map((skill) => (
-              <div key={skill} className="px-4 py-2 bg-neutral-800/50 rounded-lg text-xs font-semibold text-neutral-300 border border-neutral-700/50">
-                {skill}
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-    </section>
-
     <section className="py-12">
       <div className="flex flex-col border-l-4 border-purple-500 pl-6 text-left mb-16">
         <h3 className="text-3xl font-bold mb-4">Professional Expertise</h3>
@@ -208,6 +156,59 @@ const HomeView: React.FC<{ setActiveTab: (id: string) => void }> = ({ setActiveT
             </div>
           </div>
         ))}
+      </div>
+    </section>
+
+    {/* Expanded About Section */}
+    <section className="bg-neutral-900/20 rounded-3xl p-8 md:p-12 border border-neutral-800/50">
+      <div className="flex flex-col md:flex-row gap-12 items-start text-left">
+        <div className="w-full md:w-1/3 sticky top-24 space-y-6">
+          <ProjectCardImage text="Creative" imageSrc="/images/about.jpg" height="h-72" />
+          <div className="p-6 bg-neutral-900/50 rounded-2xl border border-neutral-800">
+             <h4 className="text-xs font-bold uppercase tracking-widest text-purple-500 mb-4 flex items-center gap-2">
+                <MapPin size={14} /> From Taveta to Tech
+             </h4>
+             <p className="text-neutral-500 text-xs leading-relaxed">
+                Born to peasant farmers on the edge of Kenya, my journey began in the shambas and charcoal kilns of the countryside.
+             </p>
+          </div>
+          <div className="p-6 bg-neutral-900/50 rounded-2xl border border-neutral-800">
+             <h4 className="text-xs font-bold uppercase tracking-widest text-blue-500 mb-4 flex items-center gap-2">
+                <GraduationCap size={14} /> Academic Journey
+             </h4>
+             <p className="text-neutral-500 text-xs leading-relaxed">
+                From a grassroots primary school to a Grade A national high school via Equity Wings to Fly, culminating in a Statistics degree at the University of Nairobi.
+             </p>
+          </div>
+        </div>
+        <div className="w-full md:w-2/3">
+          <h3 className="text-3xl font-bold mb-6 flex items-center gap-3">
+            <UserCircle2 className="text-purple-500" /> The Kiluva James Story
+          </h3>
+          <div className="space-y-6 text-neutral-400 leading-relaxed">
+            <p>
+              My background is rooted in the resilience of the Kenyan countryside. Growing up as the second born to peasant farmers in Taveta, I learned early that hard work is not an option—it is survival. Whether it was herding cattle, ploughing the shamba, or the grueling labor of charcoal burning to sustain daily needs, those experiences forged a hunger to create something different.
+            </p>
+            <p>
+              My educational path was transformed by the Equity Wings to Fly program, which supported my transition from a grassroots primary school to a Grade A national high school[cite: 3]. This high-quality education enabled me to join the University of Nairobi, where I pursued a Bachelor's degree in Statistics. It was during this time that I discovered my true passion for computing while diving into the world of Data Science. God has been great—surely, GOD DID!
+            </p>
+            <p>
+              In a community where only 1 in 20 children get the opportunity to step out, I’ve made it my mission to ensure that "success" isn't just personal—it's communal. I am driven to build the foundations and provide the resources that marginalized young minds need to venture into the tech world.
+            </p>
+            <p>
+              This vision led to the founding of <strong>KADSA</strong>—a company dedicated to pushing the boundaries of Data, Tech, and AI. Through the KADSA Academy and our innovation pool, we provide quality knowledge to feed the ideas of innovators who, like me, come from backgrounds where amenities are scarce but potential is infinite.
+            </p>
+          </div>
+          
+          <div className="mt-10 flex flex-wrap gap-3">
+            <p>Acquired & Sharpened skills:</p>
+            {['Critical Thinking', 'Leadership', 'Strategy', 'Creativity', 'Team Work', 'Curiosity', 'Adaptability', 'Communication', 'Determination', 'Problem Solving', 'Collaboration'].map((skill) => (
+              <div key={skill} className="px-4 py-2 bg-neutral-800/50 rounded-lg text-xs font-semibold text-neutral-300 border border-neutral-700/50">
+                {skill}
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
     </section>
   </div>
