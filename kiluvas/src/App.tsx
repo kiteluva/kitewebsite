@@ -6,7 +6,7 @@ import {
   Globe, Award,
   CircuitBoard,
   MapPin,
-  Sprout
+  GraduationCap
 } from 'lucide-react';
 
 // --- TYPES & INTERFACES ---
@@ -91,14 +91,22 @@ const HomeView: React.FC<{ setActiveTab: (id: string) => void }> = ({ setActiveT
     {/* Expanded About Section */}
     <section className="bg-neutral-900/20 rounded-3xl p-8 md:p-12 border border-neutral-800/50">
       <div className="flex flex-col md:flex-row gap-12 items-start text-left">
-        <div className="w-full md:w-1/3 sticky top-24">
+        <div className="w-full md:w-1/3 sticky top-24 space-y-6">
           <ProjectCardImage text="Creative" imageSrc="/images/about.jpg" height="h-72" />
-          <div className="mt-6 p-6 bg-neutral-900/50 rounded-2xl border border-neutral-800">
+          <div className="p-6 bg-neutral-900/50 rounded-2xl border border-neutral-800">
              <h4 className="text-xs font-bold uppercase tracking-widest text-purple-500 mb-4 flex items-center gap-2">
                 <MapPin size={14} /> From Taveta to Tech
              </h4>
              <p className="text-neutral-500 text-xs leading-relaxed">
-                Born to peasant farmers on the edge of Kenya, my journey began in the shambas and charcoal kilns of the countryside[cite: 2].
+                Born to peasant farmers on the edge of Kenya, my journey began in the shambas and charcoal kilns of the countryside[cite: 3].
+             </p>
+          </div>
+          <div className="p-6 bg-neutral-900/50 rounded-2xl border border-neutral-800">
+             <h4 className="text-xs font-bold uppercase tracking-widest text-blue-500 mb-4 flex items-center gap-2">
+                <GraduationCap size={14} /> Academic Journey
+             </h4>
+             <p className="text-neutral-500 text-xs leading-relaxed">
+                From a grassroots primary school to a Grade A national high school via Equity Wings to Fly, culminating in a Statistics degree at the University of Nairobi[cite: 3].
              </p>
           </div>
         </div>
@@ -108,13 +116,16 @@ const HomeView: React.FC<{ setActiveTab: (id: string) => void }> = ({ setActiveT
           </h3>
           <div className="space-y-6 text-neutral-400 leading-relaxed">
             <p>
-              My background is rooted in the resilience of the Kenyan countryside. Growing up as the second born to peasant farmers in Taveta, I learned early that hard work is not an option—it is survival[cite: 2]. Whether it was herding cattle, ploughing the shamba, or the grueling labor of charcoal burning to sustain daily needs, those experiences forged a hunger to create something different[cite: 2].
+              My background is rooted in the resilience of the Kenyan countryside. Growing up as the second born to peasant farmers in Taveta, I learned early that hard work is not an option—it is survival[cite: 3]. Whether it was herding cattle, ploughing the shamba, or the grueling labor of charcoal burning to sustain daily needs, those experiences forged a hunger to create something different[cite: 3].
             </p>
             <p>
-              In a community where only 1 in 20 children get the opportunity to step out, I’ve made it my mission to ensure that "success" isn't just personal—it's communal[cite: 2]. I am driven to build the foundations and provide the resources that marginalized young minds need to venture into the tech world[cite: 2].
+              My educational path was transformed by the Equity Wings to Fly program, which supported my transition from a grassroots primary school to a Grade A national high school[cite: 3]. This high-quality education enabled me to join the University of Nairobi, where I pursued a Bachelor's degree in Statistics[cite: 3]. It was during this time that I discovered my true passion for computing while diving into the world of Data Science[cite: 3]. God has been great—surely, GOD DID[cite: 3]!
             </p>
             <p>
-              This vision led to the founding of <strong>KADSA</strong>—a company dedicated to pushing the boundaries of Data, Tech, and AI[cite: 2]. Through the KADSA Academy and our innovation pool, we provide quality knowledge to feed the ideas of innovators who, like me, come from backgrounds where amenities are scarce but potential is infinite[cite: 2].
+              In a community where only 1 in 20 children get the opportunity to step out, I’ve made it my mission to ensure that "success" isn't just personal—it's communal[cite: 3]. I am driven to build the foundations and provide the resources that marginalized young minds need to venture into the tech world[cite: 3].
+            </p>
+            <p>
+              This vision led to the founding of <strong>KADSA</strong>—a company dedicated to pushing the boundaries of Data, Tech, and AI[cite: 3]. Through the KADSA Academy and our innovation pool, we provide quality knowledge to feed the ideas of innovators who, like me, come from backgrounds where amenities are scarce but potential is infinite[cite: 3].
             </p>
           </div>
           
@@ -567,7 +578,7 @@ const App: React.FC = () => {
               KADSA: Data, Tech & AI
             </h3>
             <p className="text-neutral-400 text-sm leading-relaxed mb-6">
-              Founded on the belief that a better tomorrow can be created by even the most marginalized brains when fed with quality knowledge[cite: 2]. Specialized in automating complex analysis for a digital-first world.
+              Founded on the belief that a better tomorrow can be created by even the most marginalized brains when fed with quality knowledge[cite: 3]. Specialized in automating complex analysis for a digital-first world.
             </p>
             <div className="flex gap-4">
               <a href="https://instagram.com/itskite_luva" target="_blank" rel="noreferrer" className="p-2 bg-neutral-900 rounded-lg hover:bg-neutral-800 transition-colors"><Instagram size={18} /></a>
@@ -590,7 +601,7 @@ const App: React.FC = () => {
 
           <div>
             <h3 className="text-sm font-bold uppercase tracking-widest text-neutral-500 mb-6">Direct Reach</h3>
-            <ul className="space-y-4 text-sm">
+            <ul className="space-y-4 text-sm mb-6">
               <li>
                 <a href="mailto:kitennykiluva@gmail.com" className="flex items-center gap-3 text-neutral-400 hover:text-white transition-colors group">
                   <Mail size={16} className="text-purple-500 group-hover:scale-110 transition-transform" />
@@ -610,10 +621,19 @@ const App: React.FC = () => {
                 </a>
               </li>
             </ul>
+
+            {/* Creative Box for Statement */}
+            <div className="p-4 bg-gradient-to-br from-neutral-900 to-black border border-neutral-800 rounded-xl relative overflow-hidden group">
+              <div className="absolute inset-0 bg-purple-500/5 group-hover:bg-purple-500/10 transition-colors duration-500"></div>
+              <div className="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-purple-500 to-blue-500"></div>
+              <p className="relative text-xs font-mono text-neutral-400 italic font-semibold tracking-tight">
+                "there aint many dollar bills like me"
+              </p>
+            </div>
           </div>
         </div>
         
-        <div className="max-w-6xl mx-auto px-6 pt-8 border-t border-neutral-900 flex flex-col items-center gap-6 text-center">
+        <div className="max-w-6xl mx-auto px-6 pt-8 border-t border-neutral-900 flex flex-col md:flex-row justify-between items-center gap-4 text-center">
           <div className="flex flex-col md:flex-row justify-between w-full items-center gap-4 text-neutral-600 text-[10px] uppercase tracking-widest">
             <p>© {new Date().getFullYear()} KITELUVA. ALL RIGHTS RESERVED.</p>
             <a href="https://the-website-chi.vercel.app" target="_blank" rel="noopener noreferrer" className="text-italic font-light hover:text-blue-400 transition-colors duration-200 flex items-center gap-1.5">
@@ -621,10 +641,6 @@ const App: React.FC = () => {
                 ~a -<strong>KADSA</strong>- make~
             </a>
           </div>
-          
-          <p className="text-neutral-700 text-xs normal-case italic opacity-60 hover:opacity-100 transition-opacity">
-             "there aint many dollar bills like me"[cite: 1]
-          </p>
         </div>
       </footer>
 
