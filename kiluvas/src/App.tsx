@@ -197,8 +197,8 @@ const HomeView: React.FC<{ setActiveTab: (id: string) => void }> = ({ setActiveT
             </p>
             <p>
               This vision led to the founding of :
-              <a href="https://the-website-chi.vercel.app" target="_blank" rel="noopener noreferrer" className="text-italic font-light hover:text-blue-400 transition-colors duration-200 flex items-center gap-1.5">
-                <img src="/images/icon2.png" alt="icon" className="w-4 h-4 inline-block" /> 
+              <a href="https://the-website-chi.vercel.app" target="_blank" rel="noopener noreferrer" className="text-indigo-400 font-bold hover:text-blue-400 transition-colors duration-200 flex items-center gap-1.5">
+                <img src="/images/icon2.png" alt="icon" className="w-10 h-10 inline-block" /> 
                 <strong>KADSA</strong> 
               </a> 
               —a company dedicated to pushing the boundaries of Data, Tech, and AI. Through the KADSA Academy and our innovation pool, we provide quality knowledge to feed the ideas of innovators who, like me, come from backgrounds where amenities are scarce but potential is infinite.
