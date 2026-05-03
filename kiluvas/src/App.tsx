@@ -4,7 +4,9 @@ import {
   BrainCircuit, Code2, 
   BarChart3, UserCircle2, ChevronRight, Send, X, 
   Globe, Award,
-  CircuitBoard
+  CircuitBoard,
+  MapPin,
+  Sprout
 } from 'lucide-react';
 
 // --- TYPES & INTERFACES ---
@@ -86,6 +88,47 @@ const HomeView: React.FC<{ setActiveTab: (id: string) => void }> = ({ setActiveT
       </div>
     </section>
 
+    {/* Expanded About Section */}
+    <section className="bg-neutral-900/20 rounded-3xl p-8 md:p-12 border border-neutral-800/50">
+      <div className="flex flex-col md:flex-row gap-12 items-start text-left">
+        <div className="w-full md:w-1/3 sticky top-24">
+          <ProjectCardImage text="Creative" imageSrc="/images/about.jpg" height="h-72" />
+          <div className="mt-6 p-6 bg-neutral-900/50 rounded-2xl border border-neutral-800">
+             <h4 className="text-xs font-bold uppercase tracking-widest text-purple-500 mb-4 flex items-center gap-2">
+                <MapPin size={14} /> From Taveta to Tech
+             </h4>
+             <p className="text-neutral-500 text-xs leading-relaxed">
+                Born to peasant farmers on the edge of Kenya, my journey began in the shambas and charcoal kilns of the countryside[cite: 2].
+             </p>
+          </div>
+        </div>
+        <div className="w-full md:w-2/3">
+          <h3 className="text-3xl font-bold mb-6 flex items-center gap-3">
+            <UserCircle2 className="text-purple-500" /> The Kiluva James Story
+          </h3>
+          <div className="space-y-6 text-neutral-400 leading-relaxed">
+            <p>
+              My background is rooted in the resilience of the Kenyan countryside. Growing up as the second born to peasant farmers in Taveta, I learned early that hard work is not an option—it is survival[cite: 2]. Whether it was herding cattle, ploughing the shamba, or the grueling labor of charcoal burning to sustain daily needs, those experiences forged a hunger to create something different[cite: 2].
+            </p>
+            <p>
+              In a community where only 1 in 20 children get the opportunity to step out, I’ve made it my mission to ensure that "success" isn't just personal—it's communal[cite: 2]. I am driven to build the foundations and provide the resources that marginalized young minds need to venture into the tech world[cite: 2].
+            </p>
+            <p>
+              This vision led to the founding of <strong>KADSA</strong>—a company dedicated to pushing the boundaries of Data, Tech, and AI[cite: 2]. Through the KADSA Academy and our innovation pool, we provide quality knowledge to feed the ideas of innovators who, like me, come from backgrounds where amenities are scarce but potential is infinite[cite: 2].
+            </p>
+          </div>
+          
+          <div className="mt-10 flex flex-wrap gap-3">
+            {['Critical Thinking', 'Leadership', 'Visualization', 'Strategy', 'Creativity', 'Programming Fluency', 'Team Work', 'Curiosity', 'Adaptability', 'Communication', 'Determination', 'Problem Solving', 'Collaboration'].map((skill) => (
+              <div key={skill} className="px-4 py-2 bg-neutral-800/50 rounded-lg text-xs font-semibold text-neutral-300 border border-neutral-700/50">
+                {skill}
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section className="py-12">
       <div className="flex flex-col border-l-4 border-purple-500 pl-6 text-left mb-16">
         <h3 className="text-3xl font-bold mb-4">Professional Expertise</h3>
@@ -143,7 +186,6 @@ const HomeView: React.FC<{ setActiveTab: (id: string) => void }> = ({ setActiveT
               {s.desc}
             </p>
 
-            {/* The Tabs/Pills Container */}
             <div className="flex flex-wrap gap-2 mt-auto">
               {s.skills.map((skill, idx) => (
                 <span 
@@ -155,32 +197,6 @@ const HomeView: React.FC<{ setActiveTab: (id: string) => void }> = ({ setActiveT
             </div>
           </div>
         ))}
-      </div>
-    </section>
-    
-    <section className="bg-neutral-900/20 rounded-3xl p-8 md:p-12 border border-neutral-800/50">
-      <div className="flex flex-col md:flex-row gap-12 items-center text-left">
-        <div className="w-full md:w-1/3">
-          <ProjectCardImage text="Creative" imageSrc="/images/about.jpg" height="h-72" />
-        </div>
-        <div className="w-full md:w-2/3">
-          <h3 className="text-2xl font-bold mb-6 flex items-center gap-3">
-            <UserCircle2 className="text-purple-500" /> About Kiluva James:
-          </h3>
-          <p className="text-neutral-400 leading-relaxed mb-6">
-            I am driven by the goal of democratizing data. My approach combines technical rigor with intuitive design. Beyond the keyboard, you'll find me swimming, exploring Nairobi's culinary scene, or diving into a film to find fresh creative perspectives.
-          </p>
-          <p className="text-neutral-400 leading-relaxed mb-6">
-            My mission is to empower businesses with data-driven insights and innovative tech solutions. I specialize in automating complex data analysis, making it accessible for decision-makers in a digital-fast evolving world.
-          </p>
-          <div className="flex flex-wrap gap-3">
-            {['Critical Thinking', 'Leadership', 'Visualization', 'Strategy', 'Creativity', 'Programming Fluency', 'Team Work', 'Curiosity', 'Adaptability', 'Communication', 'Determination', 'Problem Solving', 'Collaboration', 'Curiosity'].map((skill) => (
-              <div key={skill} className="px-4 py-2 bg-neutral-800/50 rounded-lg text-xs font-semibold text-neutral-300 border border-neutral-700/50">
-                {skill}
-              </div>
-            ))}
-          </div>
-        </div>
       </div>
     </section>
   </div>
@@ -546,9 +562,12 @@ const App: React.FC = () => {
       <footer className="border-t border-neutral-900 bg-neutral-950 pt-16 pb-8 text-left">
         <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
           <div>
-            <h3 className="text-lg font-bold mb-4"><img src="/images/drawn.png" alt="icon" className="w-5 h-5 rounded-full border border-accent shadow-sm" /> Kiluva's; Data, Tech & AI</h3>
+            <h3 className="text-lg font-bold mb-4 flex items-center gap-2">
+              <img src="/images/drawn.png" alt="icon" className="w-5 h-5 rounded-full border border-accent shadow-sm" /> 
+              KADSA: Data, Tech & AI
+            </h3>
             <p className="text-neutral-400 text-sm leading-relaxed mb-6">
-              Empowering businesses through data-driven decisions and innovative tech solutions. Specialized in automating complex analysis for a digital-first world.
+              Founded on the belief that a better tomorrow can be created by even the most marginalized brains when fed with quality knowledge[cite: 2]. Specialized in automating complex analysis for a digital-first world.
             </p>
             <div className="flex gap-4">
               <a href="https://instagram.com/itskite_luva" target="_blank" rel="noreferrer" className="p-2 bg-neutral-900 rounded-lg hover:bg-neutral-800 transition-colors"><Instagram size={18} /></a>
@@ -572,28 +591,40 @@ const App: React.FC = () => {
           <div>
             <h3 className="text-sm font-bold uppercase tracking-widest text-neutral-500 mb-6">Direct Reach</h3>
             <ul className="space-y-4 text-sm">
-              <li className="flex items-center gap-3 text-neutral-400">
-                <Mail size={16} className="text-purple-500" />
-                <span>kitennykiluva@gmail.com</span>
+              <li>
+                <a href="mailto:kitennykiluva@gmail.com" className="flex items-center gap-3 text-neutral-400 hover:text-white transition-colors group">
+                  <Mail size={16} className="text-purple-500 group-hover:scale-110 transition-transform" />
+                  <span>kitennykiluva@gmail.com</span>
+                </a>
               </li>
-              <li className="flex items-center gap-3 text-neutral-400">
-                <Linkedin size={16} className="text-purple-500" />
-                <span>James Kiluva</span>
+              <li>
+                <a href="https://linkedin.com/in/kiteluva08" target="_blank" rel="noreferrer" className="flex items-center gap-3 text-neutral-400 hover:text-white transition-colors group">
+                  <Linkedin size={16} className="text-purple-500 group-hover:scale-110 transition-transform" />
+                  <span>James Kiluva</span>
+                </a>
               </li>
-              <li className="flex items-center gap-3 text-neutral-400">
-                <Phone size={16} className="text-purple-500" />
-                <span>+254 115 939 757</span>
+              <li>
+                <a href="tel:+254115939757" className="flex items-center gap-3 text-neutral-400 hover:text-white transition-colors group">
+                  <Phone size={16} className="text-purple-500 group-hover:scale-110 transition-transform" />
+                  <span>+254 115 939 757</span>
+                </a>
               </li>
             </ul>
           </div>
         </div>
         
-        <div className="max-w-6xl mx-auto px-6 pt-8 border-t border-neutral-900 flex flex-col md:flex-row justify-between items-center gap-4 text-neutral-600 text-[10px] uppercase tracking-widest">
-          <p>© {new Date().getFullYear()} KITELUVA. ALL RIGHTS RESERVED.</p>
-          <a href="https://the-website-chi.vercel.app" target="_blank" rel="noopener noreferrer" className="text-italic font-light hover:text-blue-400 transition-colors duration-200 flex items-center gap-1.5">
-            <img src="/images/icon2.png" alt="icon" className="w-4 h-4 inline-block" onError={(e: any) => { e.target.src = "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400"; }}/> 
-              ~a -<strong>KADSA</strong>- make~
-          </a>
+        <div className="max-w-6xl mx-auto px-6 pt-8 border-t border-neutral-900 flex flex-col items-center gap-6 text-center">
+          <div className="flex flex-col md:flex-row justify-between w-full items-center gap-4 text-neutral-600 text-[10px] uppercase tracking-widest">
+            <p>© {new Date().getFullYear()} KITELUVA. ALL RIGHTS RESERVED.</p>
+            <a href="https://the-website-chi.vercel.app" target="_blank" rel="noopener noreferrer" className="text-italic font-light hover:text-blue-400 transition-colors duration-200 flex items-center gap-1.5">
+              <img src="/images/icon2.png" alt="icon" className="w-4 h-4 inline-block" /> 
+                ~a -<strong>KADSA</strong>- make~
+            </a>
+          </div>
+          
+          <p className="text-neutral-700 text-xs normal-case italic opacity-60 hover:opacity-100 transition-opacity">
+             "there aint many dollar bills like me"[cite: 1]
+          </p>
         </div>
       </footer>
 
