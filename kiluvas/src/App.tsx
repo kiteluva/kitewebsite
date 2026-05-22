@@ -165,7 +165,7 @@ const HomeView: React.FC<{ setActiveTab: (id: string) => void }> = ({ setActiveT
         <div className="w-full md:w-1/3 sticky top-24 space-y-6">
           <ProjectCardImage text="Creative" imageSrc="/images/about.jpg" height="h-72" />
           <div className="p-6 bg-neutral-900/50 rounded-2xl border border-neutral-800">
-             <h4 className="text-xs font-bold uppercase tracking-widest text-purple-500 mb-4 flex items-center gap-2">
+             <h4 className="text-xs font-bold uppercase tracking-widest text-pink-500 mb-4 flex items-center gap-2">
                 <MapPin size={14} /> From Taveta to Tech
              </h4>
              <p className="text-neutral-500 text-xs leading-relaxed">
@@ -173,11 +173,14 @@ const HomeView: React.FC<{ setActiveTab: (id: string) => void }> = ({ setActiveT
              </p>
           </div>
           <div className="p-6 bg-neutral-900/50 rounded-2xl border border-neutral-800">
-             <h4 className="text-xs font-bold uppercase tracking-widest text-blue-500 mb-4 flex items-center gap-2">
+             <h4 className="text-xs font-bold uppercase tracking-widest text-purple-500 mb-4 flex items-center gap-2">
                 <GraduationCap size={14} /> Academic Journey
              </h4>
              <p className="text-neutral-500 text-xs leading-relaxed">
                 From a grassroots primary school to a Grade A national high school via Equity Wings to Fly, culminating in a Statistics degree at the University of Nairobi.
+             </p>
+             <p className="text-neutral-500 text-xs leading-relaxed">
+                <strong>Core Focus:</strong> Machine Learning, Computational Methods, Time Series Analysis, Hypothesis Testing, and Probability Modelling.
              </p>
           </div>
           <div className="p-6 bg-neutral-900/50 rounded-2xl border border-neutral-800">
