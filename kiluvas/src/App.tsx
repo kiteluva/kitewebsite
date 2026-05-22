@@ -5,7 +5,7 @@ import {
   BarChart3, UserCircle2, ChevronRight, Send, X, 
   Globe, Award,
   CircuitBoard,
-  MapPin,
+  MapPin, Sun,
   GraduationCap
 } from 'lucide-react';
 
@@ -179,6 +179,14 @@ const HomeView: React.FC<{ setActiveTab: (id: string) => void }> = ({ setActiveT
              <p className="text-neutral-500 text-xs leading-relaxed">
                 From a grassroots primary school to a Grade A national high school via Equity Wings to Fly, culminating in a Statistics degree at the University of Nairobi.
              </p>
+          </div>
+          <div className="p-6 bg-neutral-900/50 rounded-2xl border border-neutral-800">
+             <h4 className="text-xs font-bold uppercase tracking-widest text-blue-500 mb-4 flex items-center gap-2">
+                <Sun size={14} /> My Prayer Everyday
+             </h4>
+             <p className="text-neutral-500 text-xs leading-relaxed">
+                If Not for my sake Oh God, Then for the 19 other children in marginalized communities who won't get the chance to step out. Use me Holy Father, I am here to make sure that "success" isn't just personal—it's communal.
+            </p>
           </div>
         </div>
         <div className="w-full md:w-2/3">
