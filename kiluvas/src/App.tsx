@@ -592,10 +592,10 @@ const App: React.FC = () => {
           <div>
             <h3 className="text-lg font-bold mb-4 flex items-center gap-2">
               <img src="/images/drawn.png" alt="icon" className="w-5 h-5 rounded-full border border-accent shadow-sm" /> 
-              KADSA: Data, Tech & AI
+              Kiluva James
             </h3>
             <p className="text-neutral-400 text-sm leading-relaxed mb-6">
-              Founded on the belief that a better tomorrow can be created by even the most marginalized brains when fed with quality knowledge[cite: 3]. Specialized in automating complex analysis for a digital-first world.
+              Believing that the future is Data Science, Tech and AI, a better tomorrow can be created by even the most marginalized brains when empowered with quality knowledge, access to resources and equal opportunities.
             </p>
             <div className="flex gap-4">
               <a href="https://instagram.com/itskite_luva" target="_blank" rel="noreferrer" className="p-2 bg-neutral-900 rounded-lg hover:bg-neutral-800 transition-colors"><Instagram size={18} /></a>
