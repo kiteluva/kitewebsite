@@ -67,7 +67,7 @@ const HomeView: React.FC<{ setActiveTab: (id: string) => void }> = ({ setActiveT
           Architecting <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-blue-500">Intelligence</span> Thro' Data.
         </h2>
         <p className="text-neutral-400 text-lg mb-8 max-w-lg">
-          I'm a Data Scientist and a Full-Stack Web Developer focused on building automated systems that transform raw information into strategic digital assets.
+          I'm a Mentor, Data Scientist and a Full-Stack Web Developer focused on building automated systems that transform raw information into strategic digital assets.
         </p>
         <div className="flex flex-wrap gap-4">
           <button 
@@ -371,7 +371,7 @@ const ProjectsView: React.FC<{ setSelectedProject: (p: Project) => void }> = ({ 
       longDesc: "Designed to help Catholics all over the world keep track of their pilgrimage life. With advanced curated sacristy, You keep track of your progress, aceross daily prayers, procedural and novenas. You also get recomendations from your activity what verses to read, pragraphs of the catechism. An all in one catholic holliness; prayers Scriptures and catechism, all in sync with the catholic calendar.",
       tags: ["Python", "Time series", "Predictive Modelling", "Magisterium AI", "BS4", "Automation", "Data Analysis", "FastAPI", "React", "PWA", "Generative AI", "Chatbot"],
       github: "https://github.com/kiteluva/c_p_c",
-      live: "https://c-p-c.vercel.app/"
+      live: "https://kiteluva-cpc.vercel.app/"
     },
     { 
       title: "KADA; KADSA's Automated Data Analyzer", 
@@ -548,7 +548,7 @@ const App: React.FC = () => {
             </div>
             <div>
               <h1 className="text-xl font-bold tracking-tight">KILUVA JAMES</h1>
-              <p className="text-[10px] text-neutral-400 uppercase tracking-[0.2em]">Data Scientist | Full Stack Developer</p>
+              <p className="text-[10px] text-neutral-400 uppercase tracking-[0.2em]">Mentor | Data Scientist | Full Stack Developer</p>
             </div>
           </div>
 
