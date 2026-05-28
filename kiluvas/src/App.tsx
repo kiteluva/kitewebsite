@@ -239,8 +239,8 @@ const ProjectsView: React.FC<{ setSelectedProject: (p: Project) => void }> = ({ 
       category: "data", 
       origin: "KADSA",
       imageUrl: "/images/kada.png",
-      desc: "Automated tool for extraction and analysis of multi-sector Data.", 
-      longDesc: "Designed to help small businesses track their performance without needing deep technical expertise. Features include data cleaning, visualization, and report generation.",
+      desc: "Automated analytical codeless tool for extraction and analysis of multi-sector Data.", 
+      longDesc: "Designed to help small businesses track their performance without needing deep technical expertise. Features include data cleaning, visualization/data-storytelling, report generationand Predictive modelling.",
       tags: ["Data Science", "Python", "Time series", "Predictive Modelling", "Survival Analysis", "BS4", "Data Automation", "Data Analysis", "FastAPI", "React", "PWA", "Generative AI", "Chatbot"],
       github: "https://github.com/kiteluva/CSV_XLS_DATA_ANALYZER",
       live: "https://csv-xls-data-analyzer.vercel.app/"
@@ -260,7 +260,7 @@ const ProjectsView: React.FC<{ setSelectedProject: (p: Project) => void }> = ({ 
       category: "data", 
       origin: "Future Interns",
       imageUrl: "/images/superstore.png",
-      desc: "Interactive dashboard system for monitoring sales and Return on investiment.", 
+      desc: "Interactive Power BI dashboard-system for monitoring sales and Return on investiment (ROI).", 
       longDesc: "Created during academic tenure to simulate real-world data warehousing and visualization environments.",
       tags: ["SQL", "Power Bi", "Excel", "R", "Data Storytelling"],
       github: "https://github.com/FUTURE_DS_01"
@@ -271,7 +271,7 @@ const ProjectsView: React.FC<{ setSelectedProject: (p: Project) => void }> = ({ 
       origin: "Future Interns",
       imageUrl: "/images/POWER BI 02.png",
       desc: "Analysis of the performance of Facebook Ads and their impact on returns.", 
-      longDesc: "Did column- variable enginearing on power bi to find the actual return on investiment, there after performed an anova test to check if there is any effect accross the campaigns.",
+      longDesc: "Did variable enginearing on power bi to find the actual return on investiment, there after performed an anova test to check if there is any effect accross the campaigns.",
       tags: ["Python", "Power BI", "Analytics", "Data Storytelling"],
       github: "https://github.com/kiteluva/FUTURE_DS_02"
     },
@@ -290,8 +290,8 @@ const ProjectsView: React.FC<{ setSelectedProject: (p: Project) => void }> = ({ 
       category: "tech", 
       origin: "KADSA",
       imageUrl: "/images/kada.png",
-      desc: "Automated tool for extraction and analysis of multi-sector Data.", 
-      longDesc: "Designed as a Progressive Web application (PWA) so it can serve even those who do not have access to a traditional desktops, simplified for compatibility even with smartphones.",
+      desc: "A state ot the art modern PWA, Web based and intergratable across devices.", 
+      longDesc: "Designed as a Progressive Web application (PWA) so it can serve even those who do not have access to a traditional desktops, simplified for compatibility even with smartphones, To ease access and use for even those with limited resources.",
       tags: ["JavaScript", "HTML", "CSS", "Data Analysis", "ReactJS", "PWA", "Generative AI", "Chatbot"],
       github: "https://github.com/kiteluva/CSV_XLS_DATA_ANALYZER",
       live: "https://csv-xls-data-analyzer.vercel.app/"
@@ -302,7 +302,7 @@ const ProjectsView: React.FC<{ setSelectedProject: (p: Project) => void }> = ({ 
       origin: "Professional",
       imageUrl: "/images/kadsa.png",
       desc: "Full-scale corporate website for a tech consulting firm.", 
-      longDesc: "Includes dynamic service listings, client intake forms, and an optimized performance architecture.",
+      longDesc: "Includes dynamic service listings, client intake forms, and an optimized performance architecture. With portal and role based database to allow users acces services with respective restrictions. Equiped with an innovation hub and an academy for study materials.",
       tags: ["Tailwind", "JS", "Design", "CSS", "HTML", "React", "PWA", "Chatbot"],
       github: "https://kiteluva.github.io/KADSA/",
       live: "https://the-website-chi.vercel.app/"
@@ -323,8 +323,8 @@ const ProjectsView: React.FC<{ setSelectedProject: (p: Project) => void }> = ({ 
       category: "tech", 
       origin: "Institutional",
       imageUrl: "/images/bserve.png",
-      desc: "Full-scale Institutional website for a CBC school with JSS classes.", 
-      longDesc: "This is a full-scale institutional website for a CBC school. Informative, easy to navigate, and mobile-responsive. Fitted with online applications and information on all school levels. Fitted with a placeholder for a state of the art management system.",
+      desc: "Front-end; Institutional website for a CBC school with JSS classes.", 
+      longDesc: "This is a full-scale institutional website for a CBC school. Informative, easy to navigate, and mobile-responsive. Fitted with online applications and information on all school levels. Ready to intergrate a state of the art school management system.",
       tags: ["Tailwind", "JS", "Design", "CSS", "HTML", "React"],
       github: "https://github.com/kiteluva/school_lukes",
       live: "https://schoolukes.vercel.app/"
@@ -334,8 +334,8 @@ const ProjectsView: React.FC<{ setSelectedProject: (p: Project) => void }> = ({ 
       category: "tech", 
       origin: "Professional",
       imageUrl: "/images/cliniq.png",
-      desc: "Full-scale Company website for a start up health tech company.", 
-      longDesc: "This website is Built to exclussively advertise a software the start up developed. It is equiped with a responsive design, great feel even on moble and modals for deeper contents. Themes too as per the clients requirements.",
+      desc: "A Company website for a start up health tech company.", 
+      longDesc: "This website is Built to exclussively advertise a software the start up developed. It is equiped with a responsive design, great feel even on mobile and modals for deeper contents. Themes, as per the clients tastes.",
       tags: ["Tailwind", "JS", "Design", "CSS", "HTML", "React"],
       github: "https://kiteluva.github.io/clini-q/",
       live: "https://clini-q-sigma.vercel.app/"
@@ -345,7 +345,7 @@ const ProjectsView: React.FC<{ setSelectedProject: (p: Project) => void }> = ({ 
       category: "tech", 
       origin: "Personal",
       imageUrl: "/images/portfolio.png",
-      desc: "I designed my own personal portfolio to showcase my work.", 
+      desc: "My own personal portfolio to showcase my work.", 
       longDesc: "This portfolio highlights my skills, projects, and professional journey in data science and web development. It features a sleek design, easy navigation, and responsive layout.",
       tags: ["Tailwind", "JS", "Design", "CSS", "Typescript", "React"],
       github: "https://kiteluva.github.io/kitewebsite/",
@@ -353,7 +353,7 @@ const ProjectsView: React.FC<{ setSelectedProject: (p: Project) => void }> = ({ 
     },
     { 
       title: "R shinny's Popularity Predictor", 
-      category: "tech", 
+      category: "ai", 
       origin: "School",
       imageUrl: "/images/r-shinny.png",
       desc: "An R shinny application to Predict spotify's songs' populaarity.", 
@@ -367,8 +367,8 @@ const ProjectsView: React.FC<{ setSelectedProject: (p: Project) => void }> = ({ 
       category: "ai", 
       origin: "Faith",
       imageUrl: "/images/cpc.png",
-      desc: "Automated application, practical interface across devices, A guide thro' catholic prayers, The holy scriptures and Catechism", 
-      longDesc: "Designed to help Catholics all over the world keep track of their pilgrimage life. With advanced curated sacristy, You keep track of your progress, aceross daily prayers, procedural and novenas. You also get recomendations from your activity what verses to read, pragraphs of the catechism. An all in one catholic holliness; prayers Scriptures and catechism, all in sync with the catholic calendar.",
+      desc: "Automated application, a guide thro' catholic prayers, The holy scriptures and Catechism", 
+      longDesc: "Designed to help Catholics all over the world keep track of their pilgrimage life. With advanced curated sacristy, You keep track of your progress, aceross daily prayers, procedural prayers and novenas. You also get recomendations from your activity what verses to read, pragraphs of the catechism. An all in one catholic holliness; prayers; Scriptures and catechism, all in sync with the catholic calendar.",
       tags: ["Python", "Time series", "Predictive Modelling", "Magisterium AI", "BS4", "Automation", "Data Analysis", "FastAPI", "React", "PWA", "Generative AI", "Chatbot"],
       github: "https://github.com/kiteluva/c_p_c",
       live: "https://kiteluva-cpc.vercel.app/"
@@ -378,8 +378,8 @@ const ProjectsView: React.FC<{ setSelectedProject: (p: Project) => void }> = ({ 
       category: "ai", 
       origin: "KADSA",
       imageUrl: "/images/kada.png",
-      desc: "Automated tool for extraction and analysis of multi-sector Data.", 
-      longDesc: "Designed and integrated a generative AI chatbot to help Non-technical users Interprete their findings and give simplified actionable insights from the data being worked on. Most users don't have the technical expertise to operate complicted systems not with KADA.",
+      desc: "Automated tool for extraction and analysis Data.", 
+      longDesc: "Designed and integrated with a generative AI, with a chatbot interphase to help Non-technical users communicate with the AI model, Interprete their findings and give simplified actionable insights from the data being worked on. Most users don't have the technical expertise to operate complicted systems, with KADA; Your firm gets a chance to act on your own Data even with less technical personel.",
       tags: ["Generative AI", "Chatbot" , "Python", "Gemini", "Data Science", "Data Automation", "Data Analysis", "FastAPI", "React"],
       github: "https://github.com/kiteluva/CSV_XLS_DATA_ANALYZER",
       live: "https://csv-xls-data-analyzer.vercel.app/"
@@ -448,7 +448,10 @@ const ContactView: React.FC = () => (
     <div className="text-center mb-16">
       <h2 className="text-5xl font-extrabold mb-6">Start a Conversation</h2>
       <p className="text-neutral-400 text-lg max-w-2xl mx-auto">
-        I am actively seeking opportunities with forward-thinking tech teams. Whether you have a specific role or just want to discuss data trends, I'm ready.
+        I am actively seeking opportunities with forward-thinking tech teams, Researchers and problem solving Thinkers. Whether you have a specific role or just want to discuss data trends, Tech advancements or AI impacts and its positive Importance in today's First moving world, I'm ready! just say HELLO.
+      </p>
+      <p className="text-neutral-400 text-lg max-w-2xl mx-auto">
+        For mentorship, Reach out. Teach yourself to navigate the deep end. By pushing the boundaries of imagination, Solution to the most complicated problems are found. Reach out, let an helping hand guide navigating the deep waters, and calm the fears of drowning!
       </p>
     </div>
 
@@ -462,7 +465,7 @@ const ContactView: React.FC = () => (
               <span className="text-sm font-semibold">Available for Hire</span>
             </div>
             <p className="text-xs text-neutral-500 leading-relaxed">
-              Seeking: Data Analyst, Data Scientist, ML Engineer, Full-Stack Dev roles or a blend of Data and Software Engineering, especially Automation of Data Analytics.
+              Seeking: Data Analyst, Data Scientist, ML Engineer, Full-Stack Developer roles or a blend of Data and Software Engineering, especially Automation of Data Analytics.
             </p>
           </div>
         </div>
