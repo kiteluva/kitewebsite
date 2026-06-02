@@ -112,12 +112,6 @@ const HomeView: React.FC<{ setActiveTab: (id: string) => void }> = ({ setActiveT
             skills: ["Hypothesis Testing", "Regression Analysis", "Time Series Analysis", "Survival Analysis", "R", "Python", "Data Storytelling"]
           },
           { 
-            icon: <BarChart3 className="text-pink-400" />, 
-            title: "Data Analysis", 
-            desc: "Uncovering trends and building predictive forecasting dashboards.",
-            skills: ["SQL", "Python", "Tableau", "Excel", "R", "Power BI", "Data Storytelling", "tidyverse", "pandas", "numpy"]
-          },
-          { 
             icon: <Award className="text-yellow-400" />, 
             title: "Data Visualization", 
             desc: "Creating interactive dashboards and reports for actionable insights.",
