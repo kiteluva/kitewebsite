@@ -102,7 +102,7 @@ const HomeView: React.FC<{ setActiveTab: (id: string) => void }> = ({ setActiveT
           { 
             icon: <BrainCircuit className="text-purple-400" />, 
             title: "Data Science", 
-            desc: "Proficient in data cleaning, exploration, and modeling to drive business insights.",
+            desc: "Proficient in data cleaning, exploration, and modeling to uncover trends and build predictive forecasting dashboards to drive business insights.",
             skills: ["Python", "R", "SQL", "Pandas", "tidyverse", "Scikit-learn", "Stats-models", "TensorFlow", "PyTorch", "Data Storytelling"]
           },
           {
