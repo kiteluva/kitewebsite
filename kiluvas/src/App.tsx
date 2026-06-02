@@ -6,7 +6,8 @@ import {
   Globe, Award,
   CircuitBoard,
   MapPin, Sun,
-  GraduationCap
+  GraduationCap,
+  LineChart
 } from 'lucide-react';
 
 // --- TYPES & INTERFACES ---
@@ -104,6 +105,12 @@ const HomeView: React.FC<{ setActiveTab: (id: string) => void }> = ({ setActiveT
             desc: "Proficient in data cleaning, exploration, and modeling to drive business insights.",
             skills: ["Python", "R", "SQL", "Pandas", "tidyverse", "Scikit-learn", "Stats-models", "TensorFlow", "PyTorch", "Data Storytelling"]
           },
+          {
+            icon: <LineChart className="text-blue-400" />,
+            title: "Statistical Analysis",
+            desc: "Expertise in hypothesis testing, regression, and time series analysis for informed decision-making.",
+            skills: ["Hypothesis Testing", "Regression Analysis", "Time Series Analysis", "Survival Analysis", "R", "Python", "Data Storytelling"]
+          },
           { 
             icon: <BarChart3 className="text-pink-400" />, 
             title: "Data Analysis", 
@@ -133,6 +140,24 @@ const HomeView: React.FC<{ setActiveTab: (id: string) => void }> = ({ setActiveT
             title: "Generative AI", 
             desc: "Developing AI models for content generation and automation.",
             skills: ["OpenAI", "Agents", "Chatbots", "Gemini", "GPT", "Custom Model Training", "Prompt Engineering"]
+          },
+          {
+            icon: <Code2 className="text-green-400" />,
+            title: "Automation & Scripting",
+            desc: "Streamlining workflows and automating data processes for efficiency.",
+            skills: ["Python", "Bash", "PowerShell", "Shell Scripting", "Task Automation"]
+          },
+          {
+            icon: <UserCircle2 className="text-emerald-400" />,
+            title: "Mentorship & Training",
+            desc: "Guiding and empowering others in their technical journey and career development.",
+            skills: ["Mentorship", "Technical Training", "Career Guidance", "Workshops", "One-on-One Coaching"]
+          },
+          {
+            icon: <Globe className="text-blue-400" />,
+            title: "Global Collaboration",
+            desc: "Experience working with international teams and clients across different time zones.",
+            skills: ["Remote Work", "Cross-Cultural Communication", "Global Team Collaboration", "Virtual Meetings", "Project Management Tools"]
           }
         ].map((s, i) => (
           <div key={i} className="flex flex-col p-8 bg-neutral-900/40 border border-neutral-800 rounded-2xl hover:border-purple-500/50 hover:bg-neutral-900/60 transition-all group">
