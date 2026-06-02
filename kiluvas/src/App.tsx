@@ -453,7 +453,7 @@ const ContactView: React.FC = () => (
     </div>
     <div  className="p-8 bg-neutral-900/30 border border-neutral-800 rounded-2xl flex items-center gap-4 mb-12 justify-center">
       <div className="w-2 h-2 rounded-full bg-blue-500 animate-pulse"></div>
-        <span className="text-sm font-semibold">For mentorship, Reach out. Always looking to share what God gave freely.</span>
+        <span className="text-sm font-semibold">For mentorship, Anything in concerning Data Science, Machine Learning, AI or General Technology, Reach out. I am always looking to share what God gave freely.</span>
     </div>
 
     <div className="grid grid-cols-1 md:grid-cols-5 gap-12 items-start">
