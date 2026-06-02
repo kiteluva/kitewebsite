@@ -451,7 +451,7 @@ const ContactView: React.FC = () => (
         I am actively seeking opportunities with forward-thinking tech teams, Researchers and problem solving Thinkers. Whether you have a specific role or just want to discuss data trends, Tech advancements or AI impacts and its positive Importance in today's First moving world, I'm ready!
       </p>
     </div>
-    <div className="flex items-center">
+    <div  className="p-8 bg-neutral-900/30 border border-neutral-800 rounded-2xl flex items-center gap-4 mb-12 justify-center">
       <div className="w-2 h-2 rounded-full bg-blue-500 animate-pulse"></div>
         <span className="text-sm font-semibold">For mentorship, Reach out. Always looking to share what God gave freely.</span>
     </div>
