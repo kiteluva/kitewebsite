@@ -352,17 +352,6 @@ const ProjectsView: React.FC<{ setSelectedProject: (p: Project) => void }> = ({ 
       live: "https://kitewebsite-nine.vercel.app/"
     },
     { 
-      title: "R shinny's Popularity Predictor", 
-      category: "ai", 
-      origin: "School",
-      imageUrl: "/images/r-shinny.png",
-      desc: "An R shinny application to Predict spotify's songs' populaarity.", 
-      longDesc: "Identifies key features that contribute to a song going viral using advanced regression and classification techniques. It relates song popularity to its audio features. And use user's input features to predict the likely popularity of the song, it also gives insights on how to improve the song's chances of going viral.",
-      tags: ["Scikit-Learn", "Regression", "Classification", "Math", "R", "R-shinny", "Random Forest","Gradient Boosting", "XGBoost"],
-      github: "https://github.com/kiteluva/popularity_predictor",
-      live: "https://jsf0vd-james-kitenye.shinyapps.io/Popularity_Predictor/"
-    },
-    { 
       title: "CPC, Catholic Prayer Companion", 
       category: "ai", 
       origin: "Faith",
@@ -372,6 +361,17 @@ const ProjectsView: React.FC<{ setSelectedProject: (p: Project) => void }> = ({ 
       tags: ["Python", "Time series", "Predictive Modelling", "Magisterium AI", "BS4", "Automation", "Data Analysis", "FastAPI", "React", "PWA", "Generative AI", "Chatbot"],
       github: "https://github.com/kiteluva/c_p_c",
       live: "https://kiteluva-cpc.vercel.app/"
+    },
+    { 
+      title: "R shinny's Popularity Predictor", 
+      category: "ai", 
+      origin: "School",
+      imageUrl: "/images/r-shinny.png",
+      desc: "An R shinny application to Predict spotify's songs' populaarity.", 
+      longDesc: "Identifies key features that contribute to a song going viral using advanced regression and classification techniques. It relates song popularity to its audio features. And use user's input features to predict the likely popularity of the song, it also gives insights on how to improve the song's chances of going viral.",
+      tags: ["Scikit-Learn", "Regression", "Classification", "Math", "R", "R-shinny", "Random Forest","Gradient Boosting", "XGBoost"],
+      github: "https://github.com/kiteluva/popularity_predictor",
+      live: "https://jsf0vd-james-kitenye.shinyapps.io/Popularity_Predictor/"
     },
     { 
       title: "KADA; KADSA's Automated Data Analyzer", 
@@ -448,11 +448,12 @@ const ContactView: React.FC = () => (
     <div className="text-center mb-16">
       <h2 className="text-5xl font-extrabold mb-6">Start a Conversation</h2>
       <p className="text-neutral-400 text-lg max-w-2xl mx-auto">
-        I am actively seeking opportunities with forward-thinking tech teams, Researchers and problem solving Thinkers. Whether you have a specific role or just want to discuss data trends, Tech advancements or AI impacts and its positive Importance in today's First moving world, I'm ready! just say HELLO.
+        I am actively seeking opportunities with forward-thinking tech teams, Researchers and problem solving Thinkers. Whether you have a specific role or just want to discuss data trends, Tech advancements or AI impacts and its positive Importance in today's First moving world, I'm ready!
       </p>
-      <p className="text-neutral-400 text-lg max-w-2xl mx-auto">
-        For mentorship, Reach out. Teach yourself to navigate the deep end. By pushing the boundaries of imagination, Solution to the most complicated problems are found. Reach out, let an helping hand guide navigating the deep waters, and calm the fears of drowning!
-      </p>
+    </div>
+    <div className="flex items-center">
+      <div className="w-2 h-2 rounded-full bg-blue-500 animate-pulse"></div>
+        <span className="text-sm font-semibold">For mentorship, Reach out. Always looking to share what God gave freely.</span>
     </div>
 
     <div className="grid grid-cols-1 md:grid-cols-5 gap-12 items-start">
@@ -487,7 +488,18 @@ const ContactView: React.FC = () => (
       </div>
 
       <div className="md:col-span-3">
-        <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
+        <form 
+          action="https://formsubmit.co/kitennykiluva@gmail.com" 
+          method="POST" 
+          className="space-y-10"
+        >
+          {/* Hidden Inputs for FormSubmit Configuration */}
+          <input type="hidden" name="_subject" value="Portfolio Inquiry!" />
+          {/* Optional */}
+          <input type="hidden" name="_captcha" value="false" />
+          {/* Optional */}
+          <input type="hidden" name="_next" value="https://kitewebsite-nine.vercel.app"/>
+
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="space-y-2">
               <label className="text-xs font-bold uppercase tracking-widest text-neutral-500">Identifier</label>
@@ -511,7 +523,7 @@ const ContactView: React.FC = () => (
             <label className="text-xs font-bold uppercase tracking-widest text-neutral-500">Proposal Details</label>
             <textarea rows={5} className="w-full bg-neutral-900 border border-neutral-800 rounded-xl p-4 focus:border-purple-500 outline-none transition-all text-white" placeholder="How can I help your business?"></textarea>
           </div>
-          <button className="w-full py-4 bg-purple-600 rounded-xl font-bold text-white shadow-xl shadow-purple-900/20 hover:bg-purple-500 transition-all flex items-center justify-center gap-2">
+          <button type="submit" className="w-full py-4 bg-purple-600 rounded-xl font-bold text-white shadow-xl shadow-purple-900/20 hover:bg-purple-500 transition-all flex items-center justify-center gap-2">
             Dispatch Inquiry <Send size={18} />
           </button>
         </form>
