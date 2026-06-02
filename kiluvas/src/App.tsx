@@ -451,7 +451,7 @@ const ContactView: React.FC = () => (
         I am actively seeking opportunities with forward-thinking tech teams, Researchers and problem solving Thinkers. Whether you have a specific role or just want to discuss data trends, Tech advancements or AI impacts and its positive Importance in today's First moving world, I'm ready!
       </p>
     </div>
-    <div  className="p-8 bg-neutral-900/30 border border-neutral-800 rounded-2xl flex items-center gap-4 mb-12 justify-center">
+    <div className="p-8 bg-neutral-900/30 border border-neutral-800 rounded-2xl flex items-center gap-4 mb-12 justify-center">
       <div className="w-2 h-2 rounded-full bg-blue-500 animate-pulse"></div>
         <span className="text-sm font-semibold">For mentorship, Anything concerning Data Science, Machine Learning, AI or General Technological advancements, Reach out. I am always looking to share, guide and exchange ideas.</span>
     </div>
@@ -495,34 +495,61 @@ const ContactView: React.FC = () => (
         >
           {/* Hidden Inputs for FormSubmit Configuration */}
           <input type="hidden" name="_subject" value="Portfolio Inquiry!" />
-          {/* Optional */}
           <input type="hidden" name="_captcha" value="false" />
-          {/* Optional */}
           <input type="hidden" name="_next" value="https://kitewebsite-nine.vercel.app"/>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {/* Identifier Field */}
             <div className="space-y-2">
               <label className="text-xs font-bold uppercase tracking-widest text-neutral-500">Identifier</label>
-              <input type="text" className="w-full bg-neutral-900 border border-neutral-800 rounded-xl p-4 focus:border-purple-500 outline-none transition-all text-white" placeholder="Full Name" />
+              <input 
+                type="text" 
+                name="name"
+                required
+                className="w-full bg-neutral-900 border border-neutral-800 rounded-xl p-4 focus:border-purple-500 outline-none transition-all text-white" 
+                placeholder="Full Name" 
+              />
             </div>
+            
+            {/* Contact Point Field */}
             <div className="space-y-2">
               <label className="text-xs font-bold uppercase tracking-widest text-neutral-500">Contact Point</label>
-              <input type="email" className="w-full bg-neutral-900 border border-neutral-800 rounded-xl p-4 focus:border-purple-500 outline-none transition-all text-white" placeholder="Email" />
+              <input 
+                type="email" 
+                name="email"
+                required
+                className="w-full bg-neutral-900 border border-neutral-800 rounded-xl p-4 focus:border-purple-500 outline-none transition-all text-white" 
+                placeholder="Email" 
+              />
             </div>
           </div>
+
+          {/* Project Type Dropdown */}
           <div className="space-y-2">
             <label className="text-xs font-bold uppercase tracking-widest text-neutral-500">Project Type</label>
-            <select className="w-full bg-neutral-900 border border-neutral-800 rounded-xl p-4 focus:border-purple-500 outline-none transition-all text-white">
-              <option>Full-time Employment</option>
-              <option>Contract Development</option>
-              <option>Data Consultation</option>
-              <option>Educational Inquiry</option>
+            <select 
+              name="Project_Type"
+              className="w-full bg-neutral-900 border border-neutral-800 rounded-xl p-4 focus:border-purple-500 outline-none transition-all text-white"
+            >
+              <option value="Full-time Employment">Full-time Employment</option>
+              <option value="Contract Development">Contract Development</option>
+              <option value="Data Consultation">Data Consultation</option>
+              <option value="Educational Inquiry">Educational Inquiry</option>
             </select>
           </div>
+
+          {/* Proposal Details Field */}
           <div className="space-y-2">
             <label className="text-xs font-bold uppercase tracking-widest text-neutral-500">Proposal Details</label>
-            <textarea rows={5} className="w-full bg-neutral-900 border border-neutral-800 rounded-xl p-4 focus:border-purple-500 outline-none transition-all text-white" placeholder="How can I help your business?"></textarea>
+            <textarea 
+              name="Proposal_Details"
+              rows={5} 
+              required
+              className="w-full bg-neutral-900 border border-neutral-800 rounded-xl p-4 focus:border-purple-500 outline-none transition-all text-white" 
+              placeholder="How can I help your business?"
+            ></textarea>
           </div>
+
           <button type="submit" className="w-full py-4 bg-purple-600 rounded-xl font-bold text-white shadow-xl shadow-purple-900/20 hover:bg-purple-500 transition-all flex items-center justify-center gap-2">
             Dispatch Inquiry <Send size={18} />
           </button>
