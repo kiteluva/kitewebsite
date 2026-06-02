@@ -107,8 +107,8 @@ const HomeView: React.FC<{ setActiveTab: (id: string) => void }> = ({ setActiveT
           },
           {
             icon: <LineChart className="text-blue-400" />,
-            title: "Statistical Analysis",
-            desc: "Expertise in hypothesis testing, regression, and time series analysis for informed decision-making.",
+            title: "Statistical Testing & Modelling",
+            desc: "Expertise in hypothesis testing, regression, and survival analysis for data-driven decision making.",
             skills: ["Hypothesis Testing", "Regression Analysis", "Time Series Analysis", "Survival Analysis", "R", "Python", "Data Storytelling"]
           },
           { 
