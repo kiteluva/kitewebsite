@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { 
   Github, Linkedin, Mail, Phone, Instagram, Twitter,
   BrainCircuit, Code2, 
-  BarChart3, UserCircle2, ChevronRight, Send, X, 
+  UserCircle2, ChevronRight, Send, X, 
   Globe, Award,
   CircuitBoard,
   MapPin, Sun,
