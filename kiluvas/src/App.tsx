@@ -70,7 +70,7 @@ const HomeView: React.FC<{ setActiveTab: (id: string) => void }> = ({ setActiveT
         <p className="text-neutral-400 text-lg mb-8 max-w-lg">
           I'm a -THINKER-, Problem-Solver, Mentor, Data Scientist and a Full-Stack Web Developer. I excel at spoting gaps and fomulating ways to bridge them.
         </p>
-        <p className="text-neutral-300 text-lg mb-8 max-w-lg"> 
+        <p className="text-neutral-500 text-lg mb-8 max-w-lg"> 
           I am passionate about leveraging data to drive informed decision-making and crafting seamless web experiences that empower users. With a strong foundation in both data science and web development, I thrive on creating innovative solutions that make a real impact.
         </p>
         <div className="flex flex-wrap gap-4">
