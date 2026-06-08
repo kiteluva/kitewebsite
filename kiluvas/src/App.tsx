@@ -68,7 +68,7 @@ const HomeView: React.FC<{ setActiveTab: (id: string) => void }> = ({ setActiveT
           Architecting <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-blue-500">Intelligence</span> Thro' Data.
         </h2>
         <p className="text-neutral-400 text-lg mb-8 max-w-lg">
-          I'm a Mentor, Data Scientist and a Full-Stack Web Developer focused on building automated systems that transform raw information into strategic digital assets.
+          I'm a -THINKER-, problem-solver, Mentor, Data Scientist and a Full-Stack Web Developer focused on building automated systems that transform raw information into strategic digital assets. i excel at sporting gaps and fomulating ways to bridge them.
         </p>
         <div className="flex flex-wrap gap-4">
           <button 
