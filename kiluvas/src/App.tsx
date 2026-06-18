@@ -285,7 +285,7 @@ const ProjectsView: React.FC<{ setSelectedProject: (p: Project) => void }> = ({ 
       desc: "Interactive Power BI dashboard-system for monitoring sales and Return on investiment (ROI).", 
       longDesc: "Created during academic tenure to simulate real-world data warehousing and visualization environments.",
       tags: ["SQL", "Power Bi", "Excel", "R", "Data Storytelling"],
-      github: "https://github.com/FUTURE_DS_01"
+      github: "https://github.com/kiteluva/FUTURE_DS_01"
     },
     { 
       title: "Facebook Ads Performance", 
