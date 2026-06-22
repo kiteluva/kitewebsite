@@ -363,15 +363,15 @@ const ProjectsView: React.FC<{ setSelectedProject: (p: Project) => void }> = ({ 
       live: "https://clini-q-sigma.vercel.app/"
     }, 
     { 
-      title: "Kiluvaz Portfolio", 
+      title: "Kisavi's Portfolio", 
       category: "tech", 
       origin: "Personal",
-      imageUrl: "/images/portfolio.png",
-      desc: "My own personal portfolio to showcase my work.", 
-      longDesc: "This portfolio highlights my skills, projects, and professional journey in data science and web development. It features a sleek design, easy navigation, and responsive layout.",
-      tags: ["Tailwind", "JS", "Design", "CSS", "Typescript", "React"],
-      github: "https://kiteluva.github.io/kitewebsite/",
-      live: "https://kitewebsite-nine.vercel.app/"
+      imageUrl: "/images/kisavi.png",
+      desc: "An elegant portfolio design to showcase Her work.", 
+      longDesc: "This portfolio highlights her skills, projects, and professional journey policy development and poverty eradication measures implementation. It features a sleek design, easy navigation, and a responsive layout.",
+      tags: ["Tailwind", "JS", "Design", "CSS", "Javascript", "React"],
+      github: "https://github.com/kiteluva/KISAVI-portfolio",
+      live: "https://kisavi-portfolio.vercel.app/"
     },
     { 
       title: "CPC, Catholic Prayer Companion", 
