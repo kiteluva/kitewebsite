@@ -124,31 +124,31 @@ const HomeView: React.FC<{ setActiveTab: (id: string) => void }> = ({ setActiveT
             icon: <Globe className="text-blue-400" />, 
             title: "Web Development", 
             desc: "Building responsive, high-performance web applications with modern frameworks.",
-            skills: ["React", "Next.js", "Tai", "Node.js", "PWAs", "Performance Optimization"]
+            skills: ["React", "Next.js", "Node.js", "PWAs", "Performance Optimization"]
           },
           { 
             icon: <CircuitBoard className="text-purple-400" />, 
             title: "Machine Learning", 
             desc: "Crafting custom recommendation engines and automated procedures.",
-            skills: ["Scikit-learn", "Stats-models", "TensorFlow", "PyTorch", "Ptredictive Modelling", "Custom Model Training"]
+            skills: ["Scikit-learn", "Stats-models", "TensorFlow", "PyTorch", "Custom Model Training"]
           },
           { 
             icon: <BrainCircuit className="text-pink-400" />, 
             title: "Generative AI", 
             desc: "Developing AI models for content generation and automation.",
-            skills: ["OpenAI", "Agents", "Chatbots", "Custom Model Training", "Prompt Engineering"]
+            skills: ["OpenAI", "Agents", "Chatbots", "Prompt Engineering"]
           },
           {
             icon: <Code2 className="text-green-400" />,
             title: "Automation & Scripting",
             desc: "Streamlining workflows and automating data processes for efficiency.",
-            skills: ["Python", "Bash", "PowerShell", "Shell Scripting", "Task Automation"]
+            skills: ["Python", "Bash", "PowerShell", "Task Automation"]
           },
           {
             icon: <UserCircle2 className="text-emerald-400" />,
             title: "Mentorship & Training",
             desc: "Guiding and empowering others in their technical journey and career development.",
-            skills: ["Mentorship", "Technical Training", "Career Guidance", "Workshops", "One-on-One Coaching"]
+            skills: ["Mentorship", "Career Guidance", "Workshops", "One-on-One Coaching"]
           },
           {
             icon: <Globe className="text-blue-400" />,
