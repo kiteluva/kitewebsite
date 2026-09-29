@@ -68,7 +68,7 @@ const HomeView: React.FC<{ setActiveTab: (id: string) => void }> = ({ setActiveT
           Architecting <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-blue-500">Intelligence</span> Thro' Data.
         </h2>
         <p className="text-neutral-400 text-lg mb-8 max-w-lg">
-          I'm a -THINKER-, Problem-Solver, Mentor, Data Scientist and a Full-Stack Web Developer. I excel at spoting gaps and fomulating ways to bridge them.
+          I'm a -THINKER-, Problem-Solver, Mentor, Data Scientist and a Full-Stack Web Developer. I excel at spotting gaps and formulating ways to bridge them.
         </p>
         <p className="text-neutral-500 text-lg mb-8 max-w-lg"> 
           I am passionate about leveraging data to drive informed decision-making and crafting seamless web experiences that empower users. With a strong foundation in both data science and web development, I thrive on creating innovative solutions that make a real impact.
@@ -106,49 +106,49 @@ const HomeView: React.FC<{ setActiveTab: (id: string) => void }> = ({ setActiveT
             icon: <BrainCircuit className="text-purple-400" />, 
             title: "Data Science", 
             desc: "Proficient in data cleaning, exploration, and modeling to uncover trends and build predictive forecasting dashboards to drive business insights.",
-            skills: ["Python", "R", "SQL", "Pandas", "tidyverse", "Scikit-learn", "Stats-models", "TensorFlow", "PyTorch", "Data Storytelling"]
+            skills: ["Python", "R", "SQL","advanced excel"]
           },
           {
             icon: <LineChart className="text-blue-400" />,
             title: "Statistical Testing & Modelling",
             desc: "Expertise in hypothesis testing, regression, and survival analysis for data-driven decision making.",
-            skills: ["Hypothesis Testing", "Regression Analysis", "Time Series Analysis", "Survival Analysis", "R", "Python", "Data Storytelling"]
+            skills: ["Hypothesis Testing", "Regression Analysis", "Time Series Analysis", "Survival Analysis"]
           },
           { 
             icon: <Award className="text-yellow-400" />, 
             title: "Data Visualization", 
             desc: "Creating interactive dashboards and reports for actionable insights.",
-            skills: ["Power BI", "Tableau", "D3.js", "Matplotlib", "Seaborn", "Plotly", "Data Storytelling", "ggplot2", "Shinny"]
+            skills: ["Power BI", "Tableau", "Matplotlib", "Seaborn", "Plotly", "ggplot2", "Shinny"]
           },
           { 
             icon: <Globe className="text-blue-400" />, 
             title: "Web Development", 
             desc: "Building responsive, high-performance web applications with modern frameworks.",
-            skills: ["React", "Next.js", "Tailwind", "Node.js", "TypeScript", "Full-Stack Development", "PWA", "Performance Optimization"]
+            skills: ["React", "Next.js", "Node.js", "PWAs", "Performance Optimization"]
           },
           { 
             icon: <CircuitBoard className="text-purple-400" />, 
             title: "Machine Learning", 
             desc: "Crafting custom recommendation engines and automated procedures.",
-            skills: ["Scikit-learn", "Stats-models", "TensorFlow", "PyTorch", "XGBoost", "Ptredictive Modelling", "Time series", "Survival Analysis", "Custom Model Training"]
+            skills: ["Scikit-learn", "Stats-models", "TensorFlow", "PyTorch", "Custom Model Training"]
           },
           { 
             icon: <BrainCircuit className="text-pink-400" />, 
             title: "Generative AI", 
             desc: "Developing AI models for content generation and automation.",
-            skills: ["OpenAI", "Agents", "Chatbots", "Gemini", "GPT", "Custom Model Training", "Prompt Engineering"]
+            skills: ["OpenAI", "Agents", "Chatbots", "Prompt Engineering"]
           },
           {
             icon: <Code2 className="text-green-400" />,
             title: "Automation & Scripting",
             desc: "Streamlining workflows and automating data processes for efficiency.",
-            skills: ["Python", "Bash", "PowerShell", "Shell Scripting", "Task Automation"]
+            skills: ["Python", "Bash", "PowerShell", "Task Automation"]
           },
           {
             icon: <UserCircle2 className="text-emerald-400" />,
             title: "Mentorship & Training",
             desc: "Guiding and empowering others in their technical journey and career development.",
-            skills: ["Mentorship", "Technical Training", "Career Guidance", "Workshops", "One-on-One Coaching"]
+            skills: ["Mentorship", "Career Guidance", "Workshops", "One-on-One Coaching"]
           },
           {
             icon: <Globe className="text-blue-400" />,
@@ -210,7 +210,7 @@ const HomeView: React.FC<{ setActiveTab: (id: string) => void }> = ({ setActiveT
                 <Sun size={14} /> My Prayer Everyday
              </h4>
              <p className="text-neutral-500 text-xs leading-relaxed">
-                If Not for my sake Oh God, Then for the 19 other children in marginalized communities who won't get the chance to step out. Use me Holy Father, I am here to make sure that "success" isn't just personal—it's communal.
+                If Not for my sake Oh God, Then for the 19 other children in marginalized communities who won't get the chance to step out. Use me Holy Father as an instrument of your mercy, I am here to make sure that "success" isn't just personal—it's communal.
             </p>
           </div>
         </div>
