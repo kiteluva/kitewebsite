@@ -88,7 +88,7 @@ const HomeView: React.FC<{ setActiveTab: (id: string) => void }> = ({ setActiveT
       </div>
       <div className="relative group">
         <div className="absolute inset-0 bg-purple-600/20 blur-[100px] rounded-full group-hover:bg-purple-600/30 transition-all duration-700"></div>
-        <ProjectCardImage text="Profile & Identity" imageSrc="/images/profile.jpeg" height="h-[500px]" />
+        <ProjectCardImage text="Profile & Identity" imageSrc="/images/profile.jpg" height="h-[500px]" />
       </div>
     </section>
 
