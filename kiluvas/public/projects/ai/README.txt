@@ -1,0 +1,1 @@
+Place screenshots for this category here. For each project, register all image paths in that project gallery array in src/App.tsx. Example: gallery: ["/projects/ai/project-name/dashboard.png", "/projects/ai/project-name/report.png"].
