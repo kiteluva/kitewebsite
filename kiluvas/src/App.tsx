@@ -672,7 +672,7 @@ const App: React.FC = () => {
               <div className="absolute inset-0 bg-purple-500/5 group-hover:bg-purple-500/10 transition-colors duration-500"></div>
               <div className="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-purple-500 to-blue-500"></div>
               <p className="relative text-xs font-mono text-neutral-400 italic font-semibold tracking-tight">
-                "there aint many dollar bills like me"
+                "My soul magnifies the Lord, and my spirit rejoices in God my Savior."
               </p>
             </div>
           </div>
