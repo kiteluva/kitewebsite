@@ -4,7 +4,6 @@ import {
   BrainCircuit, Code2, 
   UserCircle2, ChevronRight, Send, X, 
   Globe, Award,
-  CircuitBoard,
   MapPin, Sun,
   GraduationCap,
   LineChart
@@ -45,7 +44,7 @@ const ProjectCardImage: React.FC<ProjectCardImageProps> = ({ text, imageSrc, hei
         src={imageSrc} 
         alt={text} 
         className="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500"
-        onError={(e: any) => { e.target.src = "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=800"; }}
+        onError={(e: any) => { e.target.src = "images/kiluva.jpeg"; }}
       />
     ) : (
       <div className="w-full h-full flex flex-col items-center justify-center text-neutral-500 p-4 text-center">
@@ -64,7 +63,7 @@ const HomeView: React.FC<{ setActiveTab: (id: string) => void }> = ({ setActiveT
     <section className="relative isolate mb-8 min-h-[570px] overflow-hidden rounded-[2rem] border border-neutral-800 bg-[#08080b] px-6 py-10 md:px-12 md:py-14 lg:px-16">
       <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_82%_80%,rgba(124,58,237,0.24),transparent_38%),radial-gradient(ellipse_at_8%_10%,rgba(37,99,235,0.13),transparent_35%)]" />
       <div className="pointer-events-none absolute inset-0 -z-10 opacity-[0.12] [background-image:linear-gradient(rgba(255,255,255,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.08)_1px,transparent_1px)] [background-size:42px_42px]" />
-      <div className="relative z-10 max-w-4xl pb-32 md:pb-24 lg:pb-12">
+<div className="relative z-10 max-w-4xl pb-32 md:pb-24 lg:pb-12">
         <span className="mb-7 inline-flex items-center gap-2 rounded-full border border-purple-400/25 bg-purple-400/[0.08] px-4 py-2 text-[10px] font-bold uppercase tracking-[0.22em] text-purple-200"><span className="h-1.5 w-1.5 rounded-full bg-emerald-400" /> "sic parvis magna" <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" /></span>
         <p className="mb-4 text-xs font-bold uppercase tracking-[0.3em] text-neutral-500">Data · Technology · Ai . Service</p>
         <h2 className="mb-7 max-w-4xl text-5xl font-black leading-[0.98] tracking-[-0.045em] md:text-7xl lg:text-[5.6rem]">I use my talents to <span className="bg-gradient-to-r from-violet-300 via-sky-300 to-emerald-300 bg-clip-text text-transparent">Create Impactful Possibilities.</span></h2>
@@ -78,94 +77,7 @@ const HomeView: React.FC<{ setActiveTab: (id: string) => void }> = ({ setActiveT
       </div>
       <div className="absolute bottom-5 left-6 hidden items-center gap-3 text-[10px] font-semibold uppercase tracking-[0.2em] text-neutral-600 md:flex lg:left-16"><span>Faith-led</span><span className="h-px w-8 bg-neutral-700"/><span>People-centred</span><span className="h-px w-8 bg-neutral-700"/><span>Purpose-built</span></div>
     </section>
-    <section className="py-12">
-      <div className="flex flex-col border-l-4 border-purple-500 pl-6 text-left mb-16">
-        <h3 className="text-3xl font-bold mb-4">Professional Expertise</h3>
-        <p className="text-neutral-500 md:ml-6 md:mt-2">
-          Providing <strong>high-impact solutions</strong> for technical challenges
-        </p>
-      </div>
-
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {[
-          { 
-            icon: <BrainCircuit className="text-purple-400" />, 
-            title: "Data Science", 
-            desc: "Proficient in data cleaning, exploration, and modeling to uncover trends and build predictive forecasting dashboards to drive business insights.",
-            skills: ["Python", "R", "SQL","advanced excel"]
-          },
-          {
-            icon: <LineChart className="text-blue-400" />,
-            title: "Statistical Testing & Modelling",
-            desc: "Expertise in hypothesis testing, regression, and survival analysis for data-driven decision making.",
-            skills: ["Hypothesis Testing", "Regression Analysis", "Time Series Analysis", "Survival Analysis"]
-          },
-          { 
-            icon: <Award className="text-yellow-400" />, 
-            title: "Data Visualization", 
-            desc: "Creating interactive dashboards and reports for actionable insights.",
-            skills: ["Power BI", "Tableau", "Matplotlib", "Seaborn", "Plotly", "ggplot2", "Shinny"]
-          },
-          { 
-            icon: <Globe className="text-blue-400" />, 
-            title: "Web Development", 
-            desc: "Building responsive, high-performance web applications with modern frameworks.",
-            skills: ["React", "Next.js", "Node.js", "PWAs", "Performance Optimization"]
-          },
-          { 
-            icon: <CircuitBoard className="text-purple-400" />, 
-            title: "Machine Learning", 
-            desc: "Crafting custom recommendation engines and automated procedures.",
-            skills: ["Scikit-learn", "Stats-models", "TensorFlow", "PyTorch", "Custom Model Training"]
-          },
-          { 
-            icon: <BrainCircuit className="text-pink-400" />, 
-            title: "Generative AI", 
-            desc: "Developing AI models for content generation and automation.",
-            skills: ["OpenAI", "Agents", "Chatbots", "Prompt Engineering"]
-          },
-          {
-            icon: <Code2 className="text-green-400" />,
-            title: "Automation & Scripting",
-            desc: "Streamlining workflows and automating data processes for efficiency.",
-            skills: ["Python", "Bash", "PowerShell", "Task Automation"]
-          },
-          {
-            icon: <UserCircle2 className="text-emerald-400" />,
-            title: "Mentorship & Training",
-            desc: "Guiding and empowering others in their technical journey and career development.",
-            skills: ["Mentorship", "Career Guidance", "Workshops", "One-on-One Coaching"]
-          },
-          {
-            icon: <Globe className="text-blue-400" />,
-            title: "Global Collaboration",
-            desc: "Experience working with international teams and clients across different time zones.",
-            skills: ["Remote Work", "Cross-Cultural Communication", "Global Team Collaboration", "Virtual Meetings", "Project Management Tools"]
-          }
-        ].map((s, i) => (
-          <div key={i} className="flex flex-col p-8 bg-neutral-900/40 border border-neutral-800 rounded-2xl hover:border-purple-500/50 hover:bg-neutral-900/60 transition-all group">
-            <div className="mb-6 p-3 bg-neutral-800 w-fit rounded-xl group-hover:scale-110 transition-transform">
-              {s.icon}
-            </div>
-        
-            <h4 className="text-xl font-bold mb-3">{s.title}</h4>
-            <p className="text-neutral-400 text-sm leading-relaxed mb-6 flex-grow">
-              {s.desc}
-            </p>
-
-            <div className="flex flex-wrap gap-2 mt-auto">
-              {s.skills.map((skill, idx) => (
-                <span 
-                  key={idx} 
-                  className="px-3 py-1 text-xs font-medium bg-purple-500/10 text-purple-300 border border-purple-500/20 rounded-full group-hover:border-purple-500/40 transition-colors">
-                  {skill}
-                </span>
-              ))}
-            </div>
-          </div>
-        ))}
-      </div>
-    </section>
+    <ExpertiseSection />
 
     {/* Expanded About Section */}
     <section className="bg-neutral-900/20 rounded-3xl p-8 md:p-12 border border-neutral-800/50">
@@ -220,7 +132,7 @@ const HomeView: React.FC<{ setActiveTab: (id: string) => void }> = ({ setActiveT
                 <img src="/images/icon2.png" alt="icon" className="w-10 h-10 inline-block" /> 
                   <span className="kadsa-k">K</span><span className="kadsa-a">A</span><span className="kadsa-d">D</span><span className="kadsa-s">S</span><span className="kadsa-a2">A</span>
               </a> 
-              —a company dedicated to pushing the boundaries of Data, Tech, and AI. Through the KADSA Academy and our innovation pool, we provide quality knowledge to feed the ideas of innovators who, like me, come from backgrounds where amenities are scarce but potential is infinite.
+              —a company dedicated to pushing the boundaries of Data, Tech, and AI. Through the KADSA Academy, our innovation pool and The K-SMART initiative, we provide quality knowledge to feed the ideas of innovators, young minds and aspiring entrepreneurs who, like me, come from backgrounds where amenities are scarce but potential is infinite.
             </p>
           </div>
           
@@ -238,6 +150,98 @@ const HomeView: React.FC<{ setActiveTab: (id: string) => void }> = ({ setActiveT
   </div>
 );
 
+const ExpertiseSection: React.FC = () => {
+  const areas = [
+    { title: "Data science", icon: <LineChart size={14}/>, color: "#22d3ee" },
+    { title: "Machine learning & AI", icon: <BrainCircuit size={14}/>, color: "#8b5cf6" },
+    { title: "Web development", icon: <Globe size={14}/>, color: "#34d399" },
+    { title: "Software & systems development", icon: <Code2 size={14}/>, color: "#f59e0b" },
+    { title: "Teaching & technical learning", icon: <GraduationCap size={14}/>, color: "#f472b6" },
+    { title: "Leadership & mentorship", icon: <UserCircle2 size={14}/>, color: "#60a5fa" }
+  ];
+
+  return (
+    <section id="expertise" className="mb-20 text-left" aria-labelledby="expertise-title">
+      <div className="mb-7 max-w-3xl">
+        <p className="mb-3 text-xs font-bold uppercase tracking-[0.25em] text-cyan-200">A broad, practical toolkit</p>
+        <h2 id="expertise-title" className="mb-4 text-3xl font-black tracking-tight md:text-5xl">Where data, technology, and <span className="text-violet-300">people meet.</span></h2>
+        <p className="text-sm leading-relaxed text-neutral-400 md:text-base">I combine analytical thinking with building and teaching: from data science and machine learning to web, software, and systems development, alongside leadership, mentorship, and technical learning.</p>
+      </div>
+      <div className="grid items-stretch gap-5 lg:grid-cols-[0.95fr_1.2fr]">
+        <article className="rounded-3xl border border-neutral-800 bg-gradient-to-br from-neutral-900 to-neutral-950 p-6 md:p-8">
+          <p className="mb-5 text-xs font-bold uppercase tracking-[0.2em] text-neutral-500">My expertise, at a glance</p>
+          <div className="flex flex-col items-center gap-6 sm:flex-row lg:flex-col xl:flex-row">
+            <div role="img" aria-label="Pie chart showing six connected areas of expertise" className="relative h-44 w-44 shrink-0 rounded-full shadow-[0_0_60px_rgba(139,92,246,0.12)]" style={{ background: `conic-gradient(${areas.map((area, i) => `${area.color} ${i * 60}deg ${(i + 1) * 60}deg`).join(", ")})` }}>
+              <div className="absolute inset-[24%] flex items-center justify-center rounded-full border border-white/10 bg-[#0b0b10] text-center"><span className="text-[9px] font-bold uppercase leading-relaxed tracking-[0.12em] text-neutral-300">Data<br/>Build<br/>People</span></div>
+            </div>
+            <ul className="grid w-full gap-3">{areas.map((area) => <li key={area.title} className="flex items-center gap-3 text-xs font-medium text-neutral-300"><span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg border border-white/10 bg-white/[0.03]" style={{ color: area.color }}>{area.icon}</span>{area.title}</li>)}</ul>
+          </div>
+        </article>
+        <article className="relative overflow-hidden rounded-3xl border border-violet-300/20 bg-gradient-to-br from-violet-950/40 via-neutral-900 to-neutral-950 p-6 md:p-8">
+          <div className="absolute -right-12 -top-14 h-48 w-48 rounded-full bg-violet-400/10 blur-3xl"/>
+          <p className="relative mb-3 text-xs font-bold uppercase tracking-[0.2em] text-violet-200">Teaching in practice</p>
+          <h3 className="relative mb-4 text-2xl font-extrabold">Open University of Kenya</h3>
+          <p className="relative mb-6 max-w-xl text-sm leading-relaxed text-neutral-300">As a Teaching Assistant and Mentor, I led more than 20 hours of master’s level Linear Algebra classes, helping students apply core ideas in Python for data science.</p>
+          <div className="relative mb-6 flex flex-wrap gap-2"><span className="rounded-full border border-violet-300/20 bg-violet-300/[0.08] px-3 py-1.5 text-xs text-violet-100">March–April cohort</span><span className="rounded-full border border-cyan-300/20 bg-cyan-300/[0.06] px-3 py-1.5 text-xs text-cyan-100">September–October cohort</span></div>
+          <p className="relative border-t border-white/10 pt-4 text-xs leading-relaxed text-neutral-400">I enjoy making challenging technical ideas clear, practical, and useful beyond the classroom.</p>
+        </article>
+      </div>
+    </section>
+  );
+};
+
+const screenshotGallery = (directory: string, basename: string, count: number, includeCover = false) => [
+  ...(includeCover ? [`${directory}/${basename}.png`] : []),
+  ...Array.from({ length: count }, (_, index) => `${directory}/${basename}${index + 1}.png`)
+];
+
+const projectCategoryPalette = [
+  { key: "data", label: "Data & Analytics", color: "#22d3ee" },
+  { key: "tech", label: "Web & Software", color: "#a78bfa" },
+  { key: "ai", label: "AI & Machine Learning", color: "#fbbf24" }
+];
+
+const ProjectDistribution: React.FC<{ projects: Project[] }> = ({ projects }) => {
+  const groups = projectCategoryPalette.map((category) => ({
+    ...category,
+    projects: projects.filter((project) => project.category === category.key)
+  }));
+  const slices = projects.map((project, index) => {
+    const category = projectCategoryPalette.find((item) => item.key === project.category);
+    const start = (index * 360) / projects.length;
+    const end = ((index + 1) * 360) / projects.length;
+    return `${category?.color ?? "#71717a"} ${start}deg ${end - 1.2}deg, transparent ${end - 1.2}deg ${end}deg`;
+  });
+  let cursor = 0;
+  const categorySlices = groups.map((group) => {
+    const start = cursor;
+    cursor += (group.projects.length * 360) / projects.length;
+    return `${group.color} ${start}deg ${cursor - 1.2}deg, transparent ${cursor - 1.2}deg ${cursor}deg`;
+  });
+
+  return (
+    <section className="mb-16 rounded-[2rem] border border-neutral-800 bg-neutral-900/40 p-6 md:p-9" aria-labelledby="project-distribution-title">
+      <div className="mb-7 flex flex-wrap items-end justify-between gap-4">
+        <div><p className="mb-2 text-xs font-bold uppercase tracking-[0.24em] text-violet-300">Portfolio map</p><h3 id="project-distribution-title" className="text-2xl font-black md:text-3xl">A growing body of work</h3></div>
+        <p className="max-w-md text-xs leading-relaxed text-neutral-400">The inner ring groups the work by field. Every outer slice represents one project; its number matches the index at right.</p>
+      </div>
+      <div className="grid items-center gap-8 lg:grid-cols-[280px_1fr]">
+        <div className="flex flex-col items-center gap-5 sm:flex-row lg:flex-col xl:flex-row">
+          <div role="img" aria-label={`Double doughnut chart: ${groups.map((group) => `${group.label}, ${group.projects.length}`).join("; ")}. The outer ring contains one slice for each of ${projects.length} projects.`} className="relative h-56 w-56 shrink-0 rounded-full" style={{ background: `conic-gradient(${slices.join(", ")})` }}>
+            <div className="absolute inset-[16%] rounded-full" style={{ background: `conic-gradient(${categorySlices.join(", ")})` }} />
+            <div className="absolute inset-[34%] flex flex-col items-center justify-center rounded-full border border-white/10 bg-[#101014] text-center"><span className="text-3xl font-black">{projects.length}</span><span className="mt-1 text-[9px] font-bold uppercase tracking-[0.18em] text-neutral-400">Projects</span></div>
+          </div>
+          <ul className="grid gap-2.5">{groups.map((group) => <li key={group.key} className="flex items-center justify-between gap-5 text-xs"><span className="flex items-center gap-2.5 text-neutral-300"><span className="h-2.5 w-2.5 rounded-full" style={{ backgroundColor: group.color }} />{group.label}</span><span className="font-mono text-neutral-500">{group.projects.length}</span></li>)}</ul>
+        </div>
+        <ol className="grid gap-x-6 gap-y-1 sm:grid-cols-2">{projects.map((project, index) => {
+          const category = projectCategoryPalette.find((item) => item.key === project.category);
+          return <li key={`${project.category}-${project.title}`} className="flex min-w-0 items-center gap-3 border-b border-neutral-800/80 py-2 text-xs"><span className="font-mono text-[10px] text-neutral-600">{String(index + 1).padStart(2, "0")}</span><span className="h-1.5 w-1.5 shrink-0 rounded-full" style={{ backgroundColor: category?.color }} /><span className="truncate text-neutral-300" title={project.title}>{project.title}</span></li>;
+        })}</ol>
+      </div>
+    </section>
+  );
+};
+
 const ProjectsView: React.FC<{ setSelectedProject: (p: Project) => void }> = ({ setSelectedProject }) => {
  const [expanded,setExpanded]=useState<Record<string,boolean>>({});
  const categoryInfo={data:{title:"Data & Analytics",desc:"Analysis, statistical modelling, dashboards, and decision-support tools."},tech:{title:"Web & Software Engineering",desc:"Responsive websites, platforms, and digital experiences built around real needs."},ai:{title:"Artificial Intelligence",desc:"AI-enabled tools, prediction systems, and human-centred automation."}};
@@ -246,7 +250,8 @@ const ProjectsView: React.FC<{ setSelectedProject: (p: Project) => void }> = ({ 
       title: "KADA; KADSA's Automated Data Analyzer", 
       category: "data", 
       origin: "KADSA",
-      imageUrl: "/images/kada.png",
+      imageUrl: "/projects/data/kada/kada.png",
+      gallery: screenshotGallery("/projects/data/kada", "kada", 15, true),
       desc: "Automated analytical codeless tool for extraction and analysis of multi-sector Data.", 
       longDesc: "Designed to help small businesses track their performance without needing deep technical expertise. Features include data cleaning, visualization/data-storytelling, report generationand Predictive modelling.",
       tags: ["Data Science", "Python", "Time series", "Predictive Modelling", "Survival Analysis", "BS4", "Data Automation", "Data Analysis", "FastAPI", "React", "PWA", "Generative AI", "Chatbot"],
@@ -258,6 +263,7 @@ const ProjectsView: React.FC<{ setSelectedProject: (p: Project) => void }> = ({ 
       category: "data", 
       origin: "Future Interns",
       imageUrl: "/images/POWER BI 03.png",
+      gallery: ["/images/POWER BI 03.png"],
       desc: "An in-depth study of student demographics and behaviors to predict and improve retention rates.", 
       longDesc: "Leveraged descriptive and diagnostic analytics to identify risk factors. Provided a clear roadmap for administration to improve student experiences.",
       tags: ["Python", "Pandas", "Analytics", "Power BI", "Data Storytelling"],
@@ -268,6 +274,7 @@ const ProjectsView: React.FC<{ setSelectedProject: (p: Project) => void }> = ({ 
       category: "data", 
       origin: "Future Interns",
       imageUrl: "/images/superstore.png",
+      gallery: ["/images/superstore.png"],
       desc: "Interactive Power BI dashboard-system for monitoring sales and Return on investiment (ROI).", 
       longDesc: "Created during academic tenure to simulate real-world data warehousing and visualization environments.",
       tags: ["SQL", "Power Bi", "Excel", "R", "Data Storytelling"],
@@ -278,6 +285,7 @@ const ProjectsView: React.FC<{ setSelectedProject: (p: Project) => void }> = ({ 
       category: "data", 
       origin: "Future Interns",
       imageUrl: "/images/POWER BI 02.png",
+      gallery: ["/images/POWER BI 02.png"],
       desc: "Analysis of the performance of Facebook Ads and their impact on returns.", 
       longDesc: "Did variable enginearing on power bi to find the actual return on investiment, there after performed an anova test to check if there is any effect accross the campaigns.",
       tags: ["Python", "Power BI", "Analytics", "Data Storytelling"],
@@ -288,6 +296,7 @@ const ProjectsView: React.FC<{ setSelectedProject: (p: Project) => void }> = ({ 
       category: "data", 
       origin: "School",
       imageUrl: "/images/correlation.png",
+      gallery: ["/images/correlation.png"],
       desc: "Predictive model of spotify's songs' populaarity.", 
       longDesc: "Identifies key features that contribute to a song going viral using advanced regression and classification techniques. It relates song popularity to its audio features.",
       tags: ["Scikit-Learn", "Regression", "Classification", "Math", "R", "Random Forest","Gradient Boosting", "XGBoost"],
@@ -297,7 +306,8 @@ const ProjectsView: React.FC<{ setSelectedProject: (p: Project) => void }> = ({ 
       title: "KADA; KADSA's Automated Data Analyzer", 
       category: "tech", 
       origin: "KADSA",
-      imageUrl: "/images/kada.png",
+      imageUrl: "/projects/tech/kada/kada.png",
+      gallery: screenshotGallery("/projects/tech/kada", "kada", 15, true),
       desc: "A state ot the art modern PWA, Web based and intergratable across devices.", 
       longDesc: "Designed as a Progressive Web application (PWA) so it can serve even those who do not have access to a traditional desktops, simplified for compatibility even with smartphones, To ease access and use for even those with limited resources.",
       tags: ["JavaScript", "HTML", "CSS", "Data Analysis", "ReactJS", "PWA", "Generative AI", "Chatbot"],
@@ -305,21 +315,23 @@ const ProjectsView: React.FC<{ setSelectedProject: (p: Project) => void }> = ({ 
       live: "https://csv-xls-data-analyzer.vercel.app/"
     },
     { 
-      title: "KADSA Tech Solutions", 
+      title: "The Wealth Clinic Ke", 
       category: "tech", 
       origin: "Professional",
-      imageUrl: "/images/kadsa.png",
-      desc: "Full-scale corporate website for a tech consulting firm.", 
-      longDesc: "Includes dynamic service listings, client intake forms, and an optimized performance architecture. With portal and role based database to allow users acces services with respective restrictions. Equiped with an innovation hub and an academy for study materials.",
+      imageUrl: "/projects/tech/wealthcke/wc1.png",
+      gallery: screenshotGallery("/projects/tech/wealthcke", "wc", 10),
+      desc: "Full-scale corporate website for a wealthInvestiment consulting firm.", 
+      longDesc: "Includes dynamic service listings, client intake forms, and an optimized performance architecture. With Rich Identity and theme stability across mutiple pages with automated wealth stability assessment. Equiped with investiment and Mononey management materials and e-books.",
       tags: ["Tailwind", "JS", "Design", "CSS", "HTML", "React", "PWA", "Chatbot"],
-      github: "https://kiteluva.github.io/KADSA/",
-      live: "https://the-website-chi.vercel.app/"
+      github: "https://github.com/kiteluva/beatrice/",
+      live: "https://www.thewealthclinic.co.ke/"
     },
     { 
       title: "Ibacho Technical Training College", 
       category: "tech", 
       origin: "Professional",
-      imageUrl: "/images/ibacho.png",
+      imageUrl: "/projects/tech/ibacho/ibc1.png",
+      gallery: screenshotGallery("/projects/tech/ibacho", "ibc", 10),
       desc: "Full-scale Institutional website for a technical training college.", 
       longDesc: "This is a full-scale institutional website for a technical training college. Informative, easy to navigate, and mobile-responsive. Fitted with online applications and placeholders for bioth staff and student portals.",
       tags: ["Tailwind", "JS", "Design", "CSS", "HTML", "React"],
@@ -330,7 +342,8 @@ const ProjectsView: React.FC<{ setSelectedProject: (p: Project) => void }> = ({ 
       title: "Brainserve Academy", 
       category: "tech", 
       origin: "Institutional",
-      imageUrl: "/images/bserve.png",
+      imageUrl: "/projects/tech/brainserve/bs1.png",
+      gallery: screenshotGallery("/projects/tech/brainserve", "bs", 10),
       desc: "Front-end; Institutional website for a CBC school with JSS classes.", 
       longDesc: "This is a full-scale institutional website for a CBC school. Informative, easy to navigate, and mobile-responsive. Fitted with online applications and information on all school levels. Ready to intergrate a state of the art school management system.",
       tags: ["Tailwind", "JS", "Design", "CSS", "HTML", "React"],
@@ -341,7 +354,8 @@ const ProjectsView: React.FC<{ setSelectedProject: (p: Project) => void }> = ({ 
       title: "Clini-Q; Health start up", 
       category: "tech", 
       origin: "Professional",
-      imageUrl: "/images/cliniq.png",
+      imageUrl: "/projects/tech/clini-q/cq1.png",
+      gallery: screenshotGallery("/projects/tech/clini-q", "cq", 10),
       desc: "A Company website for a start up health tech company.", 
       longDesc: "This website is Built to exclussively advertise a software the start up developed. It is equiped with a responsive design, great feel even on mobile and modals for deeper contents. Themes, as per the clients tastes.",
       tags: ["Tailwind", "JS", "Design", "CSS", "HTML", "React"],
@@ -352,7 +366,8 @@ const ProjectsView: React.FC<{ setSelectedProject: (p: Project) => void }> = ({ 
       title: "Kisavi's Portfolio", 
       category: "tech", 
       origin: "Personal",
-      imageUrl: "/images/kisavi.png",
+      imageUrl: "/projects/tech/kisavi/ek1.png",
+      gallery: screenshotGallery("/projects/tech/kisavi", "ek", 10),
       desc: "An elegant portfolio design to showcase Her work.", 
       longDesc: "This portfolio highlights her skills, projects, and professional journey policy development and poverty eradication measures implementation. It features a sleek design, easy navigation, and a responsive layout.",
       tags: ["Tailwind", "JS", "Design", "CSS", "Javascript", "React"],
@@ -363,7 +378,8 @@ const ProjectsView: React.FC<{ setSelectedProject: (p: Project) => void }> = ({ 
       title: "CPC, Catholic Prayer Companion", 
       category: "ai", 
       origin: "Faith",
-      imageUrl: "/images/cpc.png",
+      imageUrl: "/projects/ai/cpc/cpc.png",
+      gallery: screenshotGallery("/projects/ai/cpc", "cpc", 6, true),
       desc: "Automated application, a guide thro' catholic prayers, The holy scriptures and Catechism", 
       longDesc: "Designed to help Catholics all over the world keep track of their pilgrimage life. With advanced curated sacristy, You keep track of your progress, aceross daily prayers, procedural prayers and novenas. You also get recomendations from your activity what verses to read, pragraphs of the catechism. An all in one catholic holliness; prayers; Scriptures and catechism, all in sync with the catholic calendar.",
       tags: ["Python", "Time series", "Predictive Modelling", "Magisterium AI", "BS4", "Automation", "Data Analysis", "FastAPI", "React", "PWA", "Generative AI", "Chatbot"],
@@ -374,7 +390,8 @@ const ProjectsView: React.FC<{ setSelectedProject: (p: Project) => void }> = ({ 
       title: "R shinny's Popularity Predictor", 
       category: "ai", 
       origin: "School",
-      imageUrl: "/images/r-shinny.png",
+      imageUrl: "/projects/ai/rshinny/sh1.png",
+      gallery: screenshotGallery("/projects/ai/rshinny", "sh", 5),
       desc: "An R shinny application to Predict spotify's songs' populaarity.", 
       longDesc: "Identifies key features that contribute to a song going viral using advanced regression and classification techniques. It relates song popularity to its audio features. And use user's input features to predict the likely popularity of the song, it also gives insights on how to improve the song's chances of going viral.",
       tags: ["Scikit-Learn", "Regression", "Classification", "Math", "R", "R-shinny", "Random Forest","Gradient Boosting", "XGBoost"],
@@ -385,7 +402,8 @@ const ProjectsView: React.FC<{ setSelectedProject: (p: Project) => void }> = ({ 
       title: "KADA; KADSA's Automated Data Analyzer", 
       category: "ai", 
       origin: "KADSA",
-      imageUrl: "/images/kada.png",
+      imageUrl: "/projects/ai/kada/kada.png",
+      gallery: screenshotGallery("/projects/ai/kada", "kada", 15, true),
       desc: "Automated tool for extraction and analysis Data.", 
       longDesc: "Designed and integrated with a generative AI, with a chatbot interphase to help Non-technical users communicate with the AI model, Interprete their findings and give simplified actionable insights from the data being worked on. Most users don't have the technical expertise to operate complicted systems, with KADA; Your firm gets a chance to act on your own Data even with less technical personel.",
       tags: ["Generative AI", "Chatbot" , "Python", "Gemini", "Data Science", "Data Automation", "Data Analysis", "FastAPI", "React"],
@@ -396,25 +414,42 @@ const ProjectsView: React.FC<{ setSelectedProject: (p: Project) => void }> = ({ 
   ];
 
  const categories=["data","tech","ai"] as const;
- return <div className="animate-in fade-in duration-700 text-left">
-  <section className="relative isolate mb-16 min-h-[390px] overflow-hidden rounded-[2rem] border border-neutral-800 bg-[#08080b] px-7 py-10 md:px-12 md:py-14 lg:px-16"><div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_85%_15%,rgba(124,58,237,0.23),transparent_38%),radial-gradient(ellipse_at_8%_90%,rgba(37,99,235,0.12),transparent_35%)]"/><div className="pointer-events-none absolute inset-0 -z-10 opacity-[0.12] [background-image:linear-gradient(rgba(255,255,255,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.08)_1px,transparent_1px)] [background-size:42px_42px]"/><div className="relative z-10 max-w-4xl"><p className="mb-5 text-xs font-bold uppercase tracking-[0.28em] text-purple-200">Selected work · Built to serve</p><h2 className="mb-6 max-w-4xl text-4xl font-black leading-[1.02] tracking-[-0.04em] md:text-6xl lg:text-7xl">Good work should <span className="bg-gradient-to-r from-violet-300 via-sky-300 to-emerald-300 bg-clip-text text-transparent">inspire, grow, encourage and cultivate </span>Others.</h2><p className="mb-7 max-w-2xl text-base leading-relaxed text-neutral-300 md:text-lg">Explore data, software, and AI projects shaped by curiosity and a practical desire to make things better for people.</p><div className="max-w-3xl border-l-2 border-amber-300/70 pl-4"><p className="text-sm leading-relaxed text-neutral-400">I see work as stewardship: use what you have been given well, share what you learn, and make room for others to grow.</p><p className="mt-2 text-sm font-semibold italic text-amber-200">“God’s will be done on earth, as it is in Heaven.”</p></div></div><div className="absolute bottom-5 right-6 hidden text-right text-[10px] font-semibold uppercase tracking-[0.2em] text-neutral-600 md:block">Data <span className="px-2 text-purple-300">/</span> Technology <span className="px-2 text-purple-300">/</span> Impact</div></section>
+  return <div className="animate-in fade-in duration-700 text-left">
+  <section className="relative isolate mb-10 min-h-[360px] overflow-hidden rounded-[2rem] border border-violet-300/20 bg-[#08080b] px-7 py-10 shadow-[0_24px_100px_rgba(70,40,140,0.16)] md:px-12 md:py-14 lg:px-16">
+    <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_85%_15%,rgba(124,58,237,0.26),transparent_38%),radial-gradient(ellipse_at_8%_90%,rgba(37,99,235,0.17),transparent_35%)]" />
+    <div className="pointer-events-none absolute inset-0 -z-10 opacity-[0.1] [background-image:linear-gradient(rgba(255,255,255,0.1)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.1)_1px,transparent_1px)] [background-size:42px_42px]" />
+    <div className="relative z-10 max-w-4xl">
+      <p className="mb-5 inline-flex rounded-full border border-violet-300/25 bg-violet-300/[0.08] px-4 py-2 text-[10px] font-bold uppercase tracking-[0.28em] text-violet-200">Selected work <span className="px-2 text-cyan-200">/</span> Built to serve</p>
+      <h2 className="mb-6 max-w-4xl text-4xl font-black leading-[1.02] tracking-[-0.04em] md:text-6xl lg:text-7xl">Good work should <span className="bg-gradient-to-r from-violet-300 via-sky-300 to-emerald-300 bg-clip-text text-transparent">inspire, grow, encourage and cultivate </span>others.</h2>
+      <p className="mb-7 max-w-2xl text-base leading-relaxed text-neutral-300 md:text-lg">Explore data, software, and AI projects shaped by curiosity and a practical desire to make things better for people.</p>
+      <div className="max-w-3xl border-l-2 border-amber-300/70 pl-4"><p className="text-sm leading-relaxed text-neutral-400">I see work as stewardship: use what you have been given well, share what you learn, and make room for others to grow.</p><p className="mt-2 text-sm font-semibold italic text-amber-200">“God’s will be done on earth, as it is in Heaven.”</p></div>
+    </div>
+    <div className="absolute bottom-5 right-6 hidden text-right text-[10px] font-semibold uppercase tracking-[0.2em] text-neutral-500 md:block">Data <span className="px-2 text-purple-300">/</span> Technology <span className="px-2 text-purple-300">/</span> Impact</div>
+  </section>
+  <ProjectDistribution projects={projectData} />
   <div className="mb-12 flex flex-wrap gap-2">{categories.map(c=><a key={c} href={`#projects-${c}`} className="rounded-full border border-neutral-700 px-4 py-2 text-xs font-bold uppercase tracking-widest text-neutral-300 hover:border-purple-400 hover:text-white">{categoryInfo[c].title}</a>)}</div>
-  <div className="space-y-16">{categories.map(category=>{const projects=projectData.filter(p=>p.category===category);const visible=expanded[category]?projects:projects.slice(0,3);return <section key={category} id={`projects-${category}`} className="scroll-mt-24"><div className="mb-7 border-l-4 border-purple-500 pl-5"><h3 className="mb-2 text-2xl font-extrabold md:text-3xl">{categoryInfo[category].title}</h3><p className="text-sm text-neutral-400">{categoryInfo[category].desc}</p><p className="mt-2 text-xs text-neutral-500">{projects.length} projects</p></div><div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">{visible.map((p,i)=><button key={`${p.title}-${i}`} onClick={()=>setSelectedProject({...p,gallery:p.gallery?.length?p.gallery:[p.imageUrl||""].filter(Boolean)})} className="group overflow-hidden rounded-2xl border border-neutral-800 bg-neutral-900/30 text-left transition hover:-translate-y-1 hover:border-purple-500/50"><ProjectCardImage text={p.title} imageSrc={p.imageUrl} height="h-52"/><div className="p-6"><div className="mb-4 flex justify-between gap-3"><span className="rounded-full bg-purple-400/10 px-2.5 py-1 text-[10px] font-bold uppercase tracking-widest text-purple-300">{category==="ai"?"AI & ML":category==="data"?"Data":"Technology"}</span><span className="text-[10px] uppercase tracking-widest text-neutral-600">{p.origin}</span></div><h4 className="mb-2 text-lg font-bold group-hover:text-purple-300">{p.title}</h4><p className="mb-5 line-clamp-3 text-sm text-neutral-400">{p.desc}</p><span className="text-xs font-bold uppercase tracking-widest text-neutral-300">Explore project <ChevronRight size={15} className="inline"/></span></div></button>)}</div>{projects.length>3&&<div className="mt-7 text-center"><button onClick={()=>setExpanded(prev=>({...prev,[category]:!prev[category]}))} className="rounded-full border border-neutral-700 px-6 py-3 text-sm font-bold hover:border-purple-400">{expanded[category]?"Show fewer projects":`Show more ${categoryInfo[category].title} projects`}</button></div>}</section>})}</div><section className="relative isolate mt-20 overflow-hidden rounded-[2rem] border border-purple-400/20 bg-neutral-900/40 px-7 py-10 md:px-12 md:py-14"><div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_90%_0%,rgba(124,58,237,0.2),transparent_42%)]"/><p className="mb-4 text-xs font-bold uppercase tracking-[0.25em] text-amber-200">Have a problem worth solving?</p><h3 className="mb-5 max-w-3xl text-3xl font-black leading-tight md:text-5xl">Let's build something <span className="text-purple-300">useful, thoughtful, and lasting.</span></h3><p className="mb-8 max-w-2xl text-sm leading-relaxed text-neutral-300 md:text-base">Whether you have a project idea, need help making sense of data, want to collaborate, or would like to create room for someone else through volunteering or mentorship, let's start with a conversation.</p><div className="flex flex-wrap gap-3"><button onClick={() => window.dispatchEvent(new CustomEvent('portfolio:navigate', { detail: 'contact' }))} className="inline-flex items-center gap-2 rounded-full bg-white px-7 py-3.5 text-sm font-bold text-black transition hover:bg-neutral-200">Start a project together <ChevronRight size={17}/></button><a href="mailto:kitennykiluva@gmail.com?subject=Let%27s%20start%20a%20project" className="inline-flex items-center gap-2 rounded-full border border-neutral-700 px-7 py-3.5 text-sm font-bold text-white transition hover:border-purple-400"><Mail size={16}/> Email me</a></div><p className="mt-8 text-xs italic text-neutral-500">Faith-led work. Generous collaboration. A little more good in the world.</p></section></div>;
+  <div className="space-y-16">{categories.map(category=>{const projects=projectData.filter(p=>p.category===category);const visible=expanded[category]?projects:projects.slice(0,3);return <section key={category} id={`projects-${category}`} className="scroll-mt-24"><div className="relative mb-7 overflow-hidden rounded-2xl border border-neutral-800 bg-gradient-to-r from-neutral-900/90 via-neutral-900/50 to-transparent px-6 py-5 before:absolute before:inset-y-0 before:left-0 before:w-1 before:bg-gradient-to-b before:from-cyan-300 before:via-violet-400 before:to-transparent"><h3 className="mb-2 text-2xl font-extrabold md:text-3xl">{categoryInfo[category].title}</h3><p className="text-sm text-neutral-400">{categoryInfo[category].desc}</p><p className="mt-2 text-xs text-neutral-500">{projects.length} projects</p></div><div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">{visible.map((p,i)=><button key={`${p.title}-${i}`} onClick={()=>setSelectedProject({...p,gallery:p.gallery?.length?p.gallery:[p.imageUrl||""].filter(Boolean)})} className="group overflow-hidden rounded-2xl border border-neutral-800 bg-neutral-900/30 text-left transition hover:-translate-y-1 hover:border-purple-500/50"><ProjectCardImage text={p.title} imageSrc={p.imageUrl} height="h-52"/><div className="p-6"><div className="mb-4 flex justify-between gap-3"><span className="rounded-full bg-purple-400/10 px-2.5 py-1 text-[10px] font-bold uppercase tracking-widest text-purple-300">{category==="ai"?"AI & ML":category==="data"?"Data":"Technology"}</span><span className="text-[10px] uppercase tracking-widest text-neutral-600">{p.origin}</span></div><h4 className="mb-2 text-lg font-bold group-hover:text-purple-300">{p.title}</h4><p className="mb-5 line-clamp-3 text-sm text-neutral-400">{p.desc}</p><span className="text-xs font-bold uppercase tracking-widest text-neutral-300">Explore project <ChevronRight size={15} className="inline"/></span></div></button>)}</div>{projects.length>3&&<div className="mt-7 text-center"><button onClick={()=>setExpanded(prev=>({...prev,[category]:!prev[category]}))} className="rounded-full border border-neutral-700 px-6 py-3 text-sm font-bold hover:border-purple-400">{expanded[category]?"Show fewer projects":`Show more ${categoryInfo[category].title} projects`}</button></div>}</section>})}</div><section className="relative isolate mt-20 overflow-hidden rounded-[2rem] border border-purple-400/20 bg-neutral-900/40 px-7 py-10 md:px-12 md:py-14"><div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_90%_0%,rgba(124,58,237,0.2),transparent_42%)]"/><p className="mb-4 text-xs font-bold uppercase tracking-[0.25em] text-amber-200">Have a problem worth solving?</p><h3 className="mb-5 max-w-3xl text-3xl font-black leading-tight md:text-5xl">Let's build something <span className="text-purple-300">useful, thoughtful, and lasting.</span></h3><p className="mb-8 max-w-2xl text-sm leading-relaxed text-neutral-300 md:text-base">Whether you have a project idea, need help making sense of data, want to collaborate, or would like to create room for someone else through volunteering or mentorship, let's start with a conversation.</p><div className="flex flex-wrap gap-3"><button onClick={() => window.dispatchEvent(new CustomEvent('portfolio:navigate', { detail: 'contact' }))} className="inline-flex items-center gap-2 rounded-full bg-white px-7 py-3.5 text-sm font-bold text-black transition hover:bg-neutral-200">Start a project together <ChevronRight size={17}/></button><a href="mailto:kitennykiluva@gmail.com?subject=Let%27s%20start%20a%20project" className="inline-flex items-center gap-2 rounded-full border border-neutral-700 px-7 py-3.5 text-sm font-bold text-white transition hover:border-purple-400"><Mail size={16}/> Email me</a></div><p className="mt-8 text-xs italic text-neutral-500">Faith-led work. Generous collaboration. A little more good in the world.</p></section></div>;
 };
 
 const ContactView: React.FC = () => (
-  <div className="max-w-4xl mx-auto animate-in zoom-in-95 duration-500 text-left">
-    <div className="text-center mb-16">
-      <p className="mb-4 text-xs font-bold uppercase tracking-[0.25em] text-amber-300">Purposeful work · Generous learning · Service</p><h2 className="text-5xl font-extrabold mb-6">Start a Conversation</h2>
-      <p className="text-neutral-400 text-lg max-w-2xl mx-auto">
-        I am actively seeking opportunities with forward-thinking tech teams, Researchers and problem solving Thinkers. Whether you have a specific role or just want to discuss data trends, Tech advancements or AI impacts and its positive Importance in today's First moving world, I'm here for you.
-      </p>
-      <p className="mx-auto mt-6 max-w-2xl text-sm leading-relaxed text-neutral-400">My Catholic faith calls me to treat work as service, knowledge as something to share, and opportunity as something to extend to others. Whether we discuss a role, a project, volunteering, or mentorship, I hope the conversation helps us build something good for someone beyond ourselves.</p><p className="mt-4 text-sm font-semibold italic text-amber-200">“I was given Freely, I should do similar.”</p>
-    </div>
-    <div className="p-8 bg-neutral-900/30 border border-neutral-800 rounded-2xl flex items-center gap-4 mb-12 justify-center">
-      <div className="w-2 h-2 rounded-full bg-blue-500 animate-pulse"></div>
-        <span className="text-sm font-semibold">For mentorship, Anything concerning Data Science, Machine Learning, AI or General Technological advancements, Reach out. I am always looking to share, guide and exchange ideas.</span>
-    </div>
+  <div className="mx-auto max-w-6xl animate-in zoom-in-95 duration-500 text-left">
+    <section className="relative isolate mb-12 overflow-hidden rounded-[2rem] border border-cyan-300/20 bg-[#08090d] px-7 py-10 md:px-12 md:py-14">
+      <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_86%_42%,rgba(34,211,238,0.2),transparent_32%),radial-gradient(ellipse_at_15%_5%,rgba(124,58,237,0.22),transparent_42%)]" />
+      <div className="pointer-events-none absolute inset-0 -z-10 opacity-[0.08] [background-image:linear-gradient(rgba(255,255,255,0.1)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.1)_1px,transparent_1px)] [background-size:38px_38px]" />
+      <div className="relative z-10 max-w-3xl">
+        <p className="mb-5 text-xs font-bold uppercase tracking-[0.25em] text-cyan-200">Partnership · Shared knowledge · Service</p>
+        <h2 className="mb-6 max-w-3xl text-4xl font-black leading-[1.02] tracking-tight md:text-6xl">Let’s make room for <span className="bg-gradient-to-r from-cyan-200 via-sky-300 to-violet-300 bg-clip-text text-transparent">more possibility.</span></h2>
+        <p className="max-w-2xl text-base leading-relaxed text-neutral-300 md:text-lg">I’m open to collaboration with companies and institutions committed to humanitarian impact, especially partnerships that support children and young people in marginalized communities.</p>
+        <p className="mt-5 max-w-2xl text-sm leading-relaxed text-neutral-400">I can contribute in data science, software, AI, mentorship, and technical learning. If your mission creates access, shares knowledge, or helps young people shape their futures, I’d be glad to explore how we can work together.</p>
+        <a href="mailto:kitennykiluva@gmail.com?subject=Let%27s%20collaborate" className="mt-8 inline-flex items-center gap-2 rounded-full bg-white px-6 py-3.5 text-sm font-bold text-black transition hover:bg-cyan-100">Explore a partnership <Send size={16}/></a>
+      </div>
+      <div aria-hidden="true" className="pointer-events-none absolute -right-10 top-1/2 hidden h-64 w-64 -translate-y-1/2 items-center justify-center md:flex lg:right-10 lg:h-80 lg:w-80">
+        <div className="absolute inset-5 rounded-full border border-cyan-200/20"/><div className="absolute inset-12 rounded-full border border-violet-200/20"/><div className="absolute h-28 w-28 rounded-full border border-cyan-200/30 bg-cyan-200/[0.07] shadow-[0_0_80px_rgba(34,211,238,0.15)]"/>
+        <span className="absolute left-8 top-14 rounded-full border border-white/10 bg-neutral-950/80 px-3 py-2 text-[10px] font-bold uppercase tracking-widest text-cyan-100">Learn</span><span className="absolute bottom-14 right-0 rounded-full border border-white/10 bg-neutral-950/80 px-3 py-2 text-[10px] font-bold uppercase tracking-widest text-violet-100">Build</span><span className="absolute bottom-7 left-8 rounded-full border border-white/10 bg-neutral-950/80 px-3 py-2 text-[10px] font-bold uppercase tracking-widest text-amber-100">Give back</span>
+        <span className="relative text-sm font-black tracking-[0.2em] text-white/80">TOGETHER</span>
+      </div>
+      <p className="relative z-10 mt-8 text-xs font-semibold italic text-amber-200">“I was given freely; I should give freely.”</p>
+    </section>
 
     <div className="grid grid-cols-1 md:grid-cols-5 gap-12 items-start">
       <div className="md:col-span-2 space-y-6">
@@ -423,10 +458,10 @@ const ContactView: React.FC = () => (
           <div className="space-y-4">
             <div className="flex items-center gap-4">
               <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></div>
-              <span className="text-sm font-semibold">Available for Hire</span>
+              <span className="text-sm font-semibold">Open to mission-led collaboration</span>
             </div>
             <p className="text-xs text-neutral-500 leading-relaxed">
-              Seeking: Data Analyst, Data Scientist, ML Engineer, Full-Stack Developer roles or a blend of Data and Software Engineering, especially Automation of Data Analytics.
+              I welcome project partnerships with companies, institutions, and humanitarian organizations working to expand opportunity for children and young people in marginalized communities.
             </p>
           </div>
         </div>
@@ -491,10 +526,10 @@ const ContactView: React.FC = () => (
               name="Project_Type"
               className="w-full bg-neutral-900 border border-neutral-800 rounded-xl p-4 focus:border-purple-500 outline-none transition-all text-white"
             >
-              <option value="Full-time Employment">Full-time Employment</option>
-              <option value="Contract Development">Contract Development</option>
-              <option value="Data Consultation">Data Consultation</option>
-              <option value="Educational Inquiry">Educational Inquiry</option>
+              <option value="Humanitarian partnership">Humanitarian partnership</option>
+              <option value="Technology or data project">Technology or data project</option>
+              <option value="Mentorship or training">Mentorship or training</option>
+              <option value="Institutional collaboration">Institutional collaboration</option>
             </select>
           </div>
 
@@ -506,7 +541,7 @@ const ContactView: React.FC = () => (
               rows={5} 
               required
               className="w-full bg-neutral-900 border border-neutral-800 rounded-xl p-4 focus:border-purple-500 outline-none transition-all text-white" 
-              placeholder="How can I help your business?"
+              placeholder="Tell me about your mission, the people you serve, and how we might work together."
             ></textarea>
           </div>
 
@@ -525,7 +560,7 @@ const ProjectModal: React.FC<{ project: Project; onClose: () => void }> = ({proj
  const images=(project.gallery?.length?project.gallery:[project.imageUrl||""]).filter(Boolean); const [large,setLarge]=useState<string|null>(null); const [review,setReview]=useState(false); const [rating,setRating]=useState("5"); const [feedback,setFeedback]=useState(""); const [notice,setNotice]=useState(""); const ratingKey=`portfolio-rating:${project.category}:${project.title}`; const [savedRating,setSavedRating]=useState<number>(()=>Number(localStorage.getItem(ratingKey)||0));
  const reviewUrl=`mailto:kitennykiluva@gmail.com?subject=${encodeURIComponent("Project review: "+project.title)}&body=${encodeURIComponent("Project: "+project.title+"\nRating: "+rating+"/5\n\nReview:\n"+feedback)}`;
  const share=async()=>{try{const url=project.live||project.github||window.location.href;if(navigator.share)await navigator.share({title:project.title,text:project.desc,url});else{await navigator.clipboard.writeText(project.title+"\n"+project.desc+"\n"+url);setNotice("Project details copied to clipboard.")}}catch{setNotice("Sharing is unavailable or was cancelled.")}};
- return <><div className="fixed inset-0 z-[100] flex items-center justify-center p-3 md:p-6"><button aria-label="Close project" onClick={onClose} className="absolute inset-0 bg-black/90 backdrop-blur-xl"/><div role="dialog" aria-modal="true" className="relative max-h-[94vh] w-full max-w-7xl overflow-y-auto rounded-3xl border border-neutral-800 bg-neutral-950 shadow-2xl"><button onClick={onClose} className="sticky top-3 z-20 float-right mr-4 mt-3 rounded-full border border-neutral-700 bg-neutral-900 p-2"><X/></button><div className="grid grid-cols-1 lg:grid-cols-[0.85fr_1.15fr]"><section className="p-6 pt-14 md:p-10 lg:pt-10"><p className="mb-4 text-xs font-bold uppercase tracking-widest text-purple-300">{project.category==="ai"?"AI & ML":project.category==="data"?"Data & Analytics":"Web & Software"} · {project.origin}</p><h3 className="mb-5 text-3xl font-extrabold">{project.title}</h3><p className="mb-6 text-sm leading-relaxed text-neutral-300">{project.desc}</p>{project.longDesc&&<div className="mb-7 border-t border-neutral-800 pt-5"><h4 className="mb-3 text-xs font-bold uppercase tracking-widest text-neutral-400">Full project review & implementation</h4><p className="text-sm leading-relaxed text-neutral-400">{project.longDesc}</p></div>}<div className="mb-7 rounded-2xl border border-neutral-800 bg-neutral-900/50 p-4"><div className="flex flex-wrap items-center justify-between gap-3"><div><p className="text-xs font-bold uppercase tracking-widest text-neutral-300">Rate this project</p><p className="mt-1 text-xs text-neutral-500">Your rating stays in this browser.</p></div><div className="text-right"><p className="text-sm font-bold text-amber-200">{savedRating ? `${savedRating}/5` : "Not rated"}<span className="ml-1 text-amber-300">★</span></p><p className="text-[10px] text-neutral-500">Your rating</p></div></div><div className="mt-3 flex gap-1" role="radiogroup" aria-label="Rate this project from one to five">{[1,2,3,4,5].map(n=><button key={n} type="button" role="radio" aria-checked={savedRating===n} aria-label={`${n} star${n>1?'s':''}`} onClick={()=>{setSavedRating(n);localStorage.setItem(ratingKey,String(n));}} className={`rounded-md p-1 text-2xl transition hover:scale-110 ${n<=savedRating?"text-amber-300":"text-neutral-700 hover:text-amber-200"}`}>★</button>)}</div>{savedRating>0&&<p className="mt-2 text-xs text-emerald-300">Thanks for rating this project {savedRating}/5.</p>}</div><div className="mb-8 flex flex-wrap gap-2">{project.tags.map(t=><span key={t} className="rounded-lg border border-neutral-800 bg-neutral-900 px-3 py-1 text-xs text-neutral-400">{t}</span>)}</div><div className="mb-7 grid gap-3 sm:grid-cols-2">{project.github&&<a href={project.github} target="_blank" rel="noreferrer" className="rounded-xl bg-white px-4 py-3 text-center text-sm font-bold text-black"><Github size={17} className="mr-2 inline"/>Source / Project</a>}{project.live&&<a href={project.live} target="_blank" rel="noreferrer" className="rounded-xl border border-neutral-700 px-4 py-3 text-center text-sm font-bold"><Globe size={17} className="mr-2 inline"/>Live experience</a>}</div><div className="flex flex-wrap gap-3"><button onClick={share} className="rounded-lg border border-neutral-700 px-4 py-2 text-xs font-bold"><Send size={15} className="mr-2 inline"/>Share project</button><button onClick={()=>setReview(v=>!v)} className="rounded-lg border border-neutral-700 px-4 py-2 text-xs font-bold"><Award size={15} className="mr-2 inline"/>Review project</button></div>{notice&&<p className="mt-3 text-xs text-neutral-400">{notice}</p>}{review&&<form onSubmit={e=>{e.preventDefault();window.location.href=reviewUrl}} className="mt-5 space-y-3 rounded-xl border border-neutral-800 p-4"><h4 className="font-bold">Share your review</h4><label className="block text-xs text-neutral-400">Rating<select value={rating} onChange={e=>setRating(e.target.value)} className="mt-1 block w-full rounded-lg border border-neutral-700 bg-neutral-900 p-2 text-white">{[5,4,3,2,1].map(n=><option key={n} value={n}>{n} / 5</option>)}</select></label><label className="block text-xs text-neutral-400">Feedback<textarea required value={feedback} onChange={e=>setFeedback(e.target.value)} rows={4} className="mt-1 block w-full rounded-lg border border-neutral-700 bg-neutral-900 p-3 text-white" placeholder="What worked well? What could improve?"/></label><button className="rounded-lg bg-white px-4 py-2 text-xs font-bold text-black">Continue by email</button><p className="text-[11px] text-neutral-500">The review opens in your email app; this site does not store submissions.</p></form>}</section><section className="border-t border-neutral-800 bg-neutral-900/30 p-5 md:p-8 lg:border-l lg:border-t-0"><div className="mb-5"><p className="mb-1 text-[10px] font-bold uppercase tracking-widest text-purple-300">Project gallery</p><h4 className="text-xl font-bold">Inside the work <span className="ml-2 text-xs font-normal text-neutral-500">{images.length} images</span></h4></div><div className="grid grid-cols-1 gap-4 sm:grid-cols-2">{images.map((src,i)=><div key={src+i} className="overflow-hidden rounded-xl border border-neutral-800 bg-neutral-950"><button onClick={()=>setLarge(src)} className="block aspect-[4/3] w-full"><img src={src} alt={`${project.title} screenshot ${i+1}`} className="h-full w-full object-contain" loading="lazy"/></button><div className="flex justify-between border-t border-neutral-800 px-3 py-2 text-xs"><span className="text-neutral-500">Image {i+1}</span><div className="flex flex-wrap gap-3"><button onClick={()=>setLarge(src)} className="font-semibold">Expand</button><a href={src} download className="font-semibold">Download</a><button onClick={async()=>{try{const imageUrl=new URL(src,window.location.href).href;if(navigator.share)await navigator.share({title:project.title,text:`${project.title} · image ${i+1}`,url:imageUrl});else{await navigator.clipboard.writeText(imageUrl);setNotice('Image link copied to clipboard.')}}catch{setNotice('Image sharing was cancelled or is unavailable.')}}} className="font-semibold text-purple-300">Share</button></div></div></div>)}</div><p className="mt-5 text-xs text-neutral-500">Gallery images are configured in the project's <code>gallery</code> array in <code>src/App.tsx</code>.</p></section></div></div></div>{large&&<div className="fixed inset-0 z-[120] flex items-center justify-center bg-black/95 p-4" onClick={()=>setLarge(null)}><div className="absolute right-5 top-5 flex gap-3"><a href={large} download onClick={e=>e.stopPropagation()} className="rounded-full border border-neutral-700 bg-neutral-900 px-4 py-2 text-sm">Download image</a><button onClick={()=>setLarge(null)} className="rounded-full border border-neutral-700 bg-neutral-900 p-2"><X/></button></div><img src={large} alt="Expanded project image" className="max-h-[88vh] max-w-full object-contain" onClick={e=>e.stopPropagation()}/></div>}</>;
+ return <><div className="fixed inset-0 z-[100] flex items-center justify-center p-4 md:p-8 lg:p-10"><button aria-label="Close project" onClick={onClose} className="absolute inset-0 bg-black/90 backdrop-blur-xl"/><div role="dialog" aria-modal="true" className="relative h-[min(88vh,900px)] w-full max-w-7xl overflow-hidden rounded-[2rem] border border-[#e5d9cc] bg-[#f8f4ed] text-[#2b2521] shadow-[0_32px_120px_rgba(0,0,0,0.45)]"><button onClick={onClose} className="absolute right-5 top-5 z-20 rounded-full border border-[#e2d7cb] bg-white/90 p-2 text-[#2b2521] shadow-sm backdrop-blur"><X/></button><div className="grid h-full min-h-0 grid-cols-1 grid-rows-[minmax(220px,0.8fr)_minmax(0,1.2fr)] overflow-hidden lg:grid-cols-[minmax(340px,0.78fr)_minmax(0,1.22fr)] lg:grid-rows-1"><section className="min-h-0 overflow-y-auto overscroll-contain border-b border-[#e6dbcf] bg-[#fffdfa] p-6 pt-16 md:p-10 md:pt-10 lg:border-b-0 lg:border-r"><p className="mb-2 text-[9px] font-bold uppercase tracking-[0.24em] text-[#8d7a69]">Kiluva James · Project notes</p><p className="mb-4 text-xs font-bold uppercase tracking-widest text-[#d85c38]">{project.category==="ai"?"AI & ML":project.category==="data"?"Data & Analytics":"Web & Software"} · {project.origin}</p><h3 className="mb-5 font-serif text-4xl font-bold leading-tight text-[#2b2521] md:text-5xl">{project.title}</h3><p className="mb-6 text-sm leading-relaxed text-[#62574f]">{project.desc}</p>{project.longDesc&&<div className="mb-7 border-t border-[#e6dbcf] pt-5"><h4 className="mb-3 text-xs font-bold uppercase tracking-widest text-[#6b6058]">Full project review & implementation</h4><p className="text-sm leading-relaxed text-[#6b6058]">{project.longDesc}</p></div>}<div className="mb-7 rounded-2xl border border-[#e6dbcf] bg-[#f7f2eb] p-4"><div className="flex flex-wrap items-center justify-between gap-3"><div><p className="text-xs font-bold uppercase tracking-widest text-[#62574f]">Rate this project</p><p className="mt-1 text-xs text-[#81756b]">Your rating stays in this browser.</p></div><div className="text-right"><p className="text-sm font-bold text-[#a65d2c]">{savedRating ? `${savedRating}/5` : "Not rated"}<span className="ml-1 text-amber-300">★</span></p><p className="text-[10px] text-[#81756b]">Your rating</p></div></div><div className="mt-3 flex gap-1" role="radiogroup" aria-label="Rate this project from one to five">{[1,2,3,4,5].map(n=><button key={n} type="button" role="radio" aria-checked={savedRating===n} aria-label={`${n} star${n>1?'s':''}`} onClick={()=>{setSavedRating(n);localStorage.setItem(ratingKey,String(n));}} className={`rounded-md p-1 text-2xl transition hover:scale-110 ${n<=savedRating?"text-amber-300":"text-[#a69586] hover:text-[#a65d2c]"}`}>★</button>)}</div>{savedRating>0&&<p className="mt-2 text-xs text-[#287a55]">Thanks for rating this project {savedRating}/5.</p>}</div><div className="mb-8 flex flex-wrap gap-2">{project.tags.map(t=><span key={t} className="rounded-lg border border-[#e6dbcf] bg-white px-3 py-1 text-xs text-[#6b6058]">{t}</span>)}</div><div className="mb-7 grid gap-3 sm:grid-cols-2">{project.github&&<a href={project.github} target="_blank" rel="noreferrer" className="rounded-xl bg-white px-4 py-3 text-center text-sm font-bold text-black"><Github size={17} className="mr-2 inline"/>Source / Project</a>}{project.live&&<a href={project.live} target="_blank" rel="noreferrer" className="rounded-xl border border-[#d9cbbc] px-4 py-3 text-center text-sm font-bold"><Globe size={17} className="mr-2 inline"/>Live experience</a>}</div><div className="flex flex-wrap gap-3"><button onClick={share} className="rounded-lg border border-[#d9cbbc] px-4 py-2 text-xs font-bold"><Send size={15} className="mr-2 inline"/>Share project</button><button onClick={()=>setReview(v=>!v)} className="rounded-lg border border-[#d9cbbc] px-4 py-2 text-xs font-bold"><Award size={15} className="mr-2 inline"/>Review project</button></div>{notice&&<p className="mt-3 text-xs text-[#6b6058]">{notice}</p>}{review&&<form onSubmit={e=>{e.preventDefault();window.location.href=reviewUrl}} className="mt-5 space-y-3 rounded-xl border border-[#e6dbcf] p-4"><h4 className="font-bold">Share your review</h4><label className="block text-xs text-[#6b6058]">Rating<select value={rating} onChange={e=>setRating(e.target.value)} className="mt-1 block w-full rounded-lg border border-[#d9cbbc] bg-white p-2 text-[#2b2521]">{[5,4,3,2,1].map(n=><option key={n} value={n}>{n} / 5</option>)}</select></label><label className="block text-xs text-[#6b6058]">Feedback<textarea required value={feedback} onChange={e=>setFeedback(e.target.value)} rows={4} className="mt-1 block w-full rounded-lg border border-[#d9cbbc] bg-white p-3 text-[#2b2521]" placeholder="What worked well? What could improve?"/></label><button className="rounded-lg bg-white px-4 py-2 text-xs font-bold text-black">Continue by email</button><p className="text-[11px] text-[#81756b]">The review opens in your email app; this site does not store submissions.</p></form>}</section><section className="min-h-0 overflow-y-auto overscroll-contain bg-[#f2ece3] p-4 md:p-8"><div className="sticky -top-4 z-10 -mx-4 mb-5 bg-[#f2ece3]/95 px-4 py-3 backdrop-blur md:-mx-8 md:px-8"><p className="mb-1 text-[10px] font-bold uppercase tracking-[0.2em] text-[#d85c38]">A closer look</p><h4 className="font-serif text-2xl font-bold text-[#2b2521]">Inside the work <span className="ml-2 text-xs font-normal text-[#81756b]">{images.length} images</span></h4></div><div className="grid grid-cols-1 gap-4 sm:grid-cols-2">{images.map((src,i)=><div key={src+i} className="overflow-hidden rounded-2xl border border-[#e5d9cc] bg-white p-3 shadow-md shadow-[#8f755c]/10 md:p-4"><button onClick={()=>setLarge(src)} className="block aspect-[4/3] w-full overflow-hidden rounded-xl bg-[#f5f1ea] p-2 md:p-3"><img src={src} alt={`${project.title} screenshot ${i+1}`} className="h-full w-full object-contain" loading="lazy"/></button><div className="flex justify-between px-2 pt-3 text-[10px] uppercase tracking-[0.12em] text-[#5c5047]"><span className="text-[#81756b]">Image {i+1}</span><div className="flex flex-wrap gap-3"><button onClick={()=>setLarge(src)} className="font-semibold">Expand</button><a href={src} download className="font-semibold">Download</a><button onClick={async()=>{try{const imageUrl=new URL(src,window.location.href).href;if(navigator.share)await navigator.share({title:project.title,text:`${project.title} · image ${i+1}`,url:imageUrl});else{await navigator.clipboard.writeText(imageUrl);setNotice('Image link copied to clipboard.')}}catch{setNotice('Image sharing was cancelled or is unavailable.')}}} className="font-semibold text-[#d85c38]">Share</button></div></div></div>)}</div><p className="mt-5 text-xs text-[#81756b]">Gallery images are configured in the project's <code>gallery</code> array in <code>src/App.tsx</code>.</p></section></div></div></div>{large&&<div className="fixed inset-0 z-[120] flex items-center justify-center bg-black/95 p-4" onClick={()=>setLarge(null)}><div className="absolute right-5 top-5 flex gap-3"><a href={large} download onClick={e=>e.stopPropagation()} className="rounded-full border border-[#d9cbbc] bg-white px-4 py-2 text-sm">Download image</a><button onClick={()=>setLarge(null)} className="rounded-full border border-[#d9cbbc] bg-white p-2"><X/></button></div><img src={large} alt="Expanded project image" className="max-h-[88vh] max-w-full object-contain" onClick={e=>e.stopPropagation()}/></div>}</>;
 };
 
 const App: React.FC = () => {
@@ -561,7 +596,7 @@ const App: React.FC = () => {
                 src="/images/logo.png" 
                 alt="Profile" 
                 className="w-full h-full object-cover" 
-                onError={(e: any) => { e.target.src = "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400"; }}
+                onError={(e: any) => { e.target.src = "images/kiluva.jpeg"; }}
                />   
             </div>
             <div>
@@ -593,7 +628,7 @@ const App: React.FC = () => {
             <button 
               onClick={() => setActiveTab('contact')}
               className="text-xs font-bold uppercase tracking-widest text-purple-400 hover:text-purple-300 transition-colors">
-              Hire Me
+              Partner with me
             </button>
           </div>
         </div>
@@ -629,7 +664,7 @@ const App: React.FC = () => {
               <li><button onClick={() => setActiveTab('projects')} className="text-neutral-400 hover:text-white transition-colors">Data Analysis</button></li>
               <li><button onClick={() => setActiveTab('projects')} className="text-neutral-400 hover:text-white transition-colors">Software Development</button></li>
               <li><button onClick={() => setActiveTab('projects')} className="text-neutral-400 hover:text-white transition-colors">AI & ML Solutions</button></li>
-              <li><button onClick={() => setActiveTab('contact')} className="text-neutral-400 hover:text-white transition-colors">Hire Me</button></li>
+              <li><button onClick={() => setActiveTab('contact')} className="text-neutral-400 hover:text-white transition-colors">Partnerships</button></li>
             </ul>
             <div className="kadsa-maker-card" aria-label="Website made by KADSA">
               <div className="kadsa-maker-accent" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
