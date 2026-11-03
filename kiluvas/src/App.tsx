@@ -6,8 +6,10 @@ import {
   Globe, Award,
   MapPin, Sun,
   GraduationCap,
-  LineChart
+  LineChart,
+  Images
 } from 'lucide-react';
+import MoreModal from './MoreModal';
 
 // --- TYPES & INTERFACES ---
 interface Project {
@@ -58,7 +60,7 @@ const ProjectCardImage: React.FC<ProjectCardImageProps> = ({ text, imageSrc, hei
 
 // --- SUB-VIEWS ---
 
-const HomeView: React.FC<{ setActiveTab: (id: string) => void }> = ({ setActiveTab }) => (
+const HomeView: React.FC<{ setActiveTab: (id: string) => void; onOpenMore: () => void }> = ({ setActiveTab, onOpenMore }) => (
   <div className="space-y-24 animate-in fade-in duration-700 text-left">
     <section className="relative isolate mb-8 min-h-[570px] overflow-hidden rounded-[2rem] border border-neutral-800 bg-[#08080b] px-6 py-10 md:px-12 md:py-14 lg:px-16">
       <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_82%_80%,rgba(124,58,237,0.24),transparent_38%),radial-gradient(ellipse_at_8%_10%,rgba(37,99,235,0.13),transparent_35%)]" />
@@ -84,12 +86,22 @@ const HomeView: React.FC<{ setActiveTab: (id: string) => void }> = ({ setActiveT
       <div className="flex flex-col md:flex-row gap-12 items-start text-left">
         <div className="w-full md:w-1/3 sticky top-24 space-y-6">
           <ProjectCardImage text="Creative" imageSrc="/images/about.jpg" height="h-72" />
+          <button
+            onClick={onOpenMore}
+            className="group inline-flex w-full items-center justify-center gap-2 rounded-full border border-neutral-700 bg-white/[0.03] px-6 py-3 text-sm font-bold text-white transition hover:border-purple-400 hover:bg-purple-400/10"
+          >
+            <Images size={16} className="text-purple-300" /> More
+            <ChevronRight size={16} className="transition-transform group-hover:translate-x-1" />
+          </button>
           <div className="p-6 bg-neutral-900/50 rounded-2xl border border-neutral-800">
              <h4 className="text-xs font-bold uppercase tracking-widest text-pink-500 mb-4 flex items-center gap-2">
                 <MapPin size={14} /> From Taveta to Tech
              </h4>
              <p className="text-neutral-500 text-xs leading-relaxed">
                 Born to peasant farmers on the edge of Kenya, my journey began in the shambas and charcoal kilns of the countryside.
+             </p>
+             <p className="text-blue-500 text-xs leading-relaxed">
+                A smiley, curious, and God fearing kid, I followed a path full of uncertainties, knowing there is GOD in heaven who has a plan for me. 
              </p>
           </div>
           <div className="p-6 bg-neutral-900/50 rounded-2xl border border-neutral-800">
@@ -107,9 +119,12 @@ const HomeView: React.FC<{ setActiveTab: (id: string) => void }> = ({ setActiveT
              <h4 className="text-xs font-bold uppercase tracking-widest text-blue-500 mb-4 flex items-center gap-2">
                 <Sun size={14} /> My Prayer Everyday
              </h4>
-             <p className="text-neutral-500 text-xs leading-relaxed">
-                If Not for my sake Oh God, Then for the 19 other children in marginalized communities who won't get the chance to step out. Use me Holy Father as an instrument of your mercy. You gave me the talents I have Freely, Lead me to give-back to all freely!
-            </p>
+              <p className="text-neutral-500 text-xs leading-relaxed">
+                If Not for my sake Oh God, Then for the 19 other children in marginalized communities who won't get the chance to step out.
+              </p>
+              <p className="text-neutral-500 text-xs leading-relaxed">
+                Use me Holy Father, <strong>as an instrument of your mercy</strong>. You gave me the talents I have Freely. Lead me to give-back to all, especially your children who are marginalized and underprivileged.
+              </p>
           </div>
         </div>
         <div className="w-full md:w-2/3">
@@ -124,7 +139,10 @@ const HomeView: React.FC<{ setActiveTab: (id: string) => void }> = ({ setActiveT
               My educational path was transformed by the Equity Wings to Fly program, which supported my transition from a grassroots primary school to a Grade A national high school. This high-quality education enabled me to join the University of Nairobi, where I pursued a Bachelor's degree in Statistics. It was during this time that I discovered my true passion for computing while diving into the world of Data Science. God has been great, surely GOD DID!
             </p>
             <p>
-              In a community where only 1 in 20 children get the opportunity to step out, I’ve made it my mission to ensure that "success" isn't just personal—it's communal. I am driven to build the foundations and provide the resources that marginalized young minds need to venture into the tech world.
+              Luck, Fortune, Grace, or Divine Providence—call it what you will—but I know for certain; the talents I have, the people I met and the experiences I have till now; they all point to a greater purpose. I felt a calling to ensure that others, especially marginalized young minds, could also ethically grow as independent thinkers and creators, and contribute to the betterment of their communities.
+            </p>
+            <p>
+              From a community where only 1 in 20 children get the opportunity to step out, I’ve made it my mission to ensure that "success" isn't just personal—it's communal. I am driven to build the foundations and provide the resources that marginalized young minds need to venture into the tech world.
             </p>
             <p>
               This vision led to the founding of :
@@ -136,13 +154,46 @@ const HomeView: React.FC<{ setActiveTab: (id: string) => void }> = ({ setActiveT
             </p>
           </div>
           
-          <div className="mt-10 flex flex-wrap gap-3">
-            <p>Acquired & Sharpened skills:</p>
-            {['Critical Thinking', 'Leadership', 'Strategy', 'Creativity', 'Team Work', 'Curiosity', 'Adaptability', 'Communication', 'Determination', 'Problem Solving', 'Collaboration'].map((skill) => (
-              <div key={skill} className="px-4 py-2 bg-neutral-800/50 rounded-lg text-xs font-semibold text-neutral-300 border border-neutral-700/50">
+          <div className="mt-10 space-y-5">
+            {/* Header Statement */}
+            <p className="text-sm font-medium text-neutral-400 uppercase tracking-wider">
+              Acquired & Sharpened skills:
+            </p>
+
+            {/* Skills Grid Container */}
+            <div className="flex flex-wrap gap-2.5">
+              {[
+                'Critical Thinking',
+                'Leadership',
+                'Strategy',
+                'Creativity',
+                'Team Work',
+                'Curiosity',
+                'Adaptability',
+                'Communication',
+                'Determination',
+                'Problem Solving',
+                'Collaboration',
+              ].map((skill) => (
+              <div
+                key={skill}
+                className="px-3.5 py-1.5 bg-neutral-800/60 hover:bg-neutral-800 hover:border-neutral-600 rounded-full text-xs font-medium text-neutral-300 border border-neutral-700/60 transition-colors cursor-default">
                 {skill}
               </div>
-            ))}
+              ))}
+            </div>
+
+            {/* Dedicated Tab for PRAYER! */}
+            <div className="pt-2">
+              <div className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-gradient-to-r from-amber-500/10 via-amber-500/20 to-amber-500/10 border border-amber-500/40 text-amber-300 shadow-lg shadow-amber-500/5 backdrop-blur-sm">
+                <span className="text-xs font-medium text-amber-200/80 uppercase tracking-wide">
+                  Above it all:
+                </span>
+                <span className="text-sm font-extrabold tracking-wider text-amber-400 drop-shadow-sm">
+                  |-PRAYER-|
+                </span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -560,12 +611,13 @@ const ProjectModal: React.FC<{ project: Project; onClose: () => void }> = ({proj
  const images=(project.gallery?.length?project.gallery:[project.imageUrl||""]).filter(Boolean); const [large,setLarge]=useState<string|null>(null); const [review,setReview]=useState(false); const [rating,setRating]=useState("5"); const [feedback,setFeedback]=useState(""); const [notice,setNotice]=useState(""); const ratingKey=`portfolio-rating:${project.category}:${project.title}`; const [savedRating,setSavedRating]=useState<number>(()=>Number(localStorage.getItem(ratingKey)||0));
  const reviewUrl=`mailto:kitennykiluva@gmail.com?subject=${encodeURIComponent("Project review: "+project.title)}&body=${encodeURIComponent("Project: "+project.title+"\nRating: "+rating+"/5\n\nReview:\n"+feedback)}`;
  const share=async()=>{try{const url=project.live||project.github||window.location.href;if(navigator.share)await navigator.share({title:project.title,text:project.desc,url});else{await navigator.clipboard.writeText(project.title+"\n"+project.desc+"\n"+url);setNotice("Project details copied to clipboard.")}}catch{setNotice("Sharing is unavailable or was cancelled.")}};
- return <><div className="fixed inset-0 z-[100] flex items-center justify-center p-4 md:p-8 lg:p-10"><button aria-label="Close project" onClick={onClose} className="absolute inset-0 bg-black/90 backdrop-blur-xl"/><div role="dialog" aria-modal="true" className="relative h-[min(88vh,900px)] w-full max-w-7xl overflow-hidden rounded-[2rem] border border-[#e5d9cc] bg-[#f8f4ed] text-[#2b2521] shadow-[0_32px_120px_rgba(0,0,0,0.45)]"><button onClick={onClose} className="absolute right-5 top-5 z-20 rounded-full border border-[#e2d7cb] bg-white/90 p-2 text-[#2b2521] shadow-sm backdrop-blur"><X/></button><div className="grid h-full min-h-0 grid-cols-1 grid-rows-[minmax(220px,0.8fr)_minmax(0,1.2fr)] overflow-hidden lg:grid-cols-[minmax(340px,0.78fr)_minmax(0,1.22fr)] lg:grid-rows-1"><section className="min-h-0 overflow-y-auto overscroll-contain border-b border-[#e6dbcf] bg-[#fffdfa] p-6 pt-16 md:p-10 md:pt-10 lg:border-b-0 lg:border-r"><p className="mb-2 text-[9px] font-bold uppercase tracking-[0.24em] text-[#8d7a69]">Kiluva James · Project notes</p><p className="mb-4 text-xs font-bold uppercase tracking-widest text-[#d85c38]">{project.category==="ai"?"AI & ML":project.category==="data"?"Data & Analytics":"Web & Software"} · {project.origin}</p><h3 className="mb-5 font-serif text-4xl font-bold leading-tight text-[#2b2521] md:text-5xl">{project.title}</h3><p className="mb-6 text-sm leading-relaxed text-[#62574f]">{project.desc}</p>{project.longDesc&&<div className="mb-7 border-t border-[#e6dbcf] pt-5"><h4 className="mb-3 text-xs font-bold uppercase tracking-widest text-[#6b6058]">Full project review & implementation</h4><p className="text-sm leading-relaxed text-[#6b6058]">{project.longDesc}</p></div>}<div className="mb-7 rounded-2xl border border-[#e6dbcf] bg-[#f7f2eb] p-4"><div className="flex flex-wrap items-center justify-between gap-3"><div><p className="text-xs font-bold uppercase tracking-widest text-[#62574f]">Rate this project</p><p className="mt-1 text-xs text-[#81756b]">Your rating stays in this browser.</p></div><div className="text-right"><p className="text-sm font-bold text-[#a65d2c]">{savedRating ? `${savedRating}/5` : "Not rated"}<span className="ml-1 text-amber-300">★</span></p><p className="text-[10px] text-[#81756b]">Your rating</p></div></div><div className="mt-3 flex gap-1" role="radiogroup" aria-label="Rate this project from one to five">{[1,2,3,4,5].map(n=><button key={n} type="button" role="radio" aria-checked={savedRating===n} aria-label={`${n} star${n>1?'s':''}`} onClick={()=>{setSavedRating(n);localStorage.setItem(ratingKey,String(n));}} className={`rounded-md p-1 text-2xl transition hover:scale-110 ${n<=savedRating?"text-amber-300":"text-[#a69586] hover:text-[#a65d2c]"}`}>★</button>)}</div>{savedRating>0&&<p className="mt-2 text-xs text-[#287a55]">Thanks for rating this project {savedRating}/5.</p>}</div><div className="mb-8 flex flex-wrap gap-2">{project.tags.map(t=><span key={t} className="rounded-lg border border-[#e6dbcf] bg-white px-3 py-1 text-xs text-[#6b6058]">{t}</span>)}</div><div className="mb-7 grid gap-3 sm:grid-cols-2">{project.github&&<a href={project.github} target="_blank" rel="noreferrer" className="rounded-xl bg-white px-4 py-3 text-center text-sm font-bold text-black"><Github size={17} className="mr-2 inline"/>Source / Project</a>}{project.live&&<a href={project.live} target="_blank" rel="noreferrer" className="rounded-xl border border-[#d9cbbc] px-4 py-3 text-center text-sm font-bold"><Globe size={17} className="mr-2 inline"/>Live experience</a>}</div><div className="flex flex-wrap gap-3"><button onClick={share} className="rounded-lg border border-[#d9cbbc] px-4 py-2 text-xs font-bold"><Send size={15} className="mr-2 inline"/>Share project</button><button onClick={()=>setReview(v=>!v)} className="rounded-lg border border-[#d9cbbc] px-4 py-2 text-xs font-bold"><Award size={15} className="mr-2 inline"/>Review project</button></div>{notice&&<p className="mt-3 text-xs text-[#6b6058]">{notice}</p>}{review&&<form onSubmit={e=>{e.preventDefault();window.location.href=reviewUrl}} className="mt-5 space-y-3 rounded-xl border border-[#e6dbcf] p-4"><h4 className="font-bold">Share your review</h4><label className="block text-xs text-[#6b6058]">Rating<select value={rating} onChange={e=>setRating(e.target.value)} className="mt-1 block w-full rounded-lg border border-[#d9cbbc] bg-white p-2 text-[#2b2521]">{[5,4,3,2,1].map(n=><option key={n} value={n}>{n} / 5</option>)}</select></label><label className="block text-xs text-[#6b6058]">Feedback<textarea required value={feedback} onChange={e=>setFeedback(e.target.value)} rows={4} className="mt-1 block w-full rounded-lg border border-[#d9cbbc] bg-white p-3 text-[#2b2521]" placeholder="What worked well? What could improve?"/></label><button className="rounded-lg bg-white px-4 py-2 text-xs font-bold text-black">Continue by email</button><p className="text-[11px] text-[#81756b]">The review opens in your email app; this site does not store submissions.</p></form>}</section><section className="min-h-0 overflow-y-auto overscroll-contain bg-[#f2ece3] p-4 md:p-8"><div className="sticky -top-4 z-10 -mx-4 mb-5 bg-[#f2ece3]/95 px-4 py-3 backdrop-blur md:-mx-8 md:px-8"><p className="mb-1 text-[10px] font-bold uppercase tracking-[0.2em] text-[#d85c38]">A closer look</p><h4 className="font-serif text-2xl font-bold text-[#2b2521]">Inside the work <span className="ml-2 text-xs font-normal text-[#81756b]">{images.length} images</span></h4></div><div className="grid grid-cols-1 gap-4 sm:grid-cols-2">{images.map((src,i)=><div key={src+i} className="overflow-hidden rounded-2xl border border-[#e5d9cc] bg-white p-3 shadow-md shadow-[#8f755c]/10 md:p-4"><button onClick={()=>setLarge(src)} className="block aspect-[4/3] w-full overflow-hidden rounded-xl bg-[#f5f1ea] p-2 md:p-3"><img src={src} alt={`${project.title} screenshot ${i+1}`} className="h-full w-full object-contain" loading="lazy"/></button><div className="flex justify-between px-2 pt-3 text-[10px] uppercase tracking-[0.12em] text-[#5c5047]"><span className="text-[#81756b]">Image {i+1}</span><div className="flex flex-wrap gap-3"><button onClick={()=>setLarge(src)} className="font-semibold">Expand</button><a href={src} download className="font-semibold">Download</a><button onClick={async()=>{try{const imageUrl=new URL(src,window.location.href).href;if(navigator.share)await navigator.share({title:project.title,text:`${project.title} · image ${i+1}`,url:imageUrl});else{await navigator.clipboard.writeText(imageUrl);setNotice('Image link copied to clipboard.')}}catch{setNotice('Image sharing was cancelled or is unavailable.')}}} className="font-semibold text-[#d85c38]">Share</button></div></div></div>)}</div><p className="mt-5 text-xs text-[#81756b]">Gallery images are configured in the project's <code>gallery</code> array in <code>src/App.tsx</code>.</p></section></div></div></div>{large&&<div className="fixed inset-0 z-[120] flex items-center justify-center bg-black/95 p-4" onClick={()=>setLarge(null)}><div className="absolute right-5 top-5 flex gap-3"><a href={large} download onClick={e=>e.stopPropagation()} className="rounded-full border border-[#d9cbbc] bg-white px-4 py-2 text-sm">Download image</a><button onClick={()=>setLarge(null)} className="rounded-full border border-[#d9cbbc] bg-white p-2"><X/></button></div><img src={large} alt="Expanded project image" className="max-h-[88vh] max-w-full object-contain" onClick={e=>e.stopPropagation()}/></div>}</>;
+ return <><div className="fixed inset-0 z-[100] flex items-center justify-center p-4 md:p-8 lg:p-10"><button aria-label="Close project" onClick={onClose} className="absolute inset-0 bg-black/90 backdrop-blur-xl"/><div role="dialog" aria-modal="true" className="relative h-[min(88vh,900px)] w-full max-w-7xl overflow-hidden rounded-[2rem] border border-neutral-800 bg-black text-white shadow-[0_32px_120px_rgba(0,0,0,0.8)]"><button onClick={onClose} className="absolute right-5 top-5 z-20 rounded-full border border-neutral-700 bg-neutral-900/90 p-2 text-white shadow-sm backdrop-blur transition hover:border-purple-400"><X/></button><div className="grid h-full min-h-0 grid-cols-1 grid-rows-[minmax(220px,0.8fr)_minmax(0,1.2fr)] overflow-hidden lg:grid-cols-[minmax(340px,0.78fr)_minmax(0,1.22fr)] lg:grid-rows-1"><section className="min-h-0 overflow-y-auto overscroll-contain border-b border-neutral-800 bg-neutral-950 p-6 pt-16 md:p-10 md:pt-10 lg:border-b-0 lg:border-r"><p className="mb-2 text-[9px] font-bold uppercase tracking-[0.24em] text-neutral-500">Kiluva James · Project notes</p><p className="mb-4 text-xs font-bold uppercase tracking-widest text-purple-300">{project.category==="ai"?"AI & ML":project.category==="data"?"Data & Analytics":"Web & Software"} · {project.origin}</p><h3 className="mb-5 font-serif text-4xl font-bold leading-tight text-white md:text-5xl">{project.title}</h3><p className="mb-6 text-sm leading-relaxed text-neutral-300">{project.desc}</p>{project.longDesc&&<div className="mb-7 border-t border-neutral-800 pt-5"><h4 className="mb-3 text-xs font-bold uppercase tracking-widest text-neutral-400">Full project review & implementation</h4><p className="text-sm leading-relaxed text-neutral-400">{project.longDesc}</p></div>}<div className="mb-7 rounded-2xl border border-neutral-800 bg-neutral-900/60 p-4"><div className="flex flex-wrap items-center justify-between gap-3"><div><p className="text-xs font-bold uppercase tracking-widest text-neutral-300">Rate this project</p><p className="mt-1 text-xs text-neutral-500">Your rating stays in this browser.</p></div><div className="text-right"><p className="text-sm font-bold text-amber-300">{savedRating ? `${savedRating}/5` : "Not rated"}<span className="ml-1 text-amber-300">★</span></p><p className="text-[10px] text-neutral-500">Your rating</p></div></div><div className="mt-3 flex gap-1" role="radiogroup" aria-label="Rate this project from one to five">{[1,2,3,4,5].map(n=><button key={n} type="button" role="radio" aria-checked={savedRating===n} aria-label={`${n} star${n>1?'s':''}`} onClick={()=>{setSavedRating(n);localStorage.setItem(ratingKey,String(n));}} className={`rounded-md p-1 text-2xl transition hover:scale-110 ${n<=savedRating?"text-amber-300":"text-neutral-600 hover:text-amber-300"}`}>★</button>)}</div>{savedRating>0&&<p className="mt-2 text-xs text-emerald-400">Thanks for rating this project {savedRating}/5.</p>}</div><div className="mb-8 flex flex-wrap gap-2">{project.tags.map(t=><span key={t} className="rounded-lg border border-neutral-800 bg-neutral-900 px-3 py-1 text-xs text-neutral-300">{t}</span>)}</div><div className="mb-7 grid gap-3 sm:grid-cols-2">{project.github&&<a href={project.github} target="_blank" rel="noreferrer" className="rounded-xl bg-white px-4 py-3 text-center text-sm font-bold text-black"><Github size={17} className="mr-2 inline"/>Source / Project</a>}{project.live&&<a href={project.live} target="_blank" rel="noreferrer" className="rounded-xl border border-neutral-700 px-4 py-3 text-center text-sm font-bold text-white transition hover:border-purple-400"><Globe size={17} className="mr-2 inline"/>Live experience</a>}</div><div className="flex flex-wrap gap-3"><button onClick={share} className="rounded-lg border border-neutral-700 px-4 py-2 text-xs font-bold text-white transition hover:border-purple-400"><Send size={15} className="mr-2 inline"/>Share project</button><button onClick={()=>setReview(v=>!v)} className="rounded-lg border border-neutral-700 px-4 py-2 text-xs font-bold text-white transition hover:border-purple-400"><Award size={15} className="mr-2 inline"/>Review project</button></div>{notice&&<p className="mt-3 text-xs text-neutral-400">{notice}</p>}{review&&<form onSubmit={e=>{e.preventDefault();window.location.href=reviewUrl}} className="mt-5 space-y-3 rounded-xl border border-neutral-800 p-4"><h4 className="font-bold">Share your review</h4><label className="block text-xs text-neutral-400">Rating<select value={rating} onChange={e=>setRating(e.target.value)} className="mt-1 block w-full rounded-lg border border-neutral-700 bg-neutral-900 p-2 text-white">{[5,4,3,2,1].map(n=><option key={n} value={n}>{n} / 5</option>)}</select></label><label className="block text-xs text-neutral-400">Feedback<textarea required value={feedback} onChange={e=>setFeedback(e.target.value)} rows={4} className="mt-1 block w-full rounded-lg border border-neutral-700 bg-neutral-900 p-3 text-white" placeholder="What worked well? What could improve?"/></label><button className="rounded-lg bg-white px-4 py-2 text-xs font-bold text-black">Continue by email</button><p className="text-[11px] text-neutral-500">The review opens in your email app; this site does not store submissions.</p></form>}</section><section className="min-h-0 overflow-y-auto overscroll-contain bg-black p-4 md:p-8"><div className="sticky -top-4 z-10 -mx-4 mb-5 bg-black/90 px-4 py-3 backdrop-blur md:-mx-8 md:px-8"><p className="mb-1 text-[10px] font-bold uppercase tracking-[0.2em] text-purple-300">A closer look</p><h4 className="font-serif text-2xl font-bold text-white">Inside the work <span className="ml-2 text-xs font-normal text-neutral-500">{images.length} images</span></h4></div><div className="grid grid-cols-1 gap-4 sm:grid-cols-2">{images.map((src,i)=><div key={src+i} className="overflow-hidden rounded-2xl border border-neutral-800 bg-neutral-900/60 p-3 shadow-md shadow-black/40 md:p-4"><button onClick={()=>setLarge(src)} className="block aspect-[4/3] w-full overflow-hidden rounded-xl bg-neutral-950 p-2 md:p-3"><img src={src} alt={`${project.title} screenshot ${i+1}`} className="h-full w-full object-contain" loading="lazy"/></button><div className="flex justify-between px-2 pt-3 text-[10px] uppercase tracking-[0.12em] text-neutral-400"><span className="text-neutral-500">Image {i+1}</span><div className="flex flex-wrap gap-3"><button onClick={()=>setLarge(src)} className="font-semibold">Expand</button><a href={src} download className="font-semibold">Download</a><button onClick={async()=>{try{const imageUrl=new URL(src,window.location.href).href;if(navigator.share)await navigator.share({title:project.title,text:`${project.title} · image ${i+1}`,url:imageUrl});else{await navigator.clipboard.writeText(imageUrl);setNotice('Image link copied to clipboard.')}}catch{setNotice('Image sharing was cancelled or is unavailable.')}}} className="font-semibold text-purple-300">Share</button></div></div></div>)}</div><p className="mt-5 text-xs text-neutral-500">Gallery images are configured in the project's <code>gallery</code> array in <code>src/App.tsx</code>.</p></section></div></div></div>{large&&<div className="fixed inset-0 z-[120] flex items-center justify-center bg-black/95 p-4" onClick={()=>setLarge(null)}><div className="absolute right-5 top-5 flex gap-3"><a href={large} download onClick={e=>e.stopPropagation()} className="rounded-full border border-neutral-700 bg-neutral-900 px-4 py-2 text-sm text-white">Download image</a><button onClick={()=>setLarge(null)} className="rounded-full border border-neutral-700 bg-neutral-900 p-2 text-white"><X/></button></div><img src={large} alt="Expanded project image" className="max-h-[88vh] max-w-full object-contain" onClick={e=>e.stopPropagation()}/></div>}</>;
 };
 
 const App: React.FC = () => {
   const [activeTab, setActiveTab] = useState('home');
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+  const [showMore, setShowMore] = useState(false);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -635,7 +687,7 @@ const App: React.FC = () => {
       </header>
 
       <main className="max-w-6xl mx-auto px-6 py-12 min-h-[70vh]">
-        {activeTab === 'home' && <HomeView setActiveTab={setActiveTab} />}
+        {activeTab === 'home' && <HomeView setActiveTab={setActiveTab} onOpenMore={() => setShowMore(true)} />}
         {activeTab === 'projects' && <ProjectsView setSelectedProject={setSelectedProject} />}
         {activeTab === 'contact' && <ContactView />}
       </main>
@@ -721,6 +773,7 @@ const App: React.FC = () => {
       </footer>
 
       {selectedProject && <ProjectModal project={selectedProject} onClose={() => setSelectedProject(null)} />}
+      {showMore && <MoreModal onClose={() => setShowMore(false)} />}
     </div>
   );
 };
