@@ -10,6 +10,7 @@ import {
   Images
 } from 'lucide-react';
 import MoreModal from './MoreModal';
+import PrayerCTA from './PrayerCTA';
 
 // --- TYPES & INTERFACES ---
 interface Project {
@@ -602,6 +603,8 @@ const ContactView: React.FC = () => (
         </form>
       </div>
     </div>
+
+    <PrayerCTA />
   </div>
 );
 
