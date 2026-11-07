@@ -46,7 +46,7 @@ const PrayerCTA: React.FC = () => {
       <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_50%_0%,rgba(251,191,36,0.16),transparent_45%),radial-gradient(ellipse_at_10%_100%,rgba(124,58,237,0.18),transparent_40%),radial-gradient(ellipse_at_90%_100%,rgba(34,211,238,0.1),transparent_40%)]" />
       <div className="pointer-events-none absolute inset-0 -z-10 opacity-[0.07] [background-image:linear-gradient(rgba(255,255,255,0.1)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.1)_1px,transparent_1px)] [background-size:38px_38px]" />
 
-      <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full border border-amber-300/30 bg-amber-300/[0.08] text-red shadow-[0_0_60px_rgba(251,191,36,0.2)]">
+      <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full border border-amber-300/30 bg-amber-300/[0.08] text-amber-200 shadow-[0_0_60px_rgba(251,191,36,0.2)]">
         <Flame size={26} />
       </div>
 
